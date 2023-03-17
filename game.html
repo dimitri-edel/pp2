@@ -15,8 +15,22 @@
         <h1>Game</h1>
     </header>
     <section>
-        <div id="game-window" onclick="game.userMakesMove(new Rock())">
-            ROCK
+        <div id="game-window">
+            <div id="user-rock-button" onclick="game.userMakesMove(new Rock())">
+                ROCK
+            </div>
+            <div id="user-paper-button" onclick="game.userMakesMove(new Paper())">
+                PAPER
+            </div>
+            <div id="user-scissors-button" onclick="game.userMakesMove(new Scissors())">
+                    SCISSORS
+            </div>
+            <div id="user-lizzard-button" onclick="game.userMakesMove(new Lizzard())">
+                LIZZARD
+            </div>
+            <div id="user-spock-button" onclick="game.userMakesMove(new Spock())">
+                SPOCK
+            </div>
         </div>
     </section>
 </body>
