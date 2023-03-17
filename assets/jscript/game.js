@@ -174,14 +174,13 @@ class Game {
     }
 
     userMakesMove(pick) {
+        let result = "20";
         this.userPlayer.currentPick = pick;
         this.computerPlayer.pickRandom();
 
-        window.alert("Coputer picked:" + this.computerPlayer.currentPick.name);
-        /*
-        result = this.gameProcessor.usersMoveIs(this.userPlayer, this.computerPlayer);
-        window.alert("The user has a "+result+" Computer picked"+getComputersPickAsString());
-        */
+        result = this.userPlayer.currentPick.checkOutcomeAgainst(this.computerPlayer.currentPick);
+        window.alert("Coputer picked:" + this.computerPlayer.currentPick.name + "You have a "+result);
+        
     }
 }
 
