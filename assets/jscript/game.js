@@ -104,13 +104,84 @@ SPOCK[versus_lizzard] = loss;
 SPOCK[versus_spock] = draw;
 SPOCK[owner_index] = versus_spock;
 
+class Pick {
+    constructor(owner_index, name) {
+        this.index = owner_index;
+        this.name = name;
+    }
+}
+
+class Rock extends Pick {
+    constructor() {
+        super(versus_rock, "Rock");
+    }
+    // Checks the outcome of playing it against Paper, Scissorrs, etc.
+    // If Rock wins the return value is "win" else "loss" or "draw"
+    checkOutcomeAgainst(oponentsPick) {
+        return ROCK[oponentsPick.index];
+    }
+}
+
+class Paper extends Pick {
+    constructor() {
+        super(versus_paper, "Paper");
+    }
+
+    checkOutcomeAgainst(oponentsPick) {
+        return PAPER[oponentsPick.index];
+    }
+}
+
+class Scissors extends Pick {
+    constructor() {
+        super(versus_scissors, "Scissors");
+    }
+
+    checkOutcomeAgainst(oponentsPick) {
+        return SCISSORS[oponentsPick.index];
+    }
+
+}
+
+class Lizzard extends Pick {
+    constructor() {
+        super(versus_lizzard, "Lizzard");
+    }
+
+    checkOutcomeAgainst(oponentsPick) {
+        return LIZZARD[oponentsPick.index];
+    }
+}
+
+class Spock extends Pick {
+    constructor() {
+        super(versus_spock, "Spock");
+    }
+
+    checkOutcomeAgainst(oponentsPick) {
+        return SPOCK[oponentsPick.index];
+    }
+}
+
+
 class Game {
 
-    constructor(numberOfAttempts)) {
+    constructor(numberOfAttempts, gameProcessor) {
+        this.gameProcessor = gameProcessor;
         this.attempsLeft = numberOfAttempts;
         this.computerPlayer = new Player();
         this.userPlayer = new Player();
-        
+    }
+
+    userMakesMove(pick) {
+        this.userPlayer.currentPick = pick;
+        this.computerPlayer.pickRandom();
+
+        window.alert("Coputer picked:" + this.computerPlayer.currentPick.name);
+        /*
+        result = this.gameProcessor.usersMoveIs(this.userPlayer, this.computerPlayer);
+        window.alert("The user has a "+result+" Computer picked"+getComputersPickAsString());
+        */
     }
 }
 
@@ -132,11 +203,11 @@ class GameProcessor {
         The result is a string representation that shows if the USER wins or loses or ir it's a draw.
         NOTE: The result is shown from the perpective of the user. If it says win, that means that the user wins.
     */
-    playersMoveIs(user, computer){
+    usersMoveIs(user, computer) {
         let outcome = "none";
         // ensure that both parameters are of the appropriate type
-        if(user instanceof Player && computer instanceof Player){
-            outcome = user.currentPick[computer.currentPick[owner_index]];
+        if (user instanceof Player && computer instanceof Player) {
+            outcome = "string";
         }
 
         return outcome;
@@ -169,23 +240,30 @@ class Player {
         let number = Math.floor(Math.random() * 5);
         switch (number) {
             case 0:
-                this.pick = ROCK;
+                this.pick = new Rock();
                 break;
             case 1:
-                this.pick = PAPER;
+                this.pick = new Paper();
                 break;
             case 2:
-                this.pick = SCISSORS;
+                this.pick = new Scissors();
                 break;
             case 3:
-                this.pick = LIZZARD;
+                this.pick = new Lizzard();
                 break;
             case 4:
-                this.pick = SPOCK;
+                this.pick = new Spock();
                 break;
             default:
-                this.pick = SPOCK;
+                this.pick = new Pick(7, "none");
         }
     }
 
 }
+
+let user = new Player();
+let computer = new Player();
+
+let processor = new GameProcessor();
+// for testing purposes 1 attempt
+let game = new Game(1, processor);
