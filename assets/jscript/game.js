@@ -104,6 +104,88 @@ SPOCK[versus_lizzard] = loss;
 SPOCK[versus_spock] = draw;
 SPOCK[owner_index] = versus_spock;
 
+class Game {
 
+    constructor(numberOfAttempts)) {
+        this.attempsLeft = numberOfAttempts;
+        this.computerPlayer = new Player();
+        this.userPlayer = new Player();
+        
+    }
+}
 
+class GameProcessor {
+    constructor() {
+        // TODO: Put code here
+    }
 
+    /* 
+        PURPOSE: 
+        The method must be called  when the user picks one of the five options.
+        It determines which player of the two is the winner of the round.
+
+        PARAMETERS: 
+        user must be an instance of Player 
+        computer must be an instance of Player
+
+        RETURN VALUE:
+        The result is a string representation that shows if the USER wins or loses or ir it's a draw.
+        NOTE: The result is shown from the perpective of the user. If it says win, that means that the user wins.
+    */
+    playersMoveIs(user, computer){
+        let outcome = "none";
+        // ensure that both parameters are of the appropriate type
+        if(user instanceof Player && computer instanceof Player){
+            outcome = user.currentPick[computer.currentPick[owner_index]];
+        }
+
+        return outcome;
+    }
+}
+
+class Player {
+    constructor() {
+        this.score = 0;
+        this.pick = null;
+    }
+    set currentScore(score) {
+        this.score = score;
+    }
+
+    get currentScore() {
+        return this.score;
+    }
+
+    set currentPick(pick) {
+        this.pick = pick;
+    }
+
+    get currentPick() {
+        return this.pick;
+    }
+
+    pickRandom() {
+        // Assigns a random integer from 0 to 4:
+        let number = Math.floor(Math.random() * 5);
+        switch (number) {
+            case 0:
+                this.pick = ROCK;
+                break;
+            case 1:
+                this.pick = PAPER;
+                break;
+            case 2:
+                this.pick = SCISSORS;
+                break;
+            case 3:
+                this.pick = LIZZARD;
+                break;
+            case 4:
+                this.pick = SPOCK;
+                break;
+            default:
+                this.pick = SPOCK;
+        }
+    }
+
+}
