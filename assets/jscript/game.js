@@ -54,7 +54,7 @@ const spock_index = 4;
 
 /* Possiple outcomes */
 const win = 1;
-const loss = 1;
+const loss = -1;
 const draw = 0;
 
 
