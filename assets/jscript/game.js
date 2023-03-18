@@ -266,6 +266,8 @@ class View {
         let messageText = "";
         let userOptionPanelId = "";
         let computerOptionPanelId = "";
+        let messageWindowBeginHTML = "<div class=\"outcome-message-text\">";
+        let messageWindowEndHTML = "</div><button onclick=\"view.clear()\" class=\"again-button\">Again!</button>";
 
         switch (outcome) {
             case win:
@@ -301,7 +303,7 @@ class View {
                 break;
         }
 
-        switch(computer.currentPick.name){
+        switch (computer.currentPick.name) {
             case "Rock":
                 computerOptionPanelId = "computer-rock-button";
                 break;
@@ -320,13 +322,32 @@ class View {
             default:
                 break;
         }
-        
+
         if (outcome == win) {
-            
+
             document.getElementById(userOptionPanelId).className = "winning-pick";
             document.getElementById(computerOptionPanelId).className = "losing-pick";
+        } else if(outcome == loss){
+            document.getElementById(userOptionPanelId).className = "losing-pick";
+            document.getElementById(computerOptionPanelId).className = "winning-pick";
+        } else if(outcome == draw){
+            document.getElementById(userOptionPanelId).className = "tied-pick";
+            document.getElementById(computerOptionPanelId).className = "tied-pick";
         }
-        document.getElementById("message-panel").innerHTML = messageText;
+        document.getElementById("message-panel").innerHTML = messageWindowBeginHTML + messageText + messageWindowEndHTML;
+    }
+
+    clear() {
+        const elmentIds = ["user-rock-button", "user-paper-button",
+            "user-scissors-button", "user-lizzard-button",
+            "user-spock-button", "computer-rock-button",
+            "computer-paper-button", "computer-scissors-button",
+            "computer-lizzard-button", "computer-spock-button"
+        ];
+
+        for (let i = 0; i < elmentIds.length; i++) {
+            document.getElementById(elmentIds[i]).className = "player-option-picker";
+        }
     }
 
     pickOption(player) {
