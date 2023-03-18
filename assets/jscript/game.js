@@ -166,51 +166,30 @@ class Spock extends Pick {
 
 class Game {
 
-    constructor(numberOfAttempts, gameProcessor) {
-        this.gameProcessor = gameProcessor;
+    constructor(numberOfAttempts) {
         this.attempsLeft = numberOfAttempts;
         this.computerPlayer = new Player();
         this.userPlayer = new Player();
     }
 
     userMakesMove(pick) {
-        let result = "20";
+        let result = "";
         this.userPlayer.currentPick = pick;
         this.computerPlayer.pickRandom();
 
         result = this.userPlayer.currentPick.checkOutcomeAgainst(this.computerPlayer.currentPick);
-        window.alert("Coputer picked:" + this.computerPlayer.currentPick.name + "You have a " + result);
-
-        view.displayOutComeResults(result, this.userPlayer, this.computerPlayer);
-    }
-}
-
-class GameProcessor {
-    constructor() {
-        // TODO: Put code here
-    }
-
-    /* 
-        PURPOSE: 
-        The method must be called  when the user picks one of the five options.
-        It determines which player of the two is the winner of the round.
-
-        PARAMETERS: 
-        user must be an instance of Player 
-        computer must be an instance of Player
-
-        RETURN VALUE:
-        The result is a string representation that shows if the USER wins or loses or ir it's a draw.
-        NOTE: The result is shown from the perpective of the user. If it says win, that means that the user wins.
-    */
-    usersMoveIs(user, computer) {
-        let outcome = "none";
-        // ensure that both parameters are of the appropriate type
-        if (user instanceof Player && computer instanceof Player) {
-            outcome = "string";
+        
+        // Asign score
+        if(result == win){
+            this.userPlayer.increaseScore();
+        }else if(result == loss){
+            this.computerPlayer.increaseScore();
+        }else if(result == draw){
+            this.userPlayer.increaseScore();
+            this.computerPlayer.increaseScore();
         }
-
-        return outcome;
+        view.changeScore();
+        view.displayOutComeResults(result, this.userPlayer, this.computerPlayer);
     }
 }
 
@@ -233,6 +212,10 @@ class Player {
 
     get currentPick() {
         return this.pick;
+    }
+
+    increaseScore(){
+        this.score++;
     }
 
     pickRandom() {
@@ -260,8 +243,21 @@ class Player {
     }
 
 }
-
+/*
+    PURPOSE:
+    Separate the game logic from the presentation logic.
+*/
 class View {
+    constructor() {
+        // List of optionPickerIds
+        this.optionPickerIds = ["user-rock-button", "user-paper-button",
+            "user-scissors-button", "user-lizzard-button",
+            "user-spock-button", "computer-rock-button",
+            "computer-paper-button", "computer-scissors-button",
+            "computer-lizzard-button", "computer-spock-button"
+        ];
+    }
+
     displayOutComeResults(outcome, user, computer) {
         let messageText = "";
         let userOptionPanelId = "";
@@ -327,27 +323,84 @@ class View {
 
             document.getElementById(userOptionPanelId).className = "winning-pick";
             document.getElementById(computerOptionPanelId).className = "losing-pick";
-        } else if(outcome == loss){
+        } else if (outcome == loss) {
             document.getElementById(userOptionPanelId).className = "losing-pick";
             document.getElementById(computerOptionPanelId).className = "winning-pick";
-        } else if(outcome == draw){
+        } else if (outcome == draw) {
             document.getElementById(userOptionPanelId).className = "tied-pick";
             document.getElementById(computerOptionPanelId).className = "tied-pick";
         }
         document.getElementById("message-panel").innerHTML = messageWindowBeginHTML + messageText + messageWindowEndHTML;
+        this.clearOptionPickerEventListeners();
     }
 
     clear() {
-        const elmentIds = ["user-rock-button", "user-paper-button",
-            "user-scissors-button", "user-lizzard-button",
-            "user-spock-button", "computer-rock-button",
-            "computer-paper-button", "computer-scissors-button",
-            "computer-lizzard-button", "computer-spock-button"
-        ];
 
-        for (let i = 0; i < elmentIds.length; i++) {
-            document.getElementById(elmentIds[i]).className = "player-option-picker";
+        for (let i = 0; i < this.optionPickerIds.length; i++) {
+            document.getElementById(this.optionPickerIds[i]).className = "player-option-picker";
         }
+        this.hookUpOptionPickerEventListeners();
+    }
+
+    clearOptionPickerEventListeners() {
+        const userOptionPickerIds = ["user-rock-button", "user-paper-button",
+            "user-scissors-button", "user-lizzard-button",
+            "user-spock-button"
+        ];
+        // TODO: Create real functions for the event listener
+        document.getElementById(userOptionPickerIds[0]).removeEventListener("click", this.userRockOptionPickerOnClick);
+
+        document.getElementById(userOptionPickerIds[1]).removeEventListener("click", this.userPaperOptionPickerOnClick);
+
+        document.getElementById(userOptionPickerIds[2]).removeEventListener("click", this.userScissorsOptionPickerOnClick);
+
+        document.getElementById(userOptionPickerIds[3]).removeEventListener("click", this.userLizzardOptionPickerOnClick);
+
+        document.getElementById(userOptionPickerIds[4]).removeEventListener("click", this.userSpockOptionPickerOnClick);
+    }
+
+    hookUpOptionPickerEventListeners() {
+        const userOptionPickerIds = ["user-rock-button", "user-paper-button",
+            "user-scissors-button", "user-lizzard-button",
+            "user-spock-button"
+        ];
+        // TODO: Create real functions for the event listener
+        document.getElementById(userOptionPickerIds[0]).addEventListener("click", this.userRockOptionPickerOnClick);
+
+        document.getElementById(userOptionPickerIds[1]).addEventListener("click", this.userPaperOptionPickerOnClick);
+
+        document.getElementById(userOptionPickerIds[2]).addEventListener("click", this.userScissorsOptionPickerOnClick);
+
+        document.getElementById(userOptionPickerIds[3]).addEventListener("click", this.userLizzardOptionPickerOnClick);
+
+        document.getElementById(userOptionPickerIds[4]).addEventListener("click", this.userSpockOptionPickerOnClick);
+    }
+
+    /* EventListners */
+    userRockOptionPickerOnClick() {
+        game.userMakesMove(new Rock());
+    }
+
+    userPaperOptionPickerOnClick() {
+        game.userMakesMove(new Paper());
+    }
+
+    userScissorsOptionPickerOnClick() {
+        game.userMakesMove(new Scissors());
+    }
+
+    userLizzardOptionPickerOnClick() {
+        game.userMakesMove(new Lizzard());
+    }
+
+    userSpockOptionPickerOnClick() {
+        game.userMakesMove(new Spock());
+    }
+
+    beginOnClick() {
+       
+        this.hookUpOptionPickerEventListeners();
+        document.getElementById("message-panel").innerHTML = "GO !!!";  
     }
 
     pickOption(player) {
@@ -355,7 +408,8 @@ class View {
     }
 
     changeScore(user, computer) {
-
+        document.getElementById("computer-score").innerHTML = game.computerPlayer.score;
+        document.getElementById("user-score").innerHTML = game.userPlayer.score;
     }
 
     displayGameOver() {
@@ -366,7 +420,6 @@ class View {
 let user = new Player();
 let computer = new Player();
 
-let processor = new GameProcessor();
 // for testing purposes 1 attempt
-let game = new Game(1, processor);
+let game = new Game(1);
 let view = new View();

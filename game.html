@@ -49,23 +49,23 @@
             </div>
             <!-- Messages such as 'You win', 'You lose', 'Game  Over' will appear inside this div-->
             <div id="message-panel">
-                Let's begin.
+                <button id="begin-button" onclick="view.beginOnClick();">Begin</button>
             </div>
             <!-- Inside this div live the buttons user can click to play the game -->
             <div id="user-option-panel">
-                <div id="user-rock-button" onclick="game.userMakesMove(new Rock())" class="player-option-picker">
+                <div id="user-rock-button" class="player-option-picker">
                     ROCK
                 </div>
-                <div id="user-paper-button" onclick="game.userMakesMove(new Paper())" class="player-option-picker">
+                <div id="user-paper-button" class="player-option-picker">
                     PAPER
                 </div>
-                <div id="user-scissors-button" onclick="game.userMakesMove(new Scissors())" class="player-option-picker">
+                <div id="user-scissors-button" class="player-option-picker">
                     SCISSORS
                 </div>
-                <div id="user-lizzard-button" onclick="game.userMakesMove(new Lizzard())" class="player-option-picker">
+                <div id="user-lizzard-button" class="player-option-picker">
                     LIZZARD
                 </div>
-                <div id="user-spock-button" onclick="game.userMakesMove(new Spock())" class="player-option-picker">
+                <div id="user-spock-button" class="player-option-picker">
                     SPOCK
                 </div>
             </div>
