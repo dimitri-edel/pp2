@@ -8,6 +8,7 @@
     <title>Game - Rock, Paper, Scissors, Lizzard, Spock</title>
 
     <script type="text/javascript" src="./assets/jscript/game.js"></script>
+    <link rel="stylesheet" href="./assets/css/stlye.css">
 </head>
 
 <body>
@@ -15,21 +16,58 @@
         <h1>Game</h1>
     </header>
     <section>
+        <div id="settings-panel">
+            <label for="number-of-attempts-setting">Number of possible attempts:</label>
+            <input id="number-of-attempts-setting" type="text">
+        </div>
+    </section>
+    <section>
         <div id="game-window">
-            <div id="user-rock-button" onclick="game.userMakesMove(new Rock())">
-                ROCK
+            <div id="score-panel">
+                <label for="computer-score">Computer:</label>
+                <span id="computer-score">0</span>
+                <label for="user-score">User</label>
+                <span id="user-score">0</span>
             </div>
-            <div id="user-paper-button" onclick="game.userMakesMove(new Paper())">
-                PAPER
-            </div>
-            <div id="user-scissors-button" onclick="game.userMakesMove(new Scissors())">
+            <!-- Inside this div live the 'quasi' buttons the computer picks -->
+            <div id="computer-option-panel">
+                <div id="computer-rock-button" class="player-option-picker">
+                    ROCK
+                </div>
+                <div id="computer-paper-button" class="player-option-picker">
+                    PAPER
+                </div>
+                <div id="computer-scissors-button" class="player-option-picker">
                     SCISSORS
+                </div>
+                <div id="computer-lizzard-button" class="player-option-picker">
+                    LIZZARD
+                </div>
+                <div id="computer-spock-button" class="player-option-picker">
+                    SPOCK
+                </div>
             </div>
-            <div id="user-lizzard-button" onclick="game.userMakesMove(new Lizzard())">
-                LIZZARD
+            <!-- Messages such as 'You win', 'You lose', 'Game  Over' will appear inside this div-->
+            <div id="message-panel">
+                Let's begin.
             </div>
-            <div id="user-spock-button" onclick="game.userMakesMove(new Spock())">
-                SPOCK
+            <!-- Inside this div live the buttons user can click to play the game -->
+            <div id="user-option-panel">
+                <div id="user-rock-button" onclick="game.userMakesMove(new Rock())" class="player-option-picker">
+                    ROCK
+                </div>
+                <div id="user-paper-button" onclick="game.userMakesMove(new Paper())" class="player-option-picker">
+                    PAPER
+                </div>
+                <div id="user-scissors-button" onclick="game.userMakesMove(new Scissors())" class="player-option-picker">
+                    SCISSORS
+                </div>
+                <div id="user-lizzard-button" onclick="game.userMakesMove(new Lizzard())" class="player-option-picker">
+                    LIZZARD
+                </div>
+                <div id="user-spock-button" onclick="game.userMakesMove(new Spock())" class="player-option-picker">
+                    SPOCK
+                </div>
             </div>
         </div>
     </section>

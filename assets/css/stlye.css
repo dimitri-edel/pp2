@@ -1,0 +1,55 @@
+/* The settings panel div */
+#settings-panel {
+    width: 300px;
+    height: 100px;
+    background-color: red;
+}
+
+/* Score panel div */
+#score-panel {
+    width: 300px;
+    height: 50px;
+    background-color: blue;
+}
+
+/* divs inside the user-option-panel when not picked */
+.player-option-picker {
+    height: 50px;
+    width: 60px;
+    display: inline-block;
+    color:black;
+    background-color: lightblue;
+
+    font-size: 14px;
+}
+
+#message-panel {
+    height: 200px;
+    width: 300px;
+    background-color: chartreuse;    
+}
+
+.winning-pick {
+    height: 50px;
+    width: 60px;
+    display: inline-block;
+    background-color: green;
+    font-size: 14px;
+}
+
+.losing-pick {
+    height: 50px;
+    width: 60px;
+    display: inline-block;
+    background-color: red;
+    font-size: 14px;
+}
+
+.tied-pick {
+    height: 50px;
+    width: 60px;
+    display: inline-block;
+    background-color: lightgreen;
+    font-size: 14px;
+}
+

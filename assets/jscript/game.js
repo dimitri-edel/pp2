@@ -179,8 +179,9 @@ class Game {
         this.computerPlayer.pickRandom();
 
         result = this.userPlayer.currentPick.checkOutcomeAgainst(this.computerPlayer.currentPick);
-        window.alert("Coputer picked:" + this.computerPlayer.currentPick.name + "You have a "+result);
-        
+        window.alert("Coputer picked:" + this.computerPlayer.currentPick.name + "You have a " + result);
+
+        view.displayOutComeResults(result, this.userPlayer, this.computerPlayer);
     }
 }
 
@@ -260,9 +261,91 @@ class Player {
 
 }
 
+class View {
+    displayOutComeResults(outcome, user, computer) {
+        let messageText = "";
+        let userOptionPanelId = "";
+        let computerOptionPanelId = "";
+
+        switch (outcome) {
+            case win:
+                messageText = "YOU WIN!";
+                break;
+            case loss:
+                messageText = "YOU LOSE!";
+                break;
+            case draw:
+                messageText = "DRAW!";
+                break;
+            default:
+                break;
+        }
+
+        switch (user.currentPick.name) {
+            case "Rock":
+                userOptionPanelId = "user-rock-button";
+                break;
+            case "Paper":
+                userOptionPanelId = "user-paper-button"
+                break;
+            case "Scissors":
+                userOptionPanelId = "user-scissors-button";
+                break;
+            case "Lizzard":
+                userOptionPanelId = "user-lizzard-button";
+                break;
+            case "Spock":
+                userOptionPanelId = "user-spock-button";
+                break;
+            default:
+                break;
+        }
+
+        switch(computer.currentPick.name){
+            case "Rock":
+                computerOptionPanelId = "computer-rock-button";
+                break;
+            case "Paper":
+                computerOptionPanelId = "computer-paper-button"
+                break;
+            case "Scissors":
+                computerOptionPanelId = "computer-scissors-button";
+                break;
+            case "Lizzard":
+                computerOptionPanelId = "computer-lizzard-button";
+                break;
+            case "Spock":
+                computerOptionPanelId = "computer-spock-button";
+                break;
+            default:
+                break;
+        }
+        
+        if (outcome == win) {
+            
+            document.getElementById(userOptionPanelId).className = "winning-pick";
+            document.getElementById(computerOptionPanelId).className = "losing-pick";
+        }
+        document.getElementById("message-panel").innerHTML = messageText;
+    }
+
+    pickOption(player) {
+
+    }
+
+    changeScore(user, computer) {
+
+    }
+
+    displayGameOver() {
+
+    }
+}
+
 let user = new Player();
 let computer = new Player();
 
 let processor = new GameProcessor();
 // for testing purposes 1 attempt
 let game = new Game(1, processor);
+let view = new View();
