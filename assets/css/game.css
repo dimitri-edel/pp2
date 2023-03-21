@@ -1,0 +1,495 @@
+
+
+
+/* divs inside the user-option-panel when not picked */
+.player-option-picker {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    color:black;
+    background-color: lightblue;
+
+    font-size: 14px;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0.0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ################################################################################## */
+/* LAYOUT OF THE PAGE                                                                */
+#settings-panel {    
+    height: 100px;
+    width: 300px;
+    background-color: white;
+}
+
+
+
+/* Score panel div */
+#score-panel {
+    position: absolute; 
+    top: 220px;
+    left: 10px;
+    width: 300px;
+    height: 20px;
+    background-color: rgba(117, 117, 173, 0.282);
+}
+
+#computer-option-panel {  
+    position: absolute; 
+    top: 280px;
+    left: 10px;
+    height: 60px;
+    width: 300px;
+}
+
+
+#message-panel {
+    position: absolute; 
+    top: 380px;
+    left: 10px;
+    height: 200px;
+    width: 300px;
+    background-color: rgba(215, 232, 198, 0.571);    
+}
+
+#user-option-panel {  
+    position: absolute; 
+    top: 620px;
+    left: 10px;
+    height: 60px;
+    width: 300px;
+}
+.gray-border {
+    border: 20px solid transparent;
+    border-image: url(../images/webp/panel-gray-border.webp) 20 round;
+}
+
+
+/* ############################################################################ */
+/* PANEL WITH SYMBOLS THAT INDICATE WHICH MOVE THE COMPUTER HAS PICKED         */
+#computer-rock-button {
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+}
+
+#computer-rock-button-image {      
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+#computer-rock-button-image-green {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#computer-rock-button-image-red {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+
+#computer-paper-button {
+    position:absolute;
+    top:0;
+    left: 60px;
+    width: 60px;
+    height: 60px;
+}
+
+#computer-paper-button-image {
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+#computer-paper-button-image-green {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+
+#computer-paper-button-image-red {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#computer-scissors-button {
+    position:absolute;
+    top:0;
+    left: 120px;
+    width: 60px;
+    height: 60px;
+}
+
+#computer-scissors-button-image {
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+#computer-scissors-button-image-green {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#computer-scissors-button-image-red {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#computer-lizard-button {
+    position:absolute;
+    top:0;
+    left: 180px;
+    width: 60px;
+    height: 60px;
+}
+
+#computer-lizard-button-image {
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+#computer-lizard-button-image-green {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#computer-lizard-button-image-red {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+#computer-spock-button {
+    position:absolute;
+    top:0;
+    left: 240px;
+    width: 60px;
+    height: 60px;
+}
+
+#computer-spock-button-image {
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+#computer-spock-button-image-green {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#computer-spock-button-image-red {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+/* ############################################################################ */
+/* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
+#user-rock-button {
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+}
+
+#user-rock-button-image {      
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+#user-rock-button-image-gray {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#user-rock-button-image-green {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#user-rock-button-image-red {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#user-rock-button:hover #user-rock-button-image-gray {
+    display: inline;
+}
+
+#user-rock-button:active{
+    transform: translateY(5px);
+}
+
+#user-rock-button:active #user-rock-button-image-green {
+    display: inline;
+}
+
+#user-paper-button {
+    position:absolute;
+    top:0;
+    left: 60px;
+    width: 60px;
+    height: 60px;
+}
+
+#user-paper-button-image {
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+#user-paper-button-image-gray {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#user-paper-button-image-green {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+
+#user-paper-button-image-red {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#user-paper-button:hover #user-paper-button-image-gray {
+    display: inline;
+}
+
+#user-paper-button:active{
+    transform: translateY(5px);
+}
+#user-paper-button:active #user-paper-button-image-green {
+    display: inline;
+}
+
+#user-scissors-button {
+    position:absolute;
+    top:0;
+    left: 120px;
+    width: 60px;
+    height: 60px;
+}
+
+#user-scissors-button-image {
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+
+#user-scissors-button-image-gray {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#user-scissors-button-image-green {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+
+#user-scissors-button-image-red {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#user-lizard-button {
+    position:absolute;
+    top:0;
+    left: 180px;
+    width: 60px;
+    height: 60px;
+}
+
+#user-lizard-button-image {
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+#user-lizard-button-image-gray {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#user-lizard-button-image-green {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+
+#user-lizard-button-image-red {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#user-spock-button {
+    position:absolute;
+    top:0;
+    left: 240px;
+    width: 60px;
+    height: 60px;
+}
+
+#user-spock-button-image {
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+#user-spock-button-image-gray {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+#user-spock-button-image-green {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+
+#user-spock-button-image-red {
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}

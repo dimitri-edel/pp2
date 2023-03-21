@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- This page poses the font page of the game of Rock, Paper, Scissors, Lizzard, Spock -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,14 +9,31 @@
     <title>Home - Rock, Paper, Scissors, Lizard, Spock Game</title>
 
     <script type="text/javascript" src="./assets/jscript/game.js"></script>
+    <link rel="stylesheet" href="./assets/css/cover.css">
 </head>
+
 <body>
     <header>
-        <h1>Rock, Paper, Scissors, Lizard, Spock Game</h1>
+        <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+        <div id="beginButton"><a href="game.html">Begin</a></div>
     </header>
     <section>
-        <h2>Game</h2>
-        <div id="beginButton"><a href="game.html">Begin</a></div>
+        <div class="canvas">
+            <div class="cube">
+                <div class="face-rock"></div>
+                <div class="pic-rock"></div>
+                <div class="face-paper"></div>
+                <div class="pic-paper"></div>
+                <div class="face-scissors"></div>
+                <div class="pic-scissors"></div>
+                <div class="face-lizard"></div>
+                <div class="pic-lizard"></div>
+                <div class="face-spock"></div>
+                <div class="pic-spock"></div>
+                <div class="glow"></div>
+            </div>
+        </div>
     </section>
 </body>
+
 </html>

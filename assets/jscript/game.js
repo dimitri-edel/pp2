@@ -14,7 +14,7 @@
     +---------------------------+-----------------------------------------+
     | versus_scissors           | win                                     |  Rock crushes scissors
     +---------------------------+-----------------------------------------+
-    | versus_lizzard            | win                                     |  Rock crushes lizzard
+    | versus_lizard             | win                                     |  Rock crushes lizzard
     +---------------------------+-----------------------------------------+
     | versus_spock              | loss                                    |  Spock vaporizes rock
     +---------------------------+-----------------------------------------+
@@ -30,7 +30,7 @@
     +---------------------------+-----------------------------------------+
     | versus_scissors           | loss                                    |  scissors cuts paper
     +---------------------------+-----------------------------------------+
-    | versus_lizzard            | loss                                    |  Lizzard eats paper
+    | versus_lizard             | loss                                    |  Lizzard eats paper
     +---------------------------+-----------------------------------------+
     | versus_spock              | win                                     |  Paper disproves Spock
     +---------------------------+-----------------------------------------+
@@ -48,7 +48,7 @@
 const versus_rock = 0;
 const versus_paper = 1;
 const versus_scissors = 2;
-const versus_lizzard = 3;
+const versus_lizard = 3;
 const versus_spock = 4;
 const owner_index = 5;
 
@@ -57,52 +57,144 @@ const win = "win";
 const loss = "loss";
 const draw = "draw";
 
+/* List of messages that explain the outcome by naming the corresponding rule */
+const rock_versus_rock = "Computer also picked rock!";
+const rock_versus_paper = "Paper covers rock!";
+const rock_versus_scissors = "Rock crushes scissors!";
+const rock_versus_lizard = "Rock crushes lizard!";
+const rock_versus_spock = "Spock vaporized rock!";
+
+const paper_versus_paper = "Computer also picked rock!";
+const paper_versus_rock = "Paper covers rock!";
+const paper_versus_scissors = "Scissors cuts paper!";
+const paper_versus_lizard = "Lizard eats paper!";
+const paper_versus_spock = "Paper disproves spock!";
+
+const scissors_versus_scissors = "Computer also picked scissors!";
+const scissors_vesus_rock = "Rock crushes scissors!";
+const scissors_versus_paper = "Scissors cuts paper!";
+const scissors_versus_lizard = "Scissors decapitates lizard!";
+const scissors_versus_spock = "Spock crushes scissors!";
+
+const lizard_versus_lizard = "Computer also picked lizard!";
+const lizard_versus_rock = "Rock crushes lizard!";
+const lizard_versus_paper = "Lizard eats paper!";
+const lizard_versus_scissors = "Scissors decapitates lizard!";
+const lizard_versus_spock = "Lizard poisons spock!";
+
+const spock_versus_spock = "Computer also picked spock!";
+const spock_versus_rock = "Spock vaporized rock!";
+const spock_versus_paper = "Paper disproves spock!";
+const spock_versus_scissors = "Spock crushes scissors!";
+const spock_versus_lizard = "Lizard poisons spock!";
+
+const outcome_index = 0;
+const message_index = 1;
+
 /* 
-    The content of the PAPER figure with possible outcomes at the oposing figure index 
+    The content of the ROCK, PAPER, SCISSORS, LIZARD and SPOCK arrays  contain possible outcomes at the corresponding index. 
     owner_index = the own index of the figure, that will be used to determine the outcome.
+
+    The arrays below : ROCK, PAPER, SCISSORS, LIZARD and SPOCK are two-dimensional arrays.
+    The last dimension contains two values. One is the outcome(win, loss, draw). The other 
+    is the corresponding message, that explains the outcome. See constants above.
+
+    EXAMPLE:
+    ROCK[versus_spock][outcome_index] is "win"
+    ROCK[versus_spock][message_index] is "Spock vaporizes rock!"
 */
-const ROCK = [];
-ROCK[versus_rock] = draw;
-ROCK[versus_paper] = loss;
-ROCK[versus_scissors] = win;
-ROCK[versus_lizzard] = win;
-ROCK[versus_spock] = loss;
-ROCK[owner_index] = versus_rock;
+const ROCK = new Array(6);
+// Make it a two-dimensional array
+for(var i=0; i < ROCK.length; i++){
+    // Add an array with two possible entries at the index
+    ROCK[i] = new Array(2);
+}
+ROCK[versus_rock][outcome_index] = draw;
+ROCK[versus_rock][message_index] = rock_versus_rock;
+ROCK[versus_paper][outcome_index] = loss;
+ROCK[versus_paper][message_index] = rock_versus_paper;
+ROCK[versus_scissors][outcome_index] = win;
+ROCK[versus_scissors][message_index] = rock_versus_scissors;
+ROCK[versus_lizard][outcome_index] = win;
+ROCK[versus_lizard][message_index] = rock_versus_lizard;
+ROCK[versus_spock][outcome_index] = loss;
+ROCK[versus_spock][message_index] = rock_versus_spock;
+ROCK[owner_index][outcome_index] = versus_rock;
 
 
 /* The content of the PAPER figure with possible outcomes at the oposing figure index */
-const PAPER = [];
-PAPER[versus_rock] = win;
-PAPER[versus_paper] = draw;
-PAPER[versus_scissors] = loss;
-PAPER[versus_lizzard] = loss;
-PAPER[versus_spock] = win;
-PAPER[owner_index] = versus_paper;
+const PAPER = new Array(6);
+// Make it a two-dimensional array
+for(var i=0; i < PAPER.length; i++){
+    // Add an array with two possible entries at the index
+    PAPER[i] = new Array(2);
+}
+PAPER[versus_rock][outcome_index]= win;
+PAPER[versus_rock][message_index]= paper_versus_rock;
+PAPER[versus_paper][outcome_index] = draw;
+PAPER[versus_paper][message_index] =paper_versus_paper;
+PAPER[versus_scissors][outcome_index] = loss;
+PAPER[versus_scissors][message_index] = paper_versus_scissors;
+PAPER[versus_lizard][outcome_index] = loss;
+PAPER[versus_lizard][message_index] = paper_versus_lizard;
+PAPER[versus_spock][outcome_index] = win;
+PAPER[versus_spock][message_index] = paper_versus_spock;
+PAPER[owner_index][outcome_index] = versus_paper;
 
 
-const SCISSORS = [];
-SCISSORS[versus_rock] = loss;
-SCISSORS[versus_paper] = win;
-SCISSORS[versus_scissors] = draw;
-SCISSORS[versus_lizzard] = win;
-SCISSORS[versus_spock] = loss;
-SCISSORS[owner_index] = versus_scissors;
+const SCISSORS = new Array(6);
+// Make it a two-dimensional array
+for(var i=0; i < SCISSORS.length; i++){
+    // Add an array with two possible entries at the index
+    SCISSORS[i] = new Array(2);
+}
+SCISSORS[versus_rock][outcome_index] = loss;
+SCISSORS[versus_rock][message_index] = scissors_vesus_rock;
+SCISSORS[versus_paper][outcome_index] = win;
+SCISSORS[versus_paper][message_index] = scissors_versus_paper;
+SCISSORS[versus_scissors][outcome_index] = draw;
+SCISSORS[versus_scissors][outcome_index] = scissors_versus_scissors;
+SCISSORS[versus_lizard][outcome_index] = win;
+SCISSORS[versus_lizard][message_index] = scissors_versus_lizard;
+SCISSORS[versus_spock][outcome_index] = loss;
+SCISSORS[versus_spock][message_index] = scissors_versus_spock;
+SCISSORS[owner_index][outcome_index] = versus_scissors;
 
-const LIZZARD = [];
-LIZZARD[versus_rock] = loss;
-LIZZARD[versus_paper] = win;
-LIZZARD[versus_scissors] = loss;
-LIZZARD[versus_lizzard] = draw;
-LIZZARD[versus_spock] = win;
-LIZZARD[owner_index] = versus_lizzard;
+const LIZARD = new Array(6);
+// Make it a two-dimensional array
+for(var i=0; i < LIZARD.length; i++){
+    // Add an array with two possible entries at the index
+    LIZARD[i] = new Array(2);
+}
+LIZARD[versus_rock][outcome_index] = loss;
+LIZARD[versus_rock][message_index] = lizard_versus_rock;
+LIZARD[versus_paper][outcome_index] = win;
+LIZARD[versus_paper][message_index] = lizard_versus_paper;
+LIZARD[versus_scissors][outcome_index] = loss;
+LIZARD[versus_scissors][message_index] = lizard_versus_scissors;
+LIZARD[versus_lizard][outcome_index] = draw;
+LIZARD[versus_lizard][message_index] = lizard_versus_lizard;
+LIZARD[versus_spock][outcome_index] = win;
+LIZARD[versus_spock][message_index] = lizard_versus_spock;
+LIZARD[owner_index][outcome_index] = versus_lizard;
 
-const SPOCK = [];
-SPOCK[versus_rock] = win;
-SPOCK[versus_paper] = loss;
-SPOCK[versus_scissors] = win;
-SPOCK[versus_lizzard] = loss;
-SPOCK[versus_spock] = draw;
-SPOCK[owner_index] = versus_spock;
+const SPOCK = new Array(6);
+// Make it a two-dimensional array
+for(var i=0; i < SPOCK.length; i++){
+    // Add an array with two possible entries at the index
+    SPOCK[i] = new Array(2);
+}
+SPOCK[versus_rock][outcome_index] = win;
+SPOCK[versus_rock][message_index] = spock_versus_rock;
+SPOCK[versus_paper][outcome_index] = loss;
+SPOCK[versus_paper][message_index] = spock_versus_paper;
+SPOCK[versus_scissors][outcome_index] = win;
+SPOCK[versus_scissors][message_index] = spock_versus_scissors;
+SPOCK[versus_lizard][outcome_index] = loss;
+SPOCK[versus_lizard][message_index] = spock_versus_lizard;
+SPOCK[versus_spock][outcome_index] = draw;
+SPOCK[versus_spock][message_index] = spock_versus_spock;
+SPOCK[owner_index][outcome_index] = versus_spock;
 
 class Pick {
     constructor(owner_index, name) {
@@ -118,38 +210,55 @@ class Rock extends Pick {
     // Checks the outcome of playing it against Paper, Scissorrs, etc.
     // If Rock wins the return value is "win" else "loss" or "draw"
     checkOutcomeAgainst(oponentsPick) {
-        return ROCK[oponentsPick.index];
+        return ROCK[oponentsPick.index][outcome_index];
     }
+     /* Returns the corresponding message, which explains the outcome, like "lirrad eats paper!" */
+     checkOutcomeMessageAgainst(oponentsPick){
+        return ROCK[oponentsPick.index][message_index];
+     }
 }
 
 class Paper extends Pick {
     constructor() {
         super(versus_paper, "Paper");
     }
-
+    /* Checks the outcome against what the oponent's Pick */
     checkOutcomeAgainst(oponentsPick) {
-        return PAPER[oponentsPick.index];
+        return PAPER[oponentsPick.index][outcome_index];
     }
+     /* Returns the corresponding message, which explains the outcome, like "lirrad eats paper!" */
+     checkOutcomeMessageAgainst(oponentsPick){
+        return PAPER[oponentsPick.index][message_index];
+     }
 }
 
 class Scissors extends Pick {
     constructor() {
         super(versus_scissors, "Scissors");
     }
-
+    /* Checks the outcome against what the oponent's Pick */
     checkOutcomeAgainst(oponentsPick) {
-        return SCISSORS[oponentsPick.index];
+        return SCISSORS[oponentsPick.index][outcome_index];
     }
-
+     /* Returns the corresponding message, which explains the outcome, like "lirrad eats paper!" */
+     checkOutcomeMessageAgainst(oponentsPick){
+        return SCISSORS[oponentsPick.index][message_index];
+     }
 }
 
-class Lizzard extends Pick {
+class Lizard extends Pick {
     constructor() {
-        super(versus_lizzard, "Lizzard");
+        super(versus_lizard, "Lizard");
     }
 
+    /* Checks the outcome against what the oponent's Pick */
     checkOutcomeAgainst(oponentsPick) {
-        return LIZZARD[oponentsPick.index];
+        return LIZARD[oponentsPick.index][outcome_index];
+    }
+
+    /* Returns the corresponding message, which explains the outcome, like "lirrad eats paper!" */
+    checkOutcomeMessageAgainst(oponentsPick){
+        return LIZARD[oponentsPick.index][message_index];
     }
 }
 
@@ -157,27 +266,37 @@ class Spock extends Pick {
     constructor() {
         super(versus_spock, "Spock");
     }
-
+    /* Checks the outcome against what the oponent's Pick */
     checkOutcomeAgainst(oponentsPick) {
-        return SPOCK[oponentsPick.index];
+        return SPOCK[oponentsPick.index][outcome_index];
     }
+    /* Returns the corresponding message, which explains the outcome, like "lirrad eats paper!" */
+    checkOutcomeMessageAgainst(oponentsPick){
+        return SPOCK[oponentsPick.index][message_index];
+    }
+
 }
 
 
 class Game {
 
-    constructor(numberOfAttempts) {
-        this.attempsLeft = numberOfAttempts;
+    constructor(numberOfRounds) {
+        this.roundsLeft = numberOfRounds;
         this.computerPlayer = new Player();
         this.userPlayer = new Player();
     }
 
     userMakesMove(pick) {
         let result = "";
+        let result_message = "";
         this.userPlayer.currentPick = pick;
         this.computerPlayer.pickRandom();
 
+       
+        // Check the outcome of the move made by the player
         result = this.userPlayer.currentPick.checkOutcomeAgainst(this.computerPlayer.currentPick);
+        // The corresponding message that explains the outcome
+        result_message = this.userPlayer.currentPick.checkOutcomeMessageAgainst(this.computerPlayer.currentPick);
         
         // Asign score
         if(result == win){
@@ -188,8 +307,25 @@ class Game {
             this.userPlayer.increaseScore();
             this.computerPlayer.increaseScore();
         }
-        view.changeScore();
-        view.displayOutComeResults(result, this.userPlayer, this.computerPlayer);
+        // Transfer the score to the scoreboard
+        view.updateScore();
+        // Count down the rounds
+        this.roundsLeft--;
+        // Show the result of the last move to the player
+        view.displayOutComeResults(result, result_message, this.userPlayer, this.computerPlayer);
+    }
+
+    // Set number of rounds before game over
+    setNumberOfRounds(number){
+        this.roundsLeft = number;
+    }
+
+    startOver(){
+        this.roundsLeft = view.getNumberOfRoundsSetting();
+        this.computerPlayer.currentScore = 0;
+        this.userPlayer.currentScore = 0;
+
+        view.displayStartWindow();
     }
 }
 
@@ -218,6 +354,7 @@ class Player {
         this.score++;
     }
 
+    // Pick a ramdom move for the player. Used for the computer player.
     pickRandom() {
         // Assigns a random integer from 0 to 4:
         let number = Math.floor(Math.random() * 5);
@@ -232,7 +369,7 @@ class Player {
                 this.pick = new Scissors();
                 break;
             case 3:
-                this.pick = new Lizzard();
+                this.pick = new Lizard();
                 break;
             case 4:
                 this.pick = new Spock();
@@ -251,19 +388,24 @@ class View {
     constructor() {
         // List of optionPickerIds
         this.optionPickerIds = ["user-rock-button", "user-paper-button",
-            "user-scissors-button", "user-lizzard-button",
+            "user-scissors-button", "user-lizard-button",
             "user-spock-button", "computer-rock-button",
             "computer-paper-button", "computer-scissors-button",
-            "computer-lizzard-button", "computer-spock-button"
+            "computer-lizard-button", "computer-spock-button"
         ];
     }
 
-    displayOutComeResults(outcome, user, computer) {
+    displayOutComeResults(outcome, outcome_message,  user, computer) {
+      
         let messageText = "";
         let userOptionPanelId = "";
         let computerOptionPanelId = "";
-        let messageWindowBeginHTML = "<div class=\"outcome-message-text\">";
-        let messageWindowEndHTML = "</div><button onclick=\"view.clear()\" class=\"again-button\">Again!</button>";
+        let restoreComputerImageId = "";
+        let restoreUserImageId = "";
+        let messageWindowTextBeginHTML = "<div class=\"outcome-message-text\">";
+        let messageWindowButtonTMLBegin = "<button onclick=\"view.clear('";
+        let messageWindowButtonHTMLEnd = "')\" class=\"again-button\">Again!</button>";
+        let messageWindowTextEndHTML = "</div>";
 
         switch (outcome) {
             case win:
@@ -289,8 +431,8 @@ class View {
             case "Scissors":
                 userOptionPanelId = "user-scissors-button";
                 break;
-            case "Lizzard":
-                userOptionPanelId = "user-lizzard-button";
+            case "Lizard":
+                userOptionPanelId = "user-lizard-button";
                 break;
             case "Spock":
                 userOptionPanelId = "user-spock-button";
@@ -309,8 +451,8 @@ class View {
             case "Scissors":
                 computerOptionPanelId = "computer-scissors-button";
                 break;
-            case "Lizzard":
-                computerOptionPanelId = "computer-lizzard-button";
+            case "Lizard":
+                computerOptionPanelId = "computer-lizard-button";
                 break;
             case "Spock":
                 computerOptionPanelId = "computer-spock-button";
@@ -320,22 +462,64 @@ class View {
         }
 
         if (outcome == win) {
-
-            document.getElementById(userOptionPanelId).className = "winning-pick";
-            document.getElementById(computerOptionPanelId).className = "losing-pick";
+            // Complete the Ids by attaching the appropriate extension 
+            userOptionPanelId += "-image-green";
+            computerOptionPanelId += "-image-red";
+            // Store the IDs of the images, so you can set them back to their initial settings
+            restoreComputerImageId = computerOptionPanelId;
+            restoreUserImageId = userOptionPanelId;
+            // Make the images appear above the icon
+            document.getElementById(userOptionPanelId).style = "display: inline;";
+            document.getElementById(computerOptionPanelId).style = "display: inline;";
         } else if (outcome == loss) {
-            document.getElementById(userOptionPanelId).className = "losing-pick";
-            document.getElementById(computerOptionPanelId).className = "winning-pick";
+            // Complete the Ids by attaching the appropriate extension 
+            userOptionPanelId += "-image-red";
+            computerOptionPanelId += "-image-green";
+
+            // Store the IDs of the images, so you can set them back to their initial settings
+            restoreComputerImageId = computerOptionPanelId;
+            restoreUserImageId = userOptionPanelId;
+             // Make the images appear above the icon
+            document.getElementById(userOptionPanelId).style = "display: inline;";
+            document.getElementById(computerOptionPanelId).style = "display: inline;";
         } else if (outcome == draw) {
-            document.getElementById(userOptionPanelId).className = "tied-pick";
-            document.getElementById(computerOptionPanelId).className = "tied-pick";
+            userOptionPanelId += "-image-green";
+            computerOptionPanelId += "-image-green";
+            // Store the IDs of the images, so you can set them back to their initial settings
+            restoreComputerImageId = computerOptionPanelId;
+            restoreUserImageId = userOptionPanelId;
+             // Make the images appear above the icon
+            document.getElementById(userOptionPanelId).style = "display: inline;";
+            document.getElementById(computerOptionPanelId).style = "display: inline;";
         }
-        document.getElementById("message-panel").innerHTML = messageWindowBeginHTML + messageText + messageWindowEndHTML;
-        this.clearOptionPickerEventListeners();
+        if(game.roundsLeft > 0){
+            document.getElementById("message-panel").innerHTML = messageWindowTextBeginHTML + messageText + outcome_message + messageWindowTextEndHTML +
+            messageWindowButtonTMLBegin + restoreComputerImageId + "', '" + restoreUserImageId + messageWindowButtonHTMLEnd;
+        }else{
+            this.displayGameOver(messageWindowTextBeginHTML, messageText);
+        }
+        this.clearOptionPickerEventListeners(messageWindowTextBeginHTML, messageText);
     }
 
-    clear() {
+    displayGameOver(messageWindowBeginHTML, messageText){
+        messageText += "<br><div id=\"game-over-message\">GAME OVER !</div>";
+        let messageWindowEndHTML = "<button id=\"game-over-button\" onclick=\"game.startOver()\">Start over</button>";
+        document.getElementById("message-panel").innerHTML = messageWindowBeginHTML + messageText + messageWindowEndHTML;
+    }
 
+    displayStartWindow(){
+        this.clear(null, null);
+        this.clearOptionPickerEventListeners();
+        this.updateScore();
+        document.getElementById("message-panel").innerHTML = "<button id=\"begin-button\" onclick=\"view.beginOnClick();\">Begin</button>";
+    }
+
+    clear(first_image, second_image) {
+        debugger;
+        if((first_image != null) && (second_image != null)){
+            document.getElementById(first_image).style = "display:none;";
+            document.getElementById(second_image).style = "display:none;";
+        }
         for (let i = 0; i < this.optionPickerIds.length; i++) {
             document.getElementById(this.optionPickerIds[i]).className = "player-option-picker";
         }
@@ -344,7 +528,7 @@ class View {
 
     clearOptionPickerEventListeners() {
         const userOptionPickerIds = ["user-rock-button", "user-paper-button",
-            "user-scissors-button", "user-lizzard-button",
+            "user-scissors-button", "user-lizard-button",
             "user-spock-button"
         ];
         // TODO: Create real functions for the event listener
@@ -361,7 +545,7 @@ class View {
 
     hookUpOptionPickerEventListeners() {
         const userOptionPickerIds = ["user-rock-button", "user-paper-button",
-            "user-scissors-button", "user-lizzard-button",
+            "user-scissors-button", "user-lizard-button",
             "user-spock-button"
         ];
         // TODO: Create real functions for the event listener
@@ -390,7 +574,7 @@ class View {
     }
 
     userLizzardOptionPickerOnClick() {
-        game.userMakesMove(new Lizzard());
+        game.userMakesMove(new Lizard());
     }
 
     userSpockOptionPickerOnClick() {
@@ -398,22 +582,25 @@ class View {
     }
 
     beginOnClick() {
-       
+        // Read from the settings field. 
+        game.setNumberOfRounds(this.getNumberOfRoundsSetting());
         this.hookUpOptionPickerEventListeners();
         document.getElementById("message-panel").innerHTML = "GO !!!";  
     }
 
-    pickOption(player) {
-
-    }
-
-    changeScore(user, computer) {
+    updateScore(user, computer) {
         document.getElementById("computer-score").innerHTML = game.computerPlayer.score;
         document.getElementById("user-score").innerHTML = game.userPlayer.score;
     }
+   
+    getNumberOfRoundsSetting(){
+        let val = document.getElementById("number-of-attempts-setting").value;
 
-    displayGameOver() {
+        if(isNaN(val)){
+            val = 5;
+        }
 
+        return val;
     }
 }
 
@@ -421,5 +608,5 @@ let user = new Player();
 let computer = new Player();
 
 // for testing purposes 1 attempt
-let game = new Game(1);
+let game = new Game(5);
 let view = new View();
