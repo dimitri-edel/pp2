@@ -153,7 +153,7 @@ SCISSORS[versus_rock][message_index] = scissors_vesus_rock;
 SCISSORS[versus_paper][outcome_index] = win;
 SCISSORS[versus_paper][message_index] = scissors_versus_paper;
 SCISSORS[versus_scissors][outcome_index] = draw;
-SCISSORS[versus_scissors][outcome_index] = scissors_versus_scissors;
+SCISSORS[versus_scissors][message_index] = scissors_versus_scissors;
 SCISSORS[versus_lizard][outcome_index] = win;
 SCISSORS[versus_lizard][message_index] = scissors_versus_lizard;
 SCISSORS[versus_spock][outcome_index] = loss;
@@ -386,6 +386,10 @@ class Player {
 */
 class View {
     constructor() {
+        // IDs of images whose setting need to be restored after every round
+        this.restoreComputerImageId = null;
+        this.restoreUserImageId = null;
+
         // List of optionPickerIds
         this.optionPickerIds = ["user-rock-button", "user-paper-button",
             "user-scissors-button", "user-lizard-button",
@@ -396,12 +400,12 @@ class View {
     }
 
     displayOutComeResults(outcome, outcome_message,  user, computer) {
-      
+        debugger;
         let messageText = "";
         let userOptionPanelId = "";
         let computerOptionPanelId = "";
-        let restoreComputerImageId = "";
-        let restoreUserImageId = "";
+        this.restoreComputerImageId = "";
+        this.restoreUserImageId = "";
         let messageWindowTextBeginHTML = "<div class=\"outcome-message-text\">";
         let messageWindowButtonTMLBegin = "<button onclick=\"view.clear('";
         let messageWindowButtonHTMLEnd = "')\" class=\"again-button\">Again!</button>";
@@ -466,8 +470,8 @@ class View {
             userOptionPanelId += "-image-green";
             computerOptionPanelId += "-image-red";
             // Store the IDs of the images, so you can set them back to their initial settings
-            restoreComputerImageId = computerOptionPanelId;
-            restoreUserImageId = userOptionPanelId;
+            this.restoreComputerImageId = computerOptionPanelId;
+            this.restoreUserImageId = userOptionPanelId;
             // Make the images appear above the icon
             document.getElementById(userOptionPanelId).style = "display: inline;";
             document.getElementById(computerOptionPanelId).style = "display: inline;";
@@ -477,8 +481,8 @@ class View {
             computerOptionPanelId += "-image-green";
 
             // Store the IDs of the images, so you can set them back to their initial settings
-            restoreComputerImageId = computerOptionPanelId;
-            restoreUserImageId = userOptionPanelId;
+            this.restoreComputerImageId = computerOptionPanelId;
+            this.restoreUserImageId = userOptionPanelId;
              // Make the images appear above the icon
             document.getElementById(userOptionPanelId).style = "display: inline;";
             document.getElementById(computerOptionPanelId).style = "display: inline;";
@@ -486,15 +490,15 @@ class View {
             userOptionPanelId += "-image-green";
             computerOptionPanelId += "-image-green";
             // Store the IDs of the images, so you can set them back to their initial settings
-            restoreComputerImageId = computerOptionPanelId;
-            restoreUserImageId = userOptionPanelId;
+            this.restoreComputerImageId = computerOptionPanelId;
+            this.restoreUserImageId = userOptionPanelId;
              // Make the images appear above the icon
             document.getElementById(userOptionPanelId).style = "display: inline;";
             document.getElementById(computerOptionPanelId).style = "display: inline;";
         }
         if(game.roundsLeft > 0){
             document.getElementById("message-panel").innerHTML = messageWindowTextBeginHTML + messageText + outcome_message + messageWindowTextEndHTML +
-            messageWindowButtonTMLBegin + restoreComputerImageId + "', '" + restoreUserImageId + messageWindowButtonHTMLEnd;
+            messageWindowButtonTMLBegin + this.restoreComputerImageId + "', '" + this.restoreUserImageId + messageWindowButtonHTMLEnd;
         }else{
             this.displayGameOver(messageWindowTextBeginHTML, messageText);
         }
@@ -508,17 +512,17 @@ class View {
     }
 
     displayStartWindow(){
-        this.clear(null, null);
+        this.clear();
         this.clearOptionPickerEventListeners();
         this.updateScore();
         document.getElementById("message-panel").innerHTML = "<button id=\"begin-button\" onclick=\"view.beginOnClick();\">Begin</button>";
     }
 
-    clear(first_image, second_image) {
+    clear() {
         debugger;
-        if((first_image != null) && (second_image != null)){
-            document.getElementById(first_image).style = "display:none;";
-            document.getElementById(second_image).style = "display:none;";
+        if((this.restoreComputerImageId != null) && (this.restoreUserImageId != null)){
+            document.getElementById(this.restoreComputerImageId).style = "display:none;";
+            document.getElementById(this.restoreUserImageId).style = "display:none;";
         }
         for (let i = 0; i < this.optionPickerIds.length; i++) {
             document.getElementById(this.optionPickerIds[i]).className = "player-option-picker";
