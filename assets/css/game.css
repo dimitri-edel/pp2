@@ -516,7 +516,7 @@
     display: inline;
 }
 
-#user-lizard-button:active{
+#user-spock-button:active{
     transform: translateY(5px);
 }
 #user-spock-button:active #user-spock-button-image-green {
