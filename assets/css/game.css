@@ -23,8 +23,9 @@
 
 /* ################################################################################## */
 /* LAYOUT OF THE PAGE                                                                */
-#settings-panel {    
-    height: 100px;
+#settings-panel {   
+    left: 10px; 
+    height: 50px;
     width: 300px;
     background-color: white;
 }
@@ -34,25 +35,36 @@
 /* Score panel div */
 #score-panel {
     position: absolute; 
-    top: 220px;
+    top: 171px;
     left: 10px;
     width: 300px;
     height: 20px;
-    background-color: rgba(117, 117, 173, 0.282);
+    background-color: rgba(117, 117, 173, 0.282);    
+    font-size: 18px;
+    font-weight: bold;
 }
-
+#score-panel label {
+    margin: 5px 25px;
+}
+#user-score {
+    color: green;
+}
+#computer-score {
+    color: green;
+}
+/* Panel with images of possible choices */
 #computer-option-panel {  
     position: absolute; 
-    top: 280px;
+    top: 230px;
     left: 10px;
     height: 60px;
     width: 300px;
 }
 
-
+/* Panel for messages such as 'game over' */
 #message-panel {
     position: absolute; 
-    top: 380px;
+    top: 330px;
     left: 10px;
     height: 200px;
     width: 300px;
@@ -61,7 +73,7 @@
 
 #user-option-panel {  
     position: absolute; 
-    top: 620px;
+    top: 570px;
     left: 10px;
     height: 60px;
     width: 300px;
@@ -71,6 +83,14 @@
     border-image: url(../images/webp/panel-gray-border.webp) 20 round;
 }
 
+.outcome-message-text {
+    margin: 20px;
+    text-align: center;
+}
+
+#large-message {
+    font-size: 30px;
+}
 
 /* ############################################################################ */
 /* PANEL WITH SYMBOLS THAT INDICATE WHICH MOVE THE COMPUTER HAS PICKED         */
@@ -382,6 +402,16 @@
     height: 60px;
     z-index: 2;
 }
+#user-scissors-button:hover #user-scissors-button-image-gray {
+    display: inline;
+}
+
+#user-scissors-button:active{
+    transform: translateY(5px);
+}
+#user-scissors-button:active #user-scissors-button-image-green {
+    display: inline;
+}
 
 #user-scissors-button-image-green {
     display: none;
@@ -427,7 +457,16 @@
     height: 60px;
     z-index: 2;
 }
+#user-lizard-button:hover #user-lizard-button-image-gray {
+    display: inline;
+}
 
+#user-lizard-button:active{
+    transform: translateY(5px);
+}
+#user-lizard-button:active #user-lizard-button-image-green {
+    display: inline;
+}
 #user-lizard-button-image-green {
     display: none;
     position:absolute;
@@ -471,6 +510,16 @@
     width: 60px;
     height: 60px;
     z-index: 2;
+}
+#user-spock-button:hover #user-spock-button-image-gray {
+    display: inline;
+}
+
+#user-lizard-button:active{
+    transform: translateY(5px);
+}
+#user-spock-button:active #user-spock-button-image-green {
+    display: inline;
 }
 
 #user-spock-button-image-green {

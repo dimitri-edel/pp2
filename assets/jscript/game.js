@@ -105,7 +105,7 @@ const message_index = 1;
 */
 const ROCK = new Array(6);
 // Make it a two-dimensional array
-for(var i=0; i < ROCK.length; i++){
+for (var i = 0; i < ROCK.length; i++) {
     // Add an array with two possible entries at the index
     ROCK[i] = new Array(2);
 }
@@ -125,14 +125,14 @@ ROCK[owner_index][outcome_index] = versus_rock;
 /* The content of the PAPER figure with possible outcomes at the oposing figure index */
 const PAPER = new Array(6);
 // Make it a two-dimensional array
-for(var i=0; i < PAPER.length; i++){
+for (var i = 0; i < PAPER.length; i++) {
     // Add an array with two possible entries at the index
     PAPER[i] = new Array(2);
 }
-PAPER[versus_rock][outcome_index]= win;
-PAPER[versus_rock][message_index]= paper_versus_rock;
+PAPER[versus_rock][outcome_index] = win;
+PAPER[versus_rock][message_index] = paper_versus_rock;
 PAPER[versus_paper][outcome_index] = draw;
-PAPER[versus_paper][message_index] =paper_versus_paper;
+PAPER[versus_paper][message_index] = paper_versus_paper;
 PAPER[versus_scissors][outcome_index] = loss;
 PAPER[versus_scissors][message_index] = paper_versus_scissors;
 PAPER[versus_lizard][outcome_index] = loss;
@@ -144,7 +144,7 @@ PAPER[owner_index][outcome_index] = versus_paper;
 
 const SCISSORS = new Array(6);
 // Make it a two-dimensional array
-for(var i=0; i < SCISSORS.length; i++){
+for (var i = 0; i < SCISSORS.length; i++) {
     // Add an array with two possible entries at the index
     SCISSORS[i] = new Array(2);
 }
@@ -162,7 +162,7 @@ SCISSORS[owner_index][outcome_index] = versus_scissors;
 
 const LIZARD = new Array(6);
 // Make it a two-dimensional array
-for(var i=0; i < LIZARD.length; i++){
+for (var i = 0; i < LIZARD.length; i++) {
     // Add an array with two possible entries at the index
     LIZARD[i] = new Array(2);
 }
@@ -180,7 +180,7 @@ LIZARD[owner_index][outcome_index] = versus_lizard;
 
 const SPOCK = new Array(6);
 // Make it a two-dimensional array
-for(var i=0; i < SPOCK.length; i++){
+for (var i = 0; i < SPOCK.length; i++) {
     // Add an array with two possible entries at the index
     SPOCK[i] = new Array(2);
 }
@@ -212,10 +212,10 @@ class Rock extends Pick {
     checkOutcomeAgainst(oponentsPick) {
         return ROCK[oponentsPick.index][outcome_index];
     }
-     /* Returns the corresponding message, which explains the outcome, like "lirrad eats paper!" */
-     checkOutcomeMessageAgainst(oponentsPick){
+    /* Returns the corresponding message, which explains the outcome, like "lirrad eats paper!" */
+    checkOutcomeMessageAgainst(oponentsPick) {
         return ROCK[oponentsPick.index][message_index];
-     }
+    }
 }
 
 class Paper extends Pick {
@@ -226,10 +226,10 @@ class Paper extends Pick {
     checkOutcomeAgainst(oponentsPick) {
         return PAPER[oponentsPick.index][outcome_index];
     }
-     /* Returns the corresponding message, which explains the outcome, like "lirrad eats paper!" */
-     checkOutcomeMessageAgainst(oponentsPick){
+    /* Returns the corresponding message, which explains the outcome, like "lirrad eats paper!" */
+    checkOutcomeMessageAgainst(oponentsPick) {
         return PAPER[oponentsPick.index][message_index];
-     }
+    }
 }
 
 class Scissors extends Pick {
@@ -240,10 +240,10 @@ class Scissors extends Pick {
     checkOutcomeAgainst(oponentsPick) {
         return SCISSORS[oponentsPick.index][outcome_index];
     }
-     /* Returns the corresponding message, which explains the outcome, like "lirrad eats paper!" */
-     checkOutcomeMessageAgainst(oponentsPick){
+    /* Returns the corresponding message, which explains the outcome, like "lirrad eats paper!" */
+    checkOutcomeMessageAgainst(oponentsPick) {
         return SCISSORS[oponentsPick.index][message_index];
-     }
+    }
 }
 
 class Lizard extends Pick {
@@ -257,7 +257,7 @@ class Lizard extends Pick {
     }
 
     /* Returns the corresponding message, which explains the outcome, like "lirrad eats paper!" */
-    checkOutcomeMessageAgainst(oponentsPick){
+    checkOutcomeMessageAgainst(oponentsPick) {
         return LIZARD[oponentsPick.index][message_index];
     }
 }
@@ -271,7 +271,7 @@ class Spock extends Pick {
         return SPOCK[oponentsPick.index][outcome_index];
     }
     /* Returns the corresponding message, which explains the outcome, like "lirrad eats paper!" */
-    checkOutcomeMessageAgainst(oponentsPick){
+    checkOutcomeMessageAgainst(oponentsPick) {
         return SPOCK[oponentsPick.index][message_index];
     }
 
@@ -292,23 +292,23 @@ class Game {
         this.userPlayer.currentPick = pick;
         this.computerPlayer.pickRandom();
 
-       
+
         // Check the outcome of the move made by the player
         result = this.userPlayer.currentPick.checkOutcomeAgainst(this.computerPlayer.currentPick);
         // The corresponding message that explains the outcome
         result_message = this.userPlayer.currentPick.checkOutcomeMessageAgainst(this.computerPlayer.currentPick);
-        
+
         // Asign score
-        if(result == win){
+        if (result == win) {
             this.userPlayer.increaseScore();
-        }else if(result == loss){
+        } else if (result == loss) {
             this.computerPlayer.increaseScore();
-        }else if(result == draw){
+        } else if (result == draw) {
             this.userPlayer.increaseScore();
             this.computerPlayer.increaseScore();
         }
         // Transfer the score to the scoreboard
-        view.updateScore();
+        view.updateScore(this.userPlayer, this.computerPlayer);
         // Count down the rounds
         this.roundsLeft--;
         // Show the result of the last move to the player
@@ -316,16 +316,16 @@ class Game {
     }
 
     // Set number of rounds before game over
-    setNumberOfRounds(number){
+    setNumberOfRounds(number) {
         this.roundsLeft = number;
     }
 
-    startOver(){
+    startOver() {
         this.roundsLeft = view.getNumberOfRoundsSetting();
         this.computerPlayer.currentScore = 0;
         this.userPlayer.currentScore = 0;
 
-        view.displayStartWindow();
+        view.displayStartWindow(this.userPlayer, this.computerPlayer);
     }
 }
 
@@ -350,7 +350,7 @@ class Player {
         return this.pick;
     }
 
-    increaseScore(){
+    increaseScore() {
         this.score++;
     }
 
@@ -389,6 +389,8 @@ class View {
         // IDs of images whose setting need to be restored after every round
         this.restoreComputerImageId = null;
         this.restoreUserImageId = null;
+        // Copy of the HTML code of the settings-panel, so it can be reset later on
+        this.initialSettingsHTML = "<label for='number-of-attempts-setting'>Number of possible attempts:</label><input id='number-of-attempts-setting' type='text'>";
 
         // List of optionPickerIds
         this.optionPickerIds = ["user-rock-button", "user-paper-button",
@@ -399,8 +401,8 @@ class View {
         ];
     }
 
-    displayOutComeResults(outcome, outcome_message,  user, computer) {
-        debugger;
+    displayOutComeResults(outcome, outcome_message, user, computer) {
+
         let messageText = "";
         let userOptionPanelId = "";
         let computerOptionPanelId = "";
@@ -483,7 +485,7 @@ class View {
             // Store the IDs of the images, so you can set them back to their initial settings
             this.restoreComputerImageId = computerOptionPanelId;
             this.restoreUserImageId = userOptionPanelId;
-             // Make the images appear above the icon
+            // Make the images appear above the icon
             document.getElementById(userOptionPanelId).style = "display: inline;";
             document.getElementById(computerOptionPanelId).style = "display: inline;";
         } else if (outcome == draw) {
@@ -492,35 +494,41 @@ class View {
             // Store the IDs of the images, so you can set them back to their initial settings
             this.restoreComputerImageId = computerOptionPanelId;
             this.restoreUserImageId = userOptionPanelId;
-             // Make the images appear above the icon
+            // Make the images appear above the icon
             document.getElementById(userOptionPanelId).style = "display: inline;";
             document.getElementById(computerOptionPanelId).style = "display: inline;";
         }
-        if(game.roundsLeft > 0){
+        if (game.roundsLeft > 0) {
             document.getElementById("message-panel").innerHTML = messageWindowTextBeginHTML + messageText + outcome_message + messageWindowTextEndHTML +
-            messageWindowButtonTMLBegin + this.restoreComputerImageId + "', '" + this.restoreUserImageId + messageWindowButtonHTMLEnd;
-        }else{
+                messageWindowButtonTMLBegin + this.restoreComputerImageId + "', '" + this.restoreUserImageId + messageWindowButtonHTMLEnd;
+        } else {
             this.displayGameOver(messageWindowTextBeginHTML, messageText);
         }
         this.clearOptionPickerEventListeners(messageWindowTextBeginHTML, messageText);
     }
 
-    displayGameOver(messageWindowBeginHTML, messageText){
-        messageText += "<br><div id=\"game-over-message\">GAME OVER !</div>";
+    displayGameOver(messageWindowBeginHTML, messageText) {
+       
+        messageText += "<br><div id='large-message'>GAME OVER !</div>";
         let messageWindowEndHTML = "<button id=\"game-over-button\" onclick=\"game.startOver()\">Start over</button>";
         document.getElementById("message-panel").innerHTML = messageWindowBeginHTML + messageText + messageWindowEndHTML;
     }
 
-    displayStartWindow(){
+    endGameOnClick() {
+        game.startOver();
+    }
+
+    displayStartWindow(user, computer) {
         this.clear();
         this.clearOptionPickerEventListeners();
-        this.updateScore();
+        this.updateScore(user, computer);
         document.getElementById("message-panel").innerHTML = "<button id=\"begin-button\" onclick=\"view.beginOnClick();\">Begin</button>";
+        document.getElementById("settings-panel").innerHTML = this.initialSettingsHTML;
     }
 
     clear() {
-        debugger;
-        if((this.restoreComputerImageId != null) && (this.restoreUserImageId != null)){
+
+        if ((this.restoreComputerImageId != null) && (this.restoreUserImageId != null)) {
             document.getElementById(this.restoreComputerImageId).style = "display:none;";
             document.getElementById(this.restoreUserImageId).style = "display:none;";
         }
@@ -586,30 +594,51 @@ class View {
     }
 
     beginOnClick() {
+
+        //  The message-panel
+        let messagePanel = document.getElementById("message-panel");
+        // The settings-panel
+        let settingsPanel = document.getElementById("settings-panel");
+        // THe HTML content of settings-panel, whose intial content has been preserved in the constructor
+        let settingsHTML = this.initialSettingsHTML;
         // Read from the settings field. 
         game.setNumberOfRounds(this.getNumberOfRoundsSetting());
         this.hookUpOptionPickerEventListeners();
-        document.getElementById("message-panel").innerHTML = "GO !!!";  
+        messagePanel.innerHTML = "GO !!!";
+        settingsHTML += "<button onclick='view.endGameOnClick()'>End the Game</button>";
+        settingsPanel.innerHTML = settingsHTML;
     }
 
     updateScore(user, computer) {
-        document.getElementById("computer-score").innerHTML = game.computerPlayer.score;
-        document.getElementById("user-score").innerHTML = game.userPlayer.score;
+        let user_tag = document.getElementById("user-score");
+        let computer_tag = document.getElementById("computer-score");
+
+        // set colors to the numbers red for loss, green for win
+        if (user.score > computer.score) {
+            user_tag.style = "color: green;";
+            computer_tag.style = "color: red;";
+        } else if (user.score < computer.score) {
+            user_tag.style = "color: red;";
+            computer_tag.style = "color: green;";
+        } else {
+            user_tag.style = "color: green;";
+            computer_tag.style = "color: green;";
+        }
+        // update the score numbers
+        computer_tag.innerHTML = game.computerPlayer.score;
+        user_tag.innerHTML = game.userPlayer.score;
     }
-   
-    getNumberOfRoundsSetting(){
+
+    getNumberOfRoundsSetting() {
         let val = document.getElementById("number-of-attempts-setting").value;
 
-        if(isNaN(val)){
+        if (isNaN(val)) {
             val = 5;
         }
 
         return val;
     }
 }
-
-let user = new Player();
-let computer = new Player();
 
 // for testing purposes 1 attempt
 let game = new Game(5);
