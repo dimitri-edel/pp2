@@ -64,6 +64,7 @@
 /* Panel for messages such as 'game over' */
 #message-panel {
     position: absolute; 
+    text-align: center;
     top: 330px;
     left: 10px;
     height: 200px;

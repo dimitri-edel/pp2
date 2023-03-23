@@ -499,7 +499,7 @@ class View {
             document.getElementById(computerOptionPanelId).style = "display: inline;";
         }
         if (game.roundsLeft > 0) {
-            document.getElementById("message-panel").innerHTML = messageWindowTextBeginHTML + messageText + outcome_message + messageWindowTextEndHTML +
+            document.getElementById("message-panel").innerHTML = messageWindowTextBeginHTML + messageText + "<br>" + outcome_message + messageWindowTextEndHTML +
                 messageWindowButtonTMLBegin + this.restoreComputerImageId + "', '" + this.restoreUserImageId + messageWindowButtonHTMLEnd;
         } else {
             this.displayGameOver(messageWindowTextBeginHTML, messageText);
