@@ -281,9 +281,10 @@ class Spock extends Pick {
 class Game {
 
     constructor(numberOfRounds) {
+        this.numberOfRoundsSetting = numberOfRounds;
         this.roundsLeft = numberOfRounds;
         this.computerPlayer = new Player();
-        this.userPlayer = new Player();
+        this.userPlayer = new Player();        
     }
 
     userMakesMove(pick) {
@@ -317,11 +318,16 @@ class Game {
 
     // Set number of rounds before game over
     setNumberOfRounds(number) {
+        // If not a number set to default
+        if(isNaN(number)){
+            number = 5;
+        }
+        this.numberOfRoundsSetting = number;
         this.roundsLeft = number;
     }
 
     startOver() {
-        this.roundsLeft = view.getNumberOfRoundsSetting();
+        this.roundsLeft = this.numberOfRoundsSetting;
         this.computerPlayer.currentScore = 0;
         this.userPlayer.currentScore = 0;
 
@@ -524,6 +530,7 @@ class View {
         this.updateScore(user, computer);
         document.getElementById("message-panel").innerHTML = "<button id=\"begin-button\" onclick=\"view.beginOnClick();\">Begin</button>";
         document.getElementById("settings-panel").innerHTML = this.initialSettingsHTML;
+        this.setNumberOfRoundsSetting(game.numberOfRoundsSetting);
     }
 
     clear() {
@@ -631,15 +638,23 @@ class View {
 
     getNumberOfRoundsSetting() {
         let val = document.getElementById("number-of-attempts-setting").value;
-
+        // If not a number set to default
         if (isNaN(val)) {
             val = 5;
         }
 
         return val;
     }
+
+    setNumberOfRoundsSetting(set_value) {
+        // If not a number set to default
+        if (isNaN(set_value)) {
+            set_value = 5;
+        }
+       document.getElementById("number-of-attempts-setting").value = set_value;
+    }    
 }
 
-// for testing purposes 1 attempt
+// Initialize global objects
 let game = new Game(5);
 let view = new View();
