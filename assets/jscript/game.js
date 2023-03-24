@@ -200,12 +200,14 @@ class Pick {
     constructor(owner_index, name) {
         this.index = owner_index;
         this.name = name;
+        this.imageFileName = "question.png";
     }
 }
 
 class Rock extends Pick {
     constructor() {
         super(versus_rock, "Rock");
+        super.imageFileName = "rock.webp";
     }
     // Checks the outcome of playing it against Paper, Scissorrs, etc.
     // If Rock wins the return value is "win" else "loss" or "draw"
@@ -221,6 +223,7 @@ class Rock extends Pick {
 class Paper extends Pick {
     constructor() {
         super(versus_paper, "Paper");
+        super.imageFileName = "paper.webp";
     }
     /* Checks the outcome against what the oponent's Pick */
     checkOutcomeAgainst(oponentsPick) {
@@ -235,6 +238,7 @@ class Paper extends Pick {
 class Scissors extends Pick {
     constructor() {
         super(versus_scissors, "Scissors");
+        super.imageFileName = "scissors.webp";
     }
     /* Checks the outcome against what the oponent's Pick */
     checkOutcomeAgainst(oponentsPick) {
@@ -249,6 +253,7 @@ class Scissors extends Pick {
 class Lizard extends Pick {
     constructor() {
         super(versus_lizard, "Lizard");
+        super.imageFileName = "lizard.webp";
     }
 
     /* Checks the outcome against what the oponent's Pick */
@@ -265,6 +270,7 @@ class Lizard extends Pick {
 class Spock extends Pick {
     constructor() {
         super(versus_spock, "Spock");
+        super.imageFileName = "spock.webp";
     }
     /* Checks the outcome against what the oponent's Pick */
     checkOutcomeAgainst(oponentsPick) {
@@ -283,6 +289,7 @@ class Game {
     constructor(numberOfRounds) {
         this.numberOfRoundsSetting = numberOfRounds;
         this.roundsLeft = numberOfRounds;
+        this.currentRound = 0;
         this.computerPlayer = new Player();
         this.userPlayer = new Player();        
     }
@@ -291,7 +298,7 @@ class Game {
         let result = "";
         let result_message = "";
         this.userPlayer.currentPick = pick;
-        this.computerPlayer.pickRandom();
+        this.computerPlayer.pickRandom();        
 
 
         // Check the outcome of the move made by the player
@@ -312,6 +319,7 @@ class Game {
         view.updateScore(this.userPlayer, this.computerPlayer);
         // Count down the rounds
         this.roundsLeft--;
+        this.currentRound++;
         // Show the result of the last move to the player
         view.displayOutComeResults(result, result_message, this.userPlayer, this.computerPlayer);
     }
@@ -330,8 +338,10 @@ class Game {
         this.roundsLeft = this.numberOfRoundsSetting;
         this.computerPlayer.currentScore = 0;
         this.userPlayer.currentScore = 0;
+        this.currentRound = 0;
 
-        view.displayStartWindow(this.userPlayer, this.computerPlayer);
+        // view.displayStartWindow(this.userPlayer, this.computerPlayer);
+        view.updateScore(this.userPlayer, this.computerPlayer);
     }
 }
 
@@ -405,20 +415,15 @@ class View {
             "computer-paper-button", "computer-scissors-button",
             "computer-lizard-button", "computer-spock-button"
         ];
+
+        this.hookUpOptionPickerEventListeners();
     }
 
     displayOutComeResults(outcome, outcome_message, user, computer) {
 
-        let messageText = "";
-        let userOptionPanelId = "";
-        let computerOptionPanelId = "";
+        let messageText = "";        
         this.restoreComputerImageId = "";
         this.restoreUserImageId = "";
-        let messageWindowTextBeginHTML = "<div class=\"outcome-message-text\">";
-        let messageWindowButtonTMLBegin = "<button onclick=\"view.clear('";
-        let messageWindowButtonHTMLEnd = "')\" class=\"again-button\">Again!</button>";
-        let messageWindowTextEndHTML = "</div>";
-
         switch (outcome) {
             case win:
                 messageText = "YOU WIN!";
@@ -433,112 +438,54 @@ class View {
                 break;
         }
 
-        switch (user.currentPick.name) {
-            case "Rock":
-                userOptionPanelId = "user-rock-button";
-                break;
-            case "Paper":
-                userOptionPanelId = "user-paper-button"
-                break;
-            case "Scissors":
-                userOptionPanelId = "user-scissors-button";
-                break;
-            case "Lizard":
-                userOptionPanelId = "user-lizard-button";
-                break;
-            case "Spock":
-                userOptionPanelId = "user-spock-button";
-                break;
-            default:
-                break;
-        }
-
-        switch (computer.currentPick.name) {
-            case "Rock":
-                computerOptionPanelId = "computer-rock-button";
-                break;
-            case "Paper":
-                computerOptionPanelId = "computer-paper-button"
-                break;
-            case "Scissors":
-                computerOptionPanelId = "computer-scissors-button";
-                break;
-            case "Lizard":
-                computerOptionPanelId = "computer-lizard-button";
-                break;
-            case "Spock":
-                computerOptionPanelId = "computer-spock-button";
-                break;
-            default:
-                break;
-        }
-
-        if (outcome == win) {
-            // Complete the Ids by attaching the appropriate extension 
-            userOptionPanelId += "-image-green";
-            computerOptionPanelId += "-image-red";
-            // Store the IDs of the images, so you can set them back to their initial settings
-            this.restoreComputerImageId = computerOptionPanelId;
-            this.restoreUserImageId = userOptionPanelId;
-            // Make the images appear above the icon
-            document.getElementById(userOptionPanelId).style = "display: inline;";
-            document.getElementById(computerOptionPanelId).style = "display: inline;";
-        } else if (outcome == loss) {
-            // Complete the Ids by attaching the appropriate extension 
-            userOptionPanelId += "-image-red";
-            computerOptionPanelId += "-image-green";
-
-            // Store the IDs of the images, so you can set them back to their initial settings
-            this.restoreComputerImageId = computerOptionPanelId;
-            this.restoreUserImageId = userOptionPanelId;
-            // Make the images appear above the icon
-            document.getElementById(userOptionPanelId).style = "display: inline;";
-            document.getElementById(computerOptionPanelId).style = "display: inline;";
-        } else if (outcome == draw) {
-            userOptionPanelId += "-image-green";
-            computerOptionPanelId += "-image-green";
-            // Store the IDs of the images, so you can set them back to their initial settings
-            this.restoreComputerImageId = computerOptionPanelId;
-            this.restoreUserImageId = userOptionPanelId;
-            // Make the images appear above the icon
-            document.getElementById(userOptionPanelId).style = "display: inline;";
-            document.getElementById(computerOptionPanelId).style = "display: inline;";
-        }
-        if (game.roundsLeft > 0) {
-            document.getElementById("message-panel").innerHTML = messageWindowTextBeginHTML + messageText + "<br>" + outcome_message + messageWindowTextEndHTML +
-                messageWindowButtonTMLBegin + this.restoreComputerImageId + "', '" + this.restoreUserImageId + messageWindowButtonHTMLEnd;
-        } else {
-            this.displayGameOver(messageWindowTextBeginHTML, messageText);
-        }
-        this.clearOptionPickerEventListeners(messageWindowTextBeginHTML, messageText);
-    }
-
-    displayGameOver(messageWindowBeginHTML, messageText) {
+        document.getElementById("outcome-text").innerHTML = messageText;
+        document.getElementById("user-pick-image").src = "./assets/images/webp/"+game.userPlayer.currentPick.imageFileName;
+        document.getElementById("computer-pick-image").src = "./assets/images/webp/"+game.computerPlayer.currentPick.imageFileName;
+        document.getElementById("message-text").innerHTML = outcome_message;
+        document.getElementById("settings-panel").style = "display:none;";
+        document.getElementById("rounds-counter-panel").style = "display:block;";
+        document.getElementById("rounds-counter").innerHTML = game.currentRound;
        
-        messageText += "<br><div id='large-message'>GAME OVER !</div>";
-        let messageWindowEndHTML = "<button id=\"game-over-button\" onclick=\"game.startOver()\">Start over</button>";
-        document.getElementById("message-panel").innerHTML = messageWindowBeginHTML + messageText + messageWindowEndHTML;
+        if (game.roundsLeft <= 0) {
+            this.displayGameOver();
+        }
     }
 
-    endGameOnClick() {
+    displayGameOver() {
+        document.getElementById("outcome-text").innerHTML = "GAME OVER!";
+        let messageText = "";
+        if(game.computerPlayer.score > game.userPlayer.score){
+            messageText = "You have lost this game!";
+        }else if(game.computerPlayer.score < game.userPlayer.score){
+            messageText = "You have won this game!";
+        }else {
+            messageText = "This game came up a draw!";
+        }
+        document.getElementById("message-text").innerHTML = messageText;
+        this.clearOptionPickerEventListeners();
+    }
+
+    startOverOnClick() {
         game.startOver();
+        this.hookUpOptionPickerEventListeners();
+        document.getElementById("outcome-text").innerHTML = "GO!";
+        document.getElementById("message-text").innerHTML = "Starting a new Game!";
+        document.getElementById("user-pick-image").src = "./assets/images/webp/question.webp";
+        document.getElementById("computer-pick-image").src = "./assets/images/webp/question.webp";
+        document.getElementById("settings-panel").style = "display:block;";
+        document.getElementById("rounds-counter-panel").style = "display:none;";
     }
 
     displayStartWindow(user, computer) {
-        this.clear();
-        this.clearOptionPickerEventListeners();
-        this.updateScore(user, computer);
-        document.getElementById("message-panel").innerHTML = "<button id=\"begin-button\" onclick=\"view.beginOnClick();\">Begin</button>";
-        document.getElementById("settings-panel").innerHTML = this.initialSettingsHTML;
-        this.setNumberOfRoundsSetting(game.numberOfRoundsSetting);
+        // this.clear();
+        // this.clearOptionPickerEventListeners();
+        // this.updateScore(user, computer);
+        // document.getElementById("message-panel").innerHTML = "<button id=\"begin-button\" onclick=\"view.beginOnClick();\">Begin</button>";
+        // document.getElementById("settings-panel").innerHTML = this.initialSettingsHTML;
+        // this.setNumberOfRoundsSetting(game.numberOfRoundsSetting);
     }
 
     clear() {
-
-        if ((this.restoreComputerImageId != null) && (this.restoreUserImageId != null)) {
-            document.getElementById(this.restoreComputerImageId).style = "display:none;";
-            document.getElementById(this.restoreUserImageId).style = "display:none;";
-        }
         for (let i = 0; i < this.optionPickerIds.length; i++) {
             document.getElementById(this.optionPickerIds[i]).className = "player-option-picker";
         }
@@ -656,5 +603,5 @@ class View {
 }
 
 // Initialize global objects
-let game = new Game(5);
+let game = new Game(3);
 let view = new View();
