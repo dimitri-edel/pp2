@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
 
 /* ################################################################################## */
@@ -13,6 +13,7 @@
     background-color: rgb(218, 235, 235);
     background-size: cover;
     overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
 }
 
 #computer-score {
