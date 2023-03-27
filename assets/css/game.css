@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+header {
+    width: 320px;
+    overflow: hidden;
+}
 
-
+h1 {
+    position:relative;
+    animation: message-display 10s infinite;
+    width: 620px;
+    height: 30px;
+    margin: 0;
+    padding: 5px 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+}
 /* ################################################################################## */
 /* LAYOUT OF THE CANVAS                                                                */
 
@@ -131,14 +146,15 @@
     object-fit: contain;
     margin: 0 auto;
 }
-#user-option-panel {  
-    position: absolute; 
+#user-option-panel {
+    position: absolute;
     top: 340px;
     left: 0;
     height: 50px;
     width: 280px;
-    background-color: rgb(204, 224, 242);
+    background-color: rgb(159 173 174 / 29%);
 }
+
 .gray-border {
     border: 20px solid transparent;
     border-image: url(../images/webp/panel-gray-border.webp) 20 round;
@@ -320,3 +336,78 @@
 #user-spock-button:active #user-spock-button-image-gray {
     display: inline;
 }
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    
+    /* CSS */
+    
+  }
+
+  @keyframes message-display {
+    from {
+        left: 320px;
+    } to {
+        left: -640px;
+    }
+    
+  }

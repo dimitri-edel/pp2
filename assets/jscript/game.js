@@ -74,7 +74,7 @@ const scissors_versus_scissors = "Computer also picked scissors!";
 const scissors_vesus_rock = "Rock crushes scissors!";
 const scissors_versus_paper = "Scissors cuts paper!";
 const scissors_versus_lizard = "Scissors decapitates lizard!";
-const scissors_versus_spock = "Spock crushes scissors!";
+const scissors_versus_spock = "Spock smashes scissors!";
 
 const lizard_versus_lizard = "Computer also picked lizard!";
 const lizard_versus_rock = "Rock crushes lizard!";
@@ -85,7 +85,7 @@ const lizard_versus_spock = "Lizard poisons spock!";
 const spock_versus_spock = "Computer also picked spock!";
 const spock_versus_rock = "Spock vaporized rock!";
 const spock_versus_paper = "Paper disproves spock!";
-const spock_versus_scissors = "Spock crushes scissors!";
+const spock_versus_scissors = "Spock smashes scissors!";
 const spock_versus_lizard = "Lizard poisons spock!";
 
 const outcome_index = 0;
@@ -195,6 +195,13 @@ SPOCK[versus_lizard][message_index] = spock_versus_lizard;
 SPOCK[versus_spock][outcome_index] = draw;
 SPOCK[versus_spock][message_index] = spock_versus_spock;
 SPOCK[owner_index][outcome_index] = versus_spock;
+
+// The following messages will be displayed at the top of the page. These are motivational phrases.
+const starting_message = "Welcome and may the force be with you!";
+const winning_message = "You are winning! Keep going!";
+const losing_message = "Do not give up! Luck never gives; it only lends.";
+const win_message = "Congratulations! You did awsome!";
+const loss_message = "Sorry! You have lost. Better luck next time!";
 
 class Pick {
     constructor(owner_index, name) {
@@ -426,10 +433,10 @@ class View {
         this.restoreUserImageId = "";
         switch (outcome) {
             case win:
-                messageText = "YOU WIN!";
+                messageText = "YOU WIN!";                
                 break;
             case loss:
-                messageText = "YOU LOSE!";
+                messageText = "YOU LOSE!";                
                 break;
             case draw:
                 messageText = "DRAW!";
@@ -446,6 +453,16 @@ class View {
         document.getElementById("rounds-counter-panel").style = "display:block;";
         document.getElementById("rounds-counter").innerHTML = game.currentRound;
        
+        if(game.roundsLeft > 0) {
+            if(game.userPlayer.score > game.computerPlayer.score){
+                document.getElementById("message-display").innerHTML = winning_message;
+            }else if(game.userPlayer.score < game.computerPlayer.score){
+                document.getElementById("message-display").innerHTML = losing_message;
+            }else {
+                // TODO: display message for a tie
+            }
+        }
+
         if (game.roundsLeft <= 0) {
             this.displayGameOver();
         }
@@ -456,10 +473,13 @@ class View {
         let messageText = "";
         if(game.computerPlayer.score > game.userPlayer.score){
             messageText = "You have lost this game!";
+            document.getElementById("message-display").innerHTML = loss_message;
         }else if(game.computerPlayer.score < game.userPlayer.score){
             messageText = "You have won this game!";
+            document.getElementById("message-display").innerHTML = win_message;
         }else {
             messageText = "This game came up a draw!";
+            // TODO: Display a motivational message for a draw
         }
         document.getElementById("message-text").innerHTML = messageText;
         this.clearOptionPickerEventListeners();
@@ -605,3 +625,4 @@ class View {
 // Initialize global objects
 let game = new Game(3);
 let view = new View();
+document.getElementById("message-display").innerHTML = starting_message;

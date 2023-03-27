@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -34,13 +36,28 @@ h1 {
     position: relative;
     top: 0;
     left: 0;
-    height: 600px;
+    height: 700px;
     width: 99vw;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: radial-gradient(ellipse, rgb(64, 22, 143) 0%, rgb(32, 14, 96) 40%, rgb(18, 0, 34) 100%);
     perspective: 900px;
+}
+
+.rules-panel {
+    position:absolute;
+    top: 400px;
+    left: auto;
+    color: white;
+    font-size: 20px;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+.rules-panel ul {
+    list-style: none;
+    
 }
 
 .cube {
@@ -95,6 +112,11 @@ h1 {
 
 }
 
+.cube .background-rock {
+    transform: translateZ(198px);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
 .cube .face-paper {
     transform-origin: center right;
     transform: rotateY(90deg);
@@ -110,6 +132,12 @@ h1 {
     background-size: contain;
 }
 
+.cube .background-paper {
+    transform-origin: center right;
+    transform: rotateY(90deg) translateZ(-2px);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
 .cube .face-scissors {
     transform-origin: center left;
     transform: rotateY(-90deg);
@@ -123,6 +151,12 @@ h1 {
     background-repeat: no-repeat;
     /* Do not repeat the image */
     background-size: contain;
+}
+
+.cube .background-scissors {
+    transform-origin: center left;
+    transform: rotateY(-90deg) translateZ(-2px);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .cube .face-lizard {
@@ -142,6 +176,12 @@ h1 {
     background-size: contain;
 }
 
+.cube .background-lizard {
+    transform-origin: center center;
+    transform: rotateY(180deg) translateZ(-2px);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
 .cube .face-spock {
     transform-origin: top center;
     transform: rotateX(90deg);
@@ -157,6 +197,12 @@ h1 {
     background-repeat: no-repeat;
     /* Do not repeat the image */
     background-size: contain;
+}
+
+.cube .background-spock {
+    transform-origin: top center;
+    transform: rotateX(90deg) translateZ(-2px);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .cube .glow {
