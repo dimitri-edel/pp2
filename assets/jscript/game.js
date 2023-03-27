@@ -197,11 +197,13 @@ SPOCK[versus_spock][message_index] = spock_versus_spock;
 SPOCK[owner_index][outcome_index] = versus_spock;
 
 // The following messages will be displayed at the top of the page. These are motivational phrases.
-const starting_message = "Welcome and may the force be with you!";
+const starting_message = "Welcome! May the force be with you!";
 const winning_message = "You are winning! Keep going!";
 const losing_message = "Do not give up! Luck never gives; it only lends.";
-const win_message = "Congratulations! You did awsome!";
+const tie_message = "The game is tied. You can still win!";
+const win_message = "Congratulations! You did awsome! The force was on your side!";
 const loss_message = "Sorry! You have lost. Better luck next time!";
+const draw_message = "Not bad! Not bad!";
 
 class Pick {
     constructor(owner_index, name) {
@@ -459,7 +461,7 @@ class View {
             }else if(game.userPlayer.score < game.computerPlayer.score){
                 document.getElementById("message-display").innerHTML = losing_message;
             }else {
-                // TODO: display message for a tie
+                document.getElementById("message-display").innerHTML = tie_message;
             }
         }
 
@@ -479,7 +481,7 @@ class View {
             document.getElementById("message-display").innerHTML = win_message;
         }else {
             messageText = "This game came up a draw!";
-            // TODO: Display a motivational message for a draw
+            document.getElementById("message-display").innerHTML = draw_message;
         }
         document.getElementById("message-text").innerHTML = messageText;
         this.clearOptionPickerEventListeners();
@@ -488,6 +490,7 @@ class View {
     startOverOnClick() {
         game.startOver();
         this.hookUpOptionPickerEventListeners();
+        document.getElementById("message-display").innerHTML = starting_message;
         document.getElementById("outcome-text").innerHTML = "GO!";
         document.getElementById("message-text").innerHTML = "Starting a new Game!";
         document.getElementById("user-pick-image").src = "./assets/images/webp/question.webp";

@@ -7,7 +7,7 @@ header {
 h1 {
     position:relative;
     animation: message-display 10s infinite;
-    width: 620px;
+    width: 680px;
     height: 30px;
     margin: 0;
     padding: 5px 0;
@@ -404,9 +404,13 @@ h1 {
   }
 
   @keyframes message-display {
-    from {
+    0% {
         left: 320px;
-    } to {
+    }     
+    90% {
+        left: -400px;
+    }
+    100% {
         left: -640px;
     }
     
