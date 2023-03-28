@@ -203,7 +203,7 @@ const losing_message = "Do not give up! Luck never gives; it only lends.";
 const tie_message = "The game is tied. You can still win!";
 const win_message = "Congratulations! You did awsome! The force was on your side!";
 const loss_message = "Sorry! You have lost. Better luck next time!";
-const draw_message = "Not bad! Not bad!";
+const draw_message = "Not bad! Not bad, at all!";
 
 class Pick {
     constructor(owner_index, name) {

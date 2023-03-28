@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
 /* ################################################################################## */
 /* SIZING FOR THE SMALLEST MOBILE PHONES FIRST                                        */
 /* WIDTH BETWEEN 320 AND 359 PIXELS                                                   */
@@ -11,6 +12,7 @@
 header {
     width: 320px;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 h1 {
@@ -46,7 +48,13 @@ h1 {
     position: absolute;
     top: 25px;
     left: 5px;
-    /* background-color: aliceblue; */
+    font-size: 30px;
+}
+
+#user-score {
+    position: absolute;
+    top: 25px;
+    left: 290px;
     font-size: 30px;
 }
 
@@ -56,7 +64,6 @@ h1 {
     left: 50px;
     width: 220px;
     text-align: center;
-    /* background-color: aliceblue; */
 }
 
 #rounds-counter-panel {
@@ -73,13 +80,6 @@ h1 {
     font-size: 17px;
 }
 
-#user-score {
-    position: absolute;
-    top: 25px;
-    left: 290px;
-    /* background-color: aliceblue; */
-    font-size: 30px;
-}
 
 #computer-pick-image-panel {
     position: absolute;
@@ -126,7 +126,6 @@ h1 {
     left: 5px;
     width: 95%;
     height: 50px;
-    /* background-color: green; */
     text-align: center;
     font-size: 30px;
 }
@@ -138,7 +137,6 @@ h1 {
     width: 95%;
     text-align: center;
     font-size: 20px;
-    /* background-color: rgb(152, 152, 202); */
 }
 
 #restart-button {
@@ -148,7 +146,6 @@ h1 {
     width: 95%;
     height: 50px;
     text-align: center;
-    /* background-color: rgb(180, 135, 135); */
 }
 
 #restart-button img {
@@ -359,23 +356,38 @@ h1 {
     display: inline;
 }
 
+@keyframes message-display {
+    0% {
+        left: 360px;
+    }
+
+    90% {
+        left: -400px;
+    }
+
+    100% {
+        left: -640px;
+    }
+
+}
+
 /* 
     ##Device = Most of the Smartphones Mobiles (Portrait)
     ##Screen = B/w 360px to 479px
   */
 
 @media (min-width: 360px) and (max-width: 480px) {
-
     header {
         width: 360px;
+        margin: 0 auto;
     }
 
     h1 {
         width: 680px;
         height: 30px;
-        margin: 0;
         padding: 5px 0;
         font-size: 20px;
+
     }
 
     /* ################################################################################## */
@@ -389,6 +401,12 @@ h1 {
     #computer-score {
         top: 25px;
         left: 5px;
+        font-size: 40px;
+    }
+
+    #user-score {
+        top: 25px;
+        left: 320px;
         font-size: 40px;
     }
 
@@ -407,12 +425,6 @@ h1 {
 
     #rounds-counter-text {
         font-size: 17px;
-    }
-
-    #user-score {
-        top: 25px;
-        left: 320px;
-        font-size: 40px;
     }
 
     #computer-pick-image-panel {
@@ -520,7 +532,7 @@ h1 {
 
     #user-paper-button-image-gray {
         width: 60px;
-        height: 60px;       
+        height: 60px;
     }
 
     #user-scissors-button {
@@ -538,7 +550,7 @@ h1 {
 
     #user-scissors-button-image-gray {
         width: 60px;
-        height: 60px;        
+        height: 60px;
     }
 
     #user-lizard-button {
@@ -602,16 +614,219 @@ h1 {
 
 @media (min-width: 481px) and (max-width: 767px) {
 
-    /* CSS */
+    header {
+        width: 480px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        width: 680px;
+        height: 30px;
+        padding: 5px 0;
+        font-size: 20px;
+
+    }
+
+    /* ################################################################################## */
+    /* LAYOUT OF THE CANVAS                                                                */
+
+    #canvas {
+        width: 480px;
+        height: 680px;
+    }
+
+    #computer-score {
+        top: 25px;
+        left: 20px;
+        font-size: 50px;
+    }
+
+    #user-score {
+        top: 25px;
+        left: 420px;
+        font-size: 50px;
+    }
+
+    #settings-panel {
+        top: 5px;
+        left: 120px;
+        width: 240px;
+    }
+
+    #rounds-counter-panel {
+        top: 5px;
+        left: 110px;
+        width: 280px;
+        font-size: 50px;
+    }
+
+    #rounds-counter-text {
+        font-size: 17px;
+    }
 
 
 
+    #computer-pick-image-panel {
+        top: 170px;
+        left: 0;
+        width: 200px;
+        height: 200px;
+    }
+
+    #computer-pick-image {
+        top: 0;
+        left: 0;
+        height: 200px;
+        width: 200px;
+    }
+
+    #user-pick-image-panel {
+        top: 170px;
+        left: 280px;
+        width: 200px;
+        height: 200px;
+    }
+
+    #user-pick-image {
+        top: 0;
+        left: 0;
+        height: 200px;
+        width: 200px;
+    }
+
+    #versus-text {
+        top: 250px;
+        left: 190px;
+        font-size: 50px;
+    }
+
+    #outcome-text {
+        top: 110px;
+        left: 5px;
+        width: 95%;
+        height: 60px;
+        font-size: 40px;
+    }
+
+    #message-text {
+        top: 370px;
+        left: 5px;
+        width: 95%;
+        font-size: 30px;
+    }
+
+    #restart-button {
+        top: 450px;
+        left: 20px;
+        width: 95%;
+        height: 90px;
+    }
+
+    #restart-button img {
+        top: 0;
+        left: 0;
+        width: 90px;
+        height: 90px;
+    }
+
+    #user-option-panel {
+        box-sizing: border-box;
+        top: 550px;
+        left: 0;
+        height: 130px;
+        width: 480px;
+    }
+
+    /* ############################################################################ */
+    /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
+    #user-rock-button {
+        top: 0;
+        left: 0;
+        width: 90px;
+        height: 90px;
+    }
+
+    #user-rock-button-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    #user-rock-button-image-gray {
+        top: 0;
+        left: 0;
+        width: 90px;
+        height: 90px;
+    }
+
+    #user-paper-button {
+        top: 0;
+        left: 90px;
+        width: 90px;
+        height: 90px;
+    }
+
+    #user-paper-button-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    #user-paper-button-image-gray {
+        width: 90px;
+        height: 90px;
+    }
+
+    #user-scissors-button {
+        top: 0;
+        left: 180px;
+        width: 90px;
+        height: 90px;
+    }
+
+    #user-scissors-button-image {
+        width: 90px;
+        height: 90px;
+    }
 
 
+    #user-scissors-button-image-gray {
+        width: 90px;
+        height: 90px;
+    }
 
+    #user-lizard-button {
+        top: 0;
+        left: 270px;
+        width: 90px;
+        height: 90px;
+    }
 
+    #user-lizard-button-image {
+        width: 90px;
+        height: 90px;
+    }
 
+    #user-lizard-button-image-gray {
+        width: 90px;
+        height: 90px;
+    }
 
+    #user-spock-button {
+        position: absolute;
+        top: 0;
+        left: 350px;
+        width: 90px;
+        height: 90px;
+    }
+
+    #user-spock-button-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    #user-spock-button-image-gray {
+        width: 90px;
+        height: 90px;
+    }
 
     @keyframes message-display {
         0% {
