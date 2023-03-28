@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+/* ########################################################### */
+/* SIZE : 320px x 480px */
+/* ########################################################### */
+
 h1 {
     animation: fade-in 10s;
     text-align: center;
@@ -13,7 +17,8 @@ h1 {
 
 #beginButton a {
     display: block;
-    width: 100%;
+    margin: 0 auto;
+    width: 200px;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -46,7 +51,7 @@ h1 {
 }
 
 .rules-panel {
-    position:absolute;
+    position: absolute;
     top: 400px;
     left: auto;
     color: white;
@@ -57,7 +62,7 @@ h1 {
 
 .rules-panel ul {
     list-style: none;
-    
+
 }
 
 .cube {
