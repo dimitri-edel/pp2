@@ -1285,20 +1285,213 @@ h1 {
 
 @media (min-width: 1281px) {
 
-    /* CSS */
+    header {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        width: 1500px;
+        height: 30px;
+        padding: 5px 0;
+        font-size: 20px;
+        animation: message-display-landscape-wide 14s infinite;
+    }
+
+    /* ################################################################################## */
+    /* LAYOUT OF THE CANVAS                                                                */
+
+    #canvas {
+        width: 1200px;
+        height: 900px;
+    }
+
+    #computer-score {
+        top: 50px;
+        left: 50px;
+        font-size: 70px;
+    }
+
+    #user-score {
+        top: 50px;
+        left: 1100px;
+        font-size: 70px;
+    }
+
+    #settings-panel {
+        top: 5px;
+        left: 430px;
+        width: 340px;
+        font-size: 20px;
+    }
+
+    #rounds {
+        font-size: 35px;
+    }
+
+    #rounds-counter-panel {
+        top: 5px;
+        left: 450px;
+        width: 280px;
+        font-size: 70px;
+    }
+
+    #rounds-counter-text {
+        font-size: 17px;
+    }
+
+    #computer-pick-image-panel {
+        top: 220px;
+        left: 125px;
+        width: 250px;
+        height: 250px;
+    }
+
+    #computer-pick-image {
+        top: 0;
+        left: 0;
+        height: 250px;
+        width: 250px;
+    }
+
+    #user-pick-image-panel {
+        top: 220px;
+        left: 835px;
+        width: 250px;
+        height: 250px;
+    }
+
+    #user-pick-image {
+        top: 0;
+        left: 0;
+        height: 250px;
+        width: 250px;
+    }
+
+    #versus-text {
+        top: 280px;
+        left: 505px;
+        font-size: 100px;
+    }
+
+    #outcome-text {
+        top: 140px;
+        left: 25px;
+        width: 95%;
+        height: 60px;
+        font-size: 80px;
+    }
+
+    #message-text {
+        top: 470px;
+        left: 25px;
+        width: 95%;
+        font-size: 30px;
+    }
+
+    #restart-button {
+        top: 550px;
+        left: 40px;
+        width: 95%;
+        height: 120px;
+    }
+
+    #restart-button img {
+        top: 0;
+        left: 0;
+        width: 120px;
+        height: 120px;
+    }
+
+    #user-option-panel {
+        box-sizing: border-box;
+        top:720px;
+        left: 0;
+        height: 180px;
+        width: 1200px;
+    }
+
+    /* ############################################################################ */
+    /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
+    #user-rock-button {
+        width: 150px;
+        height: 150px;
+    }
+
+    #user-rock-button-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    #user-rock-button-image-gray {
+        width: 150px;
+        height: 150px;
+    }
+
+    #user-paper-button {
+        width: 150px;
+        height: 150px;
+    }
+
+    #user-paper-button-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    #user-paper-button-image-gray {
+        width: 150px;
+        height: 150px;
+    }
+
+    #user-scissors-button {
+        width: 150px;
+        height: 150px;
+    }
+
+    #user-scissors-button-image {
+        width: 150px;
+        height: 150px;
+    }
 
 
+    #user-scissors-button-image-gray {
+        width: 150px;
+        height: 150px;
+    }
 
+    #user-lizard-button {
+        width: 150px;
+        height: 150px;
+    }
 
+    #user-lizard-button-image {
+        width: 150px;
+        height: 150px;
+    }
 
+    #user-lizard-button-image-gray {
+        width: 150px;
+        height: 150px;
+    }
 
+    #user-spock-button {
+        width: 150px;
+        height: 150px;
+    }
 
+    #user-spock-button-image {
+        width: 150px;
+        height: 150px;
+    }
 
+    #user-spock-button-image-gray {
+        width: 150px;
+        height: 150px;
+    }
 
-
-    @keyframes message-display {
+    @keyframes message-display-landscape-wide {
         0% {
-            left: 320px;
+            left: 1200px;
         }
 
         90% {
@@ -1306,9 +1499,10 @@ h1 {
         }
 
         100% {
-            left: -640px;
+            left: -650px;
         }
 
     }
+
 
 }
