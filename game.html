@@ -18,29 +18,36 @@
         </div>
     </header>
     <div id="canvas">
-        <div id="computer-score">0</div>
-        <div id="settings-panel">
-            <label for="rounds">Choose number of rounds:<br></label>
-            <select name="rounds" id="rounds" onchange="game.setNumberOfRounds(this.value)">
-                <option value="3">3</option>
-                <option value="5">5</option>
-                <option value="7">7</option>
-                <option value="11">11</option>
-            </select>
+        <div id="first-row">
+            <div id="computer-score">0</div>
+            <div id="settings-panel">
+                <label for="rounds">Choose number of rounds:<br></label>
+                <select name="rounds" id="rounds" onchange="game.setNumberOfRounds(this.value)">
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="7">7</option>
+                    <option value="11">11</option>
+                </select>
+            </div>
+            <div id="rounds-counter-panel">
+                <div id="rounds-counter-text">ROUND</div>
+                <div id="rounds-counter">0</div>
+            </div>
+            <div id="user-score">0</div>
         </div>
-        <div id="rounds-counter-panel">
-            <div id="rounds-counter-text">ROUND</div>
-            <div id="rounds-counter">0</div>
+        <div id="second-row">
+            <div id="outcome-text"></div>
         </div>
-        <div id="user-score">0</div>
-        <div id="computer-pick-image-panel"><img id="computer-pick-image" alt="image question mark"
-                src="./assets/images/webp/question.webp"></div>
-        <div id="user-pick-image-panel"><img id="user-pick-image" alt="image question mark"
-                src="./assets/images/webp/question.webp"></div>
-        <div id="versus-text">VS.</div>
-        <div id="message-text"></div>
-        <div id="outcome-text"></div>
-        <div id="user-pick-image"></div>
+        <div id="third-row">
+            <div id="computer-pick-image-panel"><img id="computer-pick-image" alt="image question mark"
+                    src="./assets/images/webp/question.webp"></div>
+            <div id="versus-text">VS.</div>
+            <div id="user-pick-image-panel"><img id="user-pick-image" alt="image question mark"
+                    src="./assets/images/webp/question.webp"></div>
+        </div>
+        <div id="fourth-row">
+            <div id="message-text"></div>
+        </div>        
         <div id="restart-button" onclick="view.startOverOnClick();">
             <img alt="image question mark" src="./assets/images/webp/restart.webp">
         </div>

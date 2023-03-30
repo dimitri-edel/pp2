@@ -44,33 +44,44 @@ h1 {
     font-family: 'Orbitron', sans-serif;
 }
 
+/* the first row contains computer-score, settings-panel, rounds-counter-panel and user-score */
+#first-row {
+    display: flex;
+    width: 100%;
+    height: 100px;
+}
+
 #computer-score {
-    position: absolute;
-    top: 25px;
-    left: 5px;
+    position: relative;
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: auto;
     font-size: 30px;
 }
 
 #user-score {
-    position: absolute;
-    top: 25px;
-    left: 290px;
+    position: relative;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: 10px;
     font-size: 30px;
 }
 
 #settings-panel {
-    position: absolute;
-    top: 5px;
-    left: 50px;
+    position: relative;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
     width: 220px;
     text-align: center;
 }
 
 #rounds-counter-panel {
     display: none;
-    position: absolute;
-    top: 5px;
-    left: 50px;
+    position: relative;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
     width: 220px;
     text-align: center;
     font-size: 30px;
@@ -80,13 +91,36 @@ h1 {
     font-size: 17px;
 }
 
+/* second-row only contains the outcome-text */
+#second-row {
+    display: flex;
+    position: absolute;
+    top: 70px;
+    left: 5px;
+    width: 95%;
+    height: 50px;
+}
 
-#computer-pick-image-panel {
+#outcome-text {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* third row contains computer-pick-image-panel, versus-text and user-pick-image-panel */
+#third-row {
+    display: flex;
     position: absolute;
     top: 120px;
     left: 5px;
-    width: 100px;
+    width: 100%;
     height: 100px;
+}
+
+#computer-pick-image-panel {
+    position: relative;
+    margin-left: 50px;
+    margin: 0 auto;
 }
 
 #computer-pick-image {
@@ -97,10 +131,16 @@ h1 {
     object-fit: contain;
 }
 
+
+#versus-text {
+    position: relative;
+    margin: auto auto;
+    font-size: 30px;
+}
+
 #user-pick-image-panel {
-    position: absolute;
-    top: 120px;
-    left: 210px;
+    position: relative;
+    margin: 0 auto;
     width: 100px;
     height: 100px;
 }
@@ -113,37 +153,27 @@ h1 {
     object-fit: contain;
 }
 
-#versus-text {
+/* fourth row contains message-text */
+#fourth-row {
+    display: flex;
     position: absolute;
-    top: 150px;
-    left: 125px;
-    font-size: 30px;
-}
-
-#outcome-text {
-    position: absolute;
-    top: 70px;
-    left: 5px;
-    width: 95%;
-    height: 50px;
-    text-align: center;
-    font-size: 30px;
+    top: 200px;
+    left: 0px;
+    width: 100%;
+    height: 100px;
 }
 
 #message-text {
-    position: absolute;
-    top: 230px;
-    left: 5px;
-    width: 95%;
-    text-align: center;
+    position: relative;
+    margin: auto auto;
     font-size: 20px;
 }
 
 #restart-button {
     position: absolute;
     top: 280px;
-    left: 5px;
-    width: 95%;
+    left: 0;
+    width: 100%;
     height: 50px;
     text-align: center;
 }
@@ -404,27 +434,25 @@ h1 {
         height: 600px;
     }
 
+    /* ------------------------------------------------------------------- */
+    /* FIRST ROW                                                           */
+    #first-row {
+        top: 0;
+    }
+
     #computer-score {
-        top: 25px;
-        left: 5px;
         font-size: 40px;
     }
 
     #user-score {
-        top: 25px;
-        left: 320px;
         font-size: 40px;
     }
 
     #settings-panel {
-        top: 5px;
-        left: 60px;
         width: 240px;
     }
 
     #rounds-counter-panel {
-        top: 5px;
-        left: 60px;
         width: 220px;
         font-size: 40px;
     }
@@ -433,9 +461,28 @@ h1 {
         font-size: 17px;
     }
 
+    /* ------------------------------------------------------------------- */
+    /* SECOND ROW                                                         */
+    #second-row {
+        top: 100px;
+        height: 50px;
+    }
+
+    #outcome-text {
+        font-size: 40px;
+    }
+
+    /* ------------------------------------------------------------------- */
+    /* THIRD ROW                                                         */
+    #third-row {
+        top: 180px;
+        height: 150px;
+        width: 360px;
+    }
+
     #computer-pick-image-panel {
-        top: 170px;
-        left: 0;
+        margin-left: 0;
+        margin-right: auto;
         width: 150px;
         height: 150px;
     }
@@ -448,8 +495,8 @@ h1 {
     }
 
     #user-pick-image-panel {
-        top: 170px;
-        left: 220px;
+        margin-left: auto;
+        margin-right: 20px;
         width: 150px;
         height: 150px;
     }
@@ -462,30 +509,22 @@ h1 {
     }
 
     #versus-text {
-        top: 250px;
-        left: 150px;
-        font-size: 30px;
+        font-size: 20px;
     }
 
-    #outcome-text {
-        top: 90px;
-        left: 5px;
-        width: 95%;
-        height: 60px;
-        font-size: 40px;
+    /* ------------------------------------------------------------------- */
+    /* FOURTH ROW                                                         */
+    #fourth-row {
+        top: 350px;
+        height: 50px;
     }
 
     #message-text {
-        top: 330px;
-        left: 5px;
-        width: 95%;
         font-size: 25px;
     }
-
+    
     #restart-button {
         top: 400px;
-        left: 20px;
-        width: 95%;
         height: 70px;
     }
 
@@ -496,6 +535,8 @@ h1 {
         height: 70px;
     }
 
+    /* ------------------------------------------------------------------- */
+    /* user-option-pnael serves as the sixth row                          */
     #user-option-panel {
         top: 490px;
         left: 0;
@@ -628,27 +669,28 @@ h1 {
         height: 680px;
     }
 
+    /* ----------------------------------------------------------------------------- */
+    /* FIRST ROW                                                                     */
+    #first-row {
+        top: 0;
+        height: 100px;
+    }
+
     #computer-score {
-        top: 25px;
-        left: 20px;
+        margin-left: 5px;
         font-size: 50px;
     }
 
     #user-score {
-        top: 25px;
-        left: 420px;
+        margin-right: 5px;
         font-size: 50px;
     }
 
     #settings-panel {
-        top: 5px;
-        left: 120px;
         width: 240px;
     }
 
     #rounds-counter-panel {
-        top: 5px;
-        left: 110px;
         width: 280px;
         font-size: 50px;
     }
@@ -657,13 +699,29 @@ h1 {
         font-size: 17px;
     }
 
+    /* ----------------------------------------------------------------------------- */
+    /* SECOND ROW                                                                   */
+    #second-row {
+        top: 110px;
+        height: 60px;
+    }
 
+    #outcome-text {
+        font-size: 40px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* THIRD ROW                                                                     */
+    #third-row {
+        width: 480px;
+        top: 170px;
+        height: 200px;
+    }
 
     #computer-pick-image-panel {
-        top: 170px;
-        left: 0;
+        margin-left: auto;
         width: 200px;
-        height: 200px;
+        height:inherit;
     }
 
     #computer-pick-image {
@@ -674,8 +732,7 @@ h1 {
     }
 
     #user-pick-image-panel {
-        top: 170px;
-        left: 280px;
+        margin-right: auto;
         width: 200px;
         height: 200px;
     }
@@ -688,30 +745,23 @@ h1 {
     }
 
     #versus-text {
-        top: 250px;
-        left: 190px;
-        font-size: 50px;
-    }
-
-    #outcome-text {
-        top: 110px;
-        left: 5px;
-        width: 95%;
-        height: 60px;
-        font-size: 40px;
-    }
-
-    #message-text {
-        top: 370px;
-        left: 5px;
-        width: 95%;
         font-size: 30px;
     }
 
+    /* ----------------------------------------------------------------------------- */
+    /* FOURTH ROW                                                                   */
+    #fourth-row {
+        top: 370px;
+        height:50px;
+    }
+    #message-text {
+        font-size: 30px;
+    }
+    
     #restart-button {
         top: 450px;
-        left: 20px;
-        width: 95%;
+        height:100px;
+        width: 480px;
         height: 90px;
     }
 
@@ -852,27 +902,28 @@ h1 {
         height: 500px;
     }
 
+    /* --------------------------------------------------------------------- */
+    /* FIRST ROW                                                            */
+    #first-row {
+        top:0;
+        height:100px;
+    }
+
     #computer-score {
-        top: 5px;
-        left: 20px;
+        margin-left: 20px;
         font-size: 30px;
     }
 
     #user-score {
-        top: 5px;
-        left: 680px;
+        margin-right: 20px;
         font-size: 30px;
     }
 
     #settings-panel {
-        top: 5px;
-        left: 230px;
         width: 240px;
     }
 
     #rounds-counter-panel {
-        top: 5px;
-        left: 230px;
         width: 280px;
         font-size: 30px;
     }
@@ -881,9 +932,26 @@ h1 {
         font-size: 17px;
     }
 
-    #computer-pick-image-panel {
+    /* --------------------------------------------------------------------- */
+    /* SECOND ROW                                                            */
+    #second-row {
+        top: 70px;
+        width:100%;
+    }
+
+    #outcome-text {
+        height: 60px;
+        font-size: 40px;
+    }
+
+    /* --------------------------------------------------------------------- */
+    /* THIRD ROW                                                            */
+    #third-row {
         top: 120px;
-        left: 50px;
+        height: 150px;
+    }
+    #computer-pick-image-panel {
+        margin-left: 20px;
         width: 150px;
         height: 150px;
     }
@@ -896,8 +964,7 @@ h1 {
     }
 
     #user-pick-image-panel {
-        top: 120px;
-        left: 520px;
+        margin-right: 20px;
         width: 150px;
         height: 150px;
     }
@@ -910,30 +977,24 @@ h1 {
     }
 
     #versus-text {
-        top: 150px;
-        left: 310px;
         font-size: 50px;
     }
 
-    #outcome-text {
-        top: 70px;
-        left: 5px;
-        width: 95%;
-        height: 60px;
-        font-size: 40px;
+    /* --------------------------------------------------------------------- */
+    /* FOURTH ROW                                                            */
+    #fourth-row {        
+        top: 250px;
+        height: 50px;
+        width: 100%;
     }
 
     #message-text {
-        top: 250px;
-        left: 5px;
-        width: 95%;
         font-size: 20px;
     }
 
     #restart-button {
-        top: 280px;
-        left: 20px;
-        width: 95%;
+        top: 300px;
+        width: 100%;
         height: 90px;
     }
 
@@ -946,88 +1007,88 @@ h1 {
 
     #user-option-panel {
         box-sizing: border-box;
-        top: 370px;
+        top: 400px;
         left: 0;
-        height: 130px;
-        width: 720px;
+        height: 100px;
+        width: 100%;
     }
 
     /* ############################################################################ */
     /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
     #user-rock-button {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     #user-rock-button-image {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     #user-rock-button-image-gray {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     #user-paper-button {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     #user-paper-button-image {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     #user-paper-button-image-gray {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     #user-scissors-button {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     #user-scissors-button-image {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
 
     #user-scissors-button-image-gray {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     #user-lizard-button {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     #user-lizard-button-image {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     #user-lizard-button-image-gray {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     #user-spock-button {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     #user-spock-button-image {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     #user-spock-button-image-gray {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     @keyframes message-display-landscape {
@@ -1074,22 +1135,23 @@ h1 {
         width: 1025px;
         height: 600px;
     }
+    /* ---------------------------------------------- +/
+    /* FIRST ROW                                     */
+    #first-row {
+        top: 0;
+    }
 
     #computer-score {
-        top: 10px;
-        left: 20px;
+        margin-left:20px;
         font-size: 50px;
     }
 
     #user-score {
-        top: 10px;
-        left: 960px;
+        margin-right: 20px;
         font-size: 50px;
     }
 
     #settings-panel {
-        top: 5px;
-        left: 320px;
         width: 340px;
         font-size: 20px;
     }
@@ -1100,8 +1162,6 @@ h1 {
 
     #rounds-counter-panel {
         top: 5px;
-        left: 350px;
-        width: 280px;
         font-size: 50px;
     }
 
@@ -1109,9 +1169,28 @@ h1 {
         font-size: 17px;
     }
 
+    /* ---------------------------------------------- +/
+    /* SECOND ROW                                    */
+    #second-row {
+        top: 100px;
+         width: 100%;
+         height: 60px;
+    }
+
+    #outcome-text {
+        font-size: 60px;
+    }
+
+
+    /* ---------------------------------------------- +/
+    /* THIRD ROW                                     */
+    #third-row {        
+        top: 140px;
+        height: 200px;
+    }
+
+
     #computer-pick-image-panel {
-        top: 120px;
-        left: 90px;
         width: 200px;
         height: 200px;
     }
@@ -1124,8 +1203,6 @@ h1 {
     }
 
     #user-pick-image-panel {
-        top: 120px;
-        left: 710px;
         width: 200px;
         height: 200px;
     }
@@ -1138,30 +1215,24 @@ h1 {
     }
 
     #versus-text {
-        top: 180px;
-        left: 430px;
         font-size: 70px;
     }
 
-    #outcome-text {
-        top: 80px;
-        left: 5px;
-        width: 95%;
-        height: 60px;
-        font-size: 60px;
+    
+    /* ---------------------------------------------- +/
+    /* FOURTH ROW                                     */
+    #fourth-row {
+        width: 100%;
+        top: 300px;
     }
 
     #message-text {
-        top: 320px;
-        left: 5px;
-        width: 95%;
         font-size: 30px;
     }
 
     #restart-button {
-        top: 360px;
-        left: 20px;
-        width: 95%;
+        top: 370px;
+        width: 100%;
         height: 100px;
     }
 
@@ -1174,7 +1245,7 @@ h1 {
 
     #user-option-panel {
         box-sizing: border-box;
-        top:470px;
+        top: 470px;
         left: 0;
         height: 130px;
         width: 1025px;
@@ -1306,21 +1377,22 @@ h1 {
         height: 700px;
     }
 
+    /* ------------------------------------------------------------------------------ */
+    /* FIRST ROW                                                                     */
+    #first-row {
+        top: 0;
+    }
     #computer-score {
-        top: 50px;
-        left: 40px;
+        margin-left: 20px;
         font-size: 70px;
     }
 
     #user-score {
-        top: 50px;
-        left: 1070px;
+        margin-right: 20px;
         font-size: 70px;
     }
 
     #settings-panel {
-        top: 5px;
-        left: 410px;
         width: 340px;
         font-size: 20px;
     }
@@ -1330,8 +1402,6 @@ h1 {
     }
 
     #rounds-counter-panel {
-        top: 5px;
-        left: 430px;
         width: 280px;
         font-size: 70px;
     }
@@ -1340,9 +1410,28 @@ h1 {
         font-size: 17px;
     }
 
-    #computer-pick-image-panel {
+    /* ------------------------------------------------------------------------------ */
+    /* SECOND ROW                                                                     */
+    #second-row {
+         top: 110px;
+         width: 100%;
+         height: 100px;
+    }
+    
+    #outcome-text {        
+        height: 60px;
+        font-size: 80px;
+    }
+
+    /* ------------------------------------------------------------------------------ */
+    /* THIRD ROW                                                                     */
+    #third-row {
         top: 170px;
-        left: 125px;
+        height: 250px;
+    }
+
+
+    #computer-pick-image-panel {
         width: 250px;
         height: 250px;
     }
@@ -1355,8 +1444,6 @@ h1 {
     }
 
     #user-pick-image-panel {
-        top: 170px;
-        left: 835px;
         width: 250px;
         height: 250px;
     }
@@ -1369,30 +1456,25 @@ h1 {
     }
 
     #versus-text {
-        top: 230px;
-        left: 480px;
         font-size: 100px;
     }
 
-    #outcome-text {
-        top: 110px;
-        left: 5px;
-        width: 95%;
-        height: 60px;
-        font-size: 80px;
+
+    /* ------------------------------------------------------------------------------ */
+    /* FOURTH ROW                                                                     */
+    #fourth-row {
+        top: 350px;
+        width: 100%;
     }
 
     #message-text {
-        top: 370px;
-        left: 25px;
-        width: 95%;
         font-size: 30px;
     }
 
     #restart-button {
-        top: 420px;
+        top: 430px;
         left: 20px;
-        width: 95%;
+        width: 100%;
         height: 120px;
     }
 
@@ -1405,7 +1487,7 @@ h1 {
 
     #user-option-panel {
         box-sizing: border-box;
-        top:550px;
+        top: 550px;
         left: 0;
         height: 150px;
         width: 1200px;
