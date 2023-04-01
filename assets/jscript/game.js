@@ -211,6 +211,7 @@ class Pick {
         this.name = name;
         this.imageFileName = "question.png";
     }
+
 }
 
 class Rock extends Pick {
@@ -227,6 +228,17 @@ class Rock extends Pick {
     checkOutcomeMessageAgainst(oponentsPick) {
         return ROCK[oponentsPick.index][message_index];
     }
+    // Returns one of the two picks that beat the Rock or an equal pick
+    getCheat(){
+        // Assigns a random integer from 0 to 2:
+        let number =  Math.floor(Math.random()* 3);
+        let arr = [new Spock(), new Paper(), new Rock()];
+
+        // To conceal from the unwitting user, that the computer is cheating,
+        // a random number ensures that it is not always the same choice that beats the oponent. 
+        
+        return arr[number];
+    }
 }
 
 class Paper extends Pick {
@@ -242,6 +254,18 @@ class Paper extends Pick {
     checkOutcomeMessageAgainst(oponentsPick) {
         return PAPER[oponentsPick.index][message_index];
     }
+    // Returns one of the two picks that beat paper or an equal pick
+    getCheat(){
+        // Assigns a random integer from 0 to 2:
+        let number =  Math.floor(Math.random()* 3);
+
+        let arr = [new Lizard(), new Scissors(), new Paper()];
+
+        // To conceal from the unwitting user, that the computer is cheating,
+        // a random number ensures that it is not always the same choice that beats the oponent. 
+        
+        return arr[number];
+    }
 }
 
 class Scissors extends Pick {
@@ -256,6 +280,19 @@ class Scissors extends Pick {
     /* Returns the corresponding message, which explains the outcome, like "lirrad eats paper!" */
     checkOutcomeMessageAgainst(oponentsPick) {
         return SCISSORS[oponentsPick.index][message_index];
+    }
+
+     // Returns one of the two picks that beat scissors or an equal pick
+     getCheat(){
+        // Assigns a random integer from 0 to 2:
+        let number =  Math.floor(Math.random()* 3);
+
+        let arr = [new Spock(), new Rock(), new Scissors()];
+
+        // To conceal from the unwitting user, that the computer is cheating,
+        // a random number ensures that it is not always the same choice that beats the oponent. 
+        
+        return arr[number];
     }
 }
 
@@ -274,6 +311,19 @@ class Lizard extends Pick {
     checkOutcomeMessageAgainst(oponentsPick) {
         return LIZARD[oponentsPick.index][message_index];
     }
+
+     // Returns one of the two picks that beat lirard or an equal pick
+     getCheat(){
+        // Assigns a random integer from 0 to 2:
+        let number =  Math.floor(Math.random()* 3);
+
+        let arr = [new Rock(), new Scissors(), new Lizard()];
+
+        // To conceal from the unwitting user, that the computer is cheating,
+        // a random number ensures that it is not always the same choice that beats the oponent. 
+        
+        return arr[number];
+    }
 }
 
 class Spock extends Pick {
@@ -289,12 +339,25 @@ class Spock extends Pick {
     checkOutcomeMessageAgainst(oponentsPick) {
         return SPOCK[oponentsPick.index][message_index];
     }
+     // Returns one of the two picks that beat Spock or an equal pick
+     getCheat(){
+        // Assigns a random integer from 0 to 2:
+        let number =  Math.floor(Math.random()* 3);
+
+        let arr = [new Lizard(), new Paper(), new Spock()];
+
+        // To conceal from the unwitting user, that the computer is cheating,
+        // a random number ensures that it is not always the same choice that beats the oponent. 
+        
+        return arr[number];
+    }
 
 }
 
-
+/* Game contains the game logic. */
 class Game {
-
+    // The constructor takes the number of rounds as the initial setting. 
+    // The setting can be changed at a later time with the setNumberOfRounds(number) method
     constructor(numberOfRounds) {
         this.numberOfRoundsSetting = numberOfRounds;
         this.roundsLeft = numberOfRounds;
@@ -303,11 +366,30 @@ class Game {
         this.userPlayer = new Player();        
     }
 
+    // The method is called when the user chooses their next move
+    // The parameter pick is of Type Pick(Rock, Paper, Scissors, Lizard, Spock) and contains information on the option the user picked
     userMakesMove(pick) {
         let result = "";
         let result_message = "";
         this.userPlayer.currentPick = pick;
-        this.computerPlayer.pickRandom();        
+
+        // Now, either let the computer pick randomly or let it cheat if the round setting is higher than 3
+        if(this.numberOfRoundsSetting > 3){
+            // The higher the number of rounds setting, the more often the computer will cheat
+            let number = 4;
+            if(this.numberOfRoundsSetting == 7){
+                number = 3;
+            }else if(this.numberOfRoundsSetting == 11){
+                number = 2;
+            }
+            // Every now and then the computer will cheat
+            if(this.roundsLeft % number == 0){
+                this.computerPlayer.currentPick = this.userPlayer.currentPick.getCheat();
+            }
+        }else {
+            this.computerPlayer.pickRandom();        
+        }
+        
 
 
         // Check the outcome of the move made by the player
@@ -343,6 +425,7 @@ class Game {
         this.roundsLeft = number;
     }
 
+    // Resets the game 
     startOver() {
         this.roundsLeft = this.numberOfRoundsSetting;
         this.computerPlayer.currentScore = 0;
@@ -354,6 +437,7 @@ class Game {
     }
 }
 
+// Player contains information on the player, such as the score and the current pick
 class Player {
     constructor() {
         this.score = 0;
@@ -375,6 +459,7 @@ class Player {
         return this.pick;
     }
 
+    // Increases the current score by 1
     increaseScore() {
         this.score++;
     }
@@ -406,6 +491,9 @@ class Player {
 
 }
 /*
+    View contains all methods that display changes in the process of the game.
+    It also harbors the methods that will be called when the user clicks on an html element that has the onclick event listener.
+
     PURPOSE:
     Separate the game logic from the presentation logic.
 */
@@ -428,6 +516,7 @@ class View {
         this.hookUpOptionPickerEventListeners();
     }
 
+    // Applies changes to the html document to show the outcome of the current round
     displayOutComeResults(outcome, outcome_message, user, computer) {
 
         let messageText = "";        
@@ -470,6 +559,7 @@ class View {
         }
     }
 
+    // Applies changes to the html document once the game is over
     displayGameOver() {
         document.getElementById("outcome-text").innerHTML = "GAME OVER!";
         let messageText = "";
@@ -487,6 +577,7 @@ class View {
         this.clearOptionPickerEventListeners();
     }
 
+    // Is triggered when the 'restart' icon is clicked
     startOverOnClick() {
         game.startOver();
         this.hookUpOptionPickerEventListeners();
@@ -499,28 +590,17 @@ class View {
         document.getElementById("rounds-counter-panel").style = "display:none;";
     }
 
-    displayStartWindow(user, computer) {
-        // this.clear();
-        // this.clearOptionPickerEventListeners();
-        // this.updateScore(user, computer);
-        // document.getElementById("message-panel").innerHTML = "<button id=\"begin-button\" onclick=\"view.beginOnClick();\">Begin</button>";
-        // document.getElementById("settings-panel").innerHTML = this.initialSettingsHTML;
-        // this.setNumberOfRoundsSetting(game.numberOfRoundsSetting);
+    // Is triggered when the 'home' icon is clicked
+    homeButtonOnClick() {
+        window.open("/index.html", "_self");
     }
-
-    clear() {
-        for (let i = 0; i < this.optionPickerIds.length; i++) {
-            document.getElementById(this.optionPickerIds[i]).className = "player-option-picker";
-        }
-        this.hookUpOptionPickerEventListeners();
-    }
-
+    // Removes onclick event listeners from the user option picker panel. Used when the game is over, to prevent the
+    // user from continueing the game. After that it becomes necessary to click the restart icon to start a new game.    
     clearOptionPickerEventListeners() {
         const userOptionPickerIds = ["user-rock-button", "user-paper-button",
             "user-scissors-button", "user-lizard-button",
             "user-spock-button"
         ];
-        // TODO: Create real functions for the event listener
         document.getElementById(userOptionPickerIds[0]).removeEventListener("click", this.userRockOptionPickerOnClick);
 
         document.getElementById(userOptionPickerIds[1]).removeEventListener("click", this.userPaperOptionPickerOnClick);
@@ -532,12 +612,13 @@ class View {
         document.getElementById(userOptionPickerIds[4]).removeEventListener("click", this.userSpockOptionPickerOnClick);
     }
 
+    // Sets event listeners on each all buttons that the user can click to play the game
     hookUpOptionPickerEventListeners() {
         const userOptionPickerIds = ["user-rock-button", "user-paper-button",
             "user-scissors-button", "user-lizard-button",
             "user-spock-button"
         ];
-        // TODO: Create real functions for the event listener
+        
         document.getElementById(userOptionPickerIds[0]).addEventListener("click", this.userRockOptionPickerOnClick);
 
         document.getElementById(userOptionPickerIds[1]).addEventListener("click", this.userPaperOptionPickerOnClick);
@@ -549,7 +630,7 @@ class View {
         document.getElementById(userOptionPickerIds[4]).addEventListener("click", this.userSpockOptionPickerOnClick);
     }
 
-    /* EventListners */
+    /* EventListners for the panel with buttons from which the user can pick his move */
     userRockOptionPickerOnClick() {
         game.userMakesMove(new Rock());
     }
@@ -570,22 +651,7 @@ class View {
         game.userMakesMove(new Spock());
     }
 
-    beginOnClick() {
-
-        //  The message-panel
-        let messagePanel = document.getElementById("message-panel");
-        // The settings-panel
-        let settingsPanel = document.getElementById("settings-panel");
-        // THe HTML content of settings-panel, whose intial content has been preserved in the constructor
-        let settingsHTML = this.initialSettingsHTML;
-        // Read from the settings field. 
-        game.setNumberOfRounds(this.getNumberOfRoundsSetting());
-        this.hookUpOptionPickerEventListeners();
-        messagePanel.innerHTML = "GO !!!";
-        settingsHTML += "<button onclick='view.endGameOnClick()'>End the Game</button>";
-        settingsPanel.innerHTML = settingsHTML;
-    }
-
+    // Updates the score of each player and colors them accordingly
     updateScore(user, computer) {
         let user_tag = document.getElementById("user-score");
         let computer_tag = document.getElementById("computer-score");
@@ -606,6 +672,7 @@ class View {
         user_tag.innerHTML = game.userPlayer.score;
     }
 
+    // Retrieves the number of rounds setting
     getNumberOfRoundsSetting() {
         let val = document.getElementById("number-of-attempts-setting").value;
         // If not a number set to default
@@ -615,17 +682,11 @@ class View {
 
         return val;
     }
-
-    setNumberOfRoundsSetting(set_value) {
-        // If not a number set to default
-        if (isNaN(set_value)) {
-            set_value = 5;
-        }
-       document.getElementById("number-of-attempts-setting").value = set_value;
-    }    
 }
 
 // Initialize global objects
+// The game object is initialized with 3 rounds as initial setting
 let game = new Game(3);
+// The view object will be used to relay view events
 let view = new View();
 document.getElementById("message-display").innerHTML = starting_message;

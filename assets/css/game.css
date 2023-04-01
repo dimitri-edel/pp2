@@ -566,7 +566,6 @@ h1 {
     #user-option-panel {
         box-sizing: border-box;
         top: 530px;
-        left: 0;
         height: 70px;
         width: 100%;
     }
@@ -750,8 +749,6 @@ h1 {
     }
 
     #computer-pick-image {
-        top: 0;
-        left: 0;
         height: 120px;
         width: 120px;
     }
@@ -763,8 +760,6 @@ h1 {
     }
 
     #user-pick-image {
-        top: 0;
-        left: 0;
         height: 120px;
         width: 120px;
     }
@@ -993,8 +988,6 @@ h1 {
     }
 
     #computer-pick-image {
-        top: 0;
-        left: 0;
         height: 200px;
         width: 200px;
     }
@@ -1006,8 +999,6 @@ h1 {
     }
 
     #user-pick-image {
-        top: 0;
-        left: 0;
         height: 200px;
         width: 200px;
     }
@@ -1040,8 +1031,6 @@ h1 {
     }
 
     #restart-button img {
-        top: 0;
-        left: 0;
         width: 90px;
         height: 90px;
     }
@@ -1058,7 +1047,6 @@ h1 {
     #user-option-panel {
         box-sizing: border-box;
         top: 550px;
-        left: 0;
         height: 130px;
         width: 480px;
     }
@@ -1521,7 +1509,6 @@ h1 {
     #user-option-panel {
         box-sizing: border-box;
         top: 240px;
-        left: 0;
         height: 80px;
         width: 100%;
     }
@@ -1946,8 +1933,6 @@ h1 {
     }
 
     #computer-pick-image {
-        top: 0;
-        left: 0;
         height: 150px;
         width: 150px;
     }
@@ -1959,8 +1944,6 @@ h1 {
     }
 
     #user-pick-image {
-        top: 0;
-        left: 0;
         height: 150px;
         width: 150px;
     }
@@ -2002,7 +1985,6 @@ h1 {
     #user-option-panel {
         box-sizing: border-box;
         top: 400px;
-        left: 0;
         height: 100px;
         width: 100%;
     }
@@ -2191,8 +2173,6 @@ h1 {
     }
 
     #computer-pick-image {
-        top: 0;
-        left: 0;
         height: 200px;
         width: 200px;
     }
@@ -2203,8 +2183,6 @@ h1 {
     }
 
     #user-pick-image {
-        top: 0;
-        left: 0;
         height: 200px;
         width: 200px;
     }
@@ -2245,7 +2223,6 @@ h1 {
     #user-option-panel {
         box-sizing: border-box;
         top: 630px;
-        left: 0;
         height: 130px;
         width: 1025px;
     }
@@ -2437,8 +2414,6 @@ h1 {
     }
 
     #computer-pick-image {
-        top: 0;
-        left: 0;
         height: 250px;
         width: 250px;
     }
@@ -2449,8 +2424,6 @@ h1 {
     }
 
     #user-pick-image {
-        top: 0;
-        left: 0;
         height: 250px;
         width: 250px;
     }
@@ -2677,8 +2650,6 @@ h1 {
     }
 
     #computer-pick-image {
-        top: 0;
-        left: 0;
         height: 100px;
         width: 100px;
     }
@@ -2689,8 +2660,6 @@ h1 {
     }
 
     #user-pick-image {
-        top: 0;
-        left: 0;
         height: 100px;
         width: 100px;
     }
@@ -2911,8 +2880,6 @@ h1 {
     }
 
     #computer-pick-image {
-        top: 0;
-        left: 0;
         height: 100px;
         width: 100px;
     }
@@ -2923,8 +2890,6 @@ h1 {
     }
 
     #user-pick-image {
-        top: 0;
-        left: 0;
         height: 100px;
         width: 100px;
     }
@@ -2969,7 +2934,6 @@ h1 {
     #user-option-panel {
         box-sizing: border-box;
         top: 300px;
-        left: 0;
         height: 70px;
         width: 100%;
     }
@@ -3138,8 +3102,6 @@ h1 {
     }
 
     #computer-pick-image {
-        top: 0;
-        left: 0;
         height: 100px;
         width: 100px;
     }
@@ -3150,8 +3112,6 @@ h1 {
     }
 
     #user-pick-image {
-        top: 0;
-        left: 0;
         height: 100px;
         width: 100px;
     }
@@ -3194,7 +3154,6 @@ h1 {
     #user-option-panel {
         box-sizing: border-box;
         top: 240px;
-        left: 0;
         height: 80px;
         width: 100%;
     }
