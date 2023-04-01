@@ -168,17 +168,44 @@ h1 {
     margin: auto auto;
     font-size: 20px;
 }
-
-#restart-button {
+/* ------------------------------------------------------ */
+/* FIFTH ROW                                              */
+#fifth-row {
+    display: flex;
     position: absolute;
     top: 280px;
     left: 0;
     width: 100%;
     height: 50px;
+}
+
+#restart-button {
+    margin-top:0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: 10px;
     text-align: center;
 }
 
 #restart-button img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+#home-button {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: auto;
+    text-align: center;
+}
+
+#home-button img {
     position: relative;
     top: 0;
     left: 0;
@@ -481,29 +508,23 @@ h1 {
     }
 
     #computer-pick-image-panel {
-        margin-left: 0;
-        margin-right: auto;
+        margin: 0 auto;
         width: 150px;
         height: 150px;
     }
 
     #computer-pick-image {
-        top: 0;
-        left: 0;
         height: 150px;
         width: 150px;
     }
 
     #user-pick-image-panel {
-        margin-left: auto;
-        margin-right: 20px;
+        margin: 0 auto;
         width: 150px;
         height: 150px;
     }
 
     #user-pick-image {
-        top: 0;
-        left: 0;
         height: 150px;
         width: 150px;
     }
@@ -520,17 +541,22 @@ h1 {
     }
 
     #message-text {
-        font-size: 25px;
+        font-size: 20px;
     }
-    
-    #restart-button {
-        top: 400px;
+
+    /* ------------------------------------------------------------------- */
+    /* FIFTH ROW                                                         */
+    #fifth-row {
+        top: 430px;
         height: 70px;
     }
 
     #restart-button img {
-        top: 0;
-        left: 0;
+        width: 70px;
+        height: 70px;
+    }
+
+    #home-button img {
         width: 70px;
         height: 70px;
     }
@@ -538,88 +564,93 @@ h1 {
     /* ------------------------------------------------------------------- */
     /* user-option-pnael serves as the sixth row                          */
     #user-option-panel {
-        top: 490px;
+        box-sizing: border-box;
+        top: 530px;
         left: 0;
-        height: 60px;
-        width: 320px;
+        height: 70px;
+        width: 100%;
+    }
+
+    .gray-border {
+        border-width: 15px;
     }
 
     /* ############################################################################ */
     /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
     #user-rock-button {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     #user-rock-button-image {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     #user-rock-button-image-gray {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     #user-paper-button {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     #user-paper-button-image {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     #user-paper-button-image-gray {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     #user-scissors-button {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     #user-scissors-button-image {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
 
     #user-scissors-button-image-gray {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     #user-lizard-button {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     #user-lizard-button-image {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     #user-lizard-button-image-gray {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     #user-spock-button {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     #user-spock-button-image {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     #user-spock-button-image-gray {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
 
@@ -639,14 +670,251 @@ h1 {
     }
 
 }
+/* LANDSCAPE : (460 through 480) + 320+ */
+@media (min-width: 460px) and (max-width: 480px) and (orientation:landscape) {
+    header {
+        width: 460px;
+        margin: 0 auto;
+    }
 
+    h1 {
+        width: 680px;
+        height: 15px;
+        padding-top: 2px;
+        padding-bottom: 3px;       
+        font-size: 15px;
+
+    }
+
+    /* ################################################################################## */
+    /* LAYOUT OF THE CANVAS                                                                */
+
+    #canvas {
+        width: 480px;
+        height: 300px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* FIRST ROW                                                                     */
+    #first-row {
+        top: 0;
+        height: 50px;
+    }
+
+    #computer-score {
+        margin-left: 5px;
+        font-size: 24px;
+    }
+
+    #user-score {
+        margin-right: 5px;
+        font-size: 24px;
+    }
+
+    #settings-panel {
+        width: 240px;
+    }
+
+    #rounds-counter-panel {
+        width: 280px;
+        font-size: 24px;
+    }
+
+    #rounds-counter-text {
+        font-size: 15px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* SECOND ROW                                                                   */
+    #second-row {
+        top: 50px;
+        height: 40px;
+    }
+
+    #outcome-text {
+        font-size: 30px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* THIRD ROW                                                                     */
+    #third-row {
+        width: 100%;
+        top: 70px;
+        height: 120px;
+    }
+
+    #computer-pick-image-panel {
+        margin-left: auto;
+        width: 120px;
+        height: 120px;
+    }
+
+    #computer-pick-image {
+        top: 0;
+        left: 0;
+        height: 120px;
+        width: 120px;
+    }
+
+    #user-pick-image-panel {
+        margin-right: auto;
+        width: 120px;
+        height: 120px;
+    }
+
+    #user-pick-image {
+        top: 0;
+        left: 0;
+        height: 120px;
+        width: 120px;
+    }
+
+    #versus-text {
+        font-size: 30px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* FOURTH ROW                                                                   */
+    #fourth-row {
+        top: 180px;
+        height: 20px;
+    }
+
+    #message-text {
+        font-size: 16px;
+    }
+
+/* ----------------------------------------------------------------------------- */
+    /* FIFTH ROW                                                                   */
+    #fifth-row {
+        top: 200px;
+        height : 30px;
+        width: 100%;
+
+    }   
+
+    #restart-button img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    #home-button img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* ------------------------------------------------------------------ */
+    /* SIXTH ROW                                                         */
+    .gray-border {
+        border-width: 10px;
+    }
+    #user-option-panel {
+        box-sizing: border-box;
+        top: 240px;
+        height: 60px;
+        width: 100%;
+    }
+
+    /* ############################################################################ */
+    /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
+    #user-rock-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-rock-button-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-rock-button-image-gray {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-paper-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-paper-button-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-paper-button-image-gray {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-scissors-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-scissors-button-image {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    #user-scissors-button-image-gray {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-lizard-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-lizard-button-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-lizard-button-image-gray {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-spock-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-spock-button-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-spock-button-image-gray {
+        width: 40px;
+        height: 40px;
+    }
+
+    @keyframes message-display {
+        0% {
+            left: 320px;
+        }
+
+        90% {
+            left: -400px;
+        }
+
+        100% {
+            left: -640px;
+        }
+
+    }
+}
 
 /* 
     ##Device = Low Resolution Tablets, Mobiles (Landscape)
     ##Screen = B/w 481px to 767px
   */
 
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 481px) and (max-width: 767px) and (min-height: 720px) {
 
     header {
         width: 480px;
@@ -721,7 +989,7 @@ h1 {
     #computer-pick-image-panel {
         margin-left: auto;
         width: 200px;
-        height:inherit;
+        height: inherit;
     }
 
     #computer-pick-image {
@@ -752,22 +1020,37 @@ h1 {
     /* FOURTH ROW                                                                   */
     #fourth-row {
         top: 370px;
-        height:50px;
+        height: 50px;
     }
+
     #message-text {
         font-size: 30px;
     }
-    
-    #restart-button {
+
+/* ----------------------------------------------------------------------------- */
+    /* FIFTH ROW                                                                   */
+    #fifth-row {
         top: 450px;
-        height:100px;
-        width: 480px;
+        height : 90px;
+        width: 100%;
+
+    }    
+    #restart-button {
         height: 90px;
     }
 
     #restart-button img {
         top: 0;
         left: 0;
+        width: 90px;
+        height: 90px;
+    }
+
+    #home-button {
+        height: 90px;
+    }
+    
+    #home-button img {
         width: 90px;
         height: 90px;
     }
@@ -875,12 +1158,238 @@ h1 {
 
 }
 
+/* LANDSCAPE 530 to 736  x 280 to 414 */
+@media (min-width: 530px) and (max-width: 736px) and (max-height: 414px) and (orientation:landscape) {
+    header {
+        width: 640px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        width: 680px;
+        height: 30px;
+        padding: 5px 0;
+        font-size: 20px;
+
+    }
+
+    #canvas {
+        width: 530px;
+        height: 240px;
+    }
+
+     /* ----------------------------------------------------------------------------- */
+    /* FIRST ROW                                                                     */
+    #first-row {
+        top: 0;
+        height: 50px;
+    }
+
+    #computer-score {
+        margin-left: 5px;
+        font-size: 20px;
+    }
+
+    #user-score {
+        margin-right: 5px;
+        font-size: 20px;
+    }
+
+    #settings-panel {
+        width: 240px;
+    }
+
+    #rounds-counter-panel {
+        width: 280px;
+        font-size: 20px;
+    }
+
+    #rounds-counter-text {
+        font-size: 17px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* SECOND ROW                                                                   */
+    #second-row {
+        top: 50px;
+        height: 30px;
+    }
+
+    #outcome-text {
+        font-size: 25px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* THIRD ROW                                                                     */
+    #third-row {
+        width: 100%;
+        top: 50px;
+        height: 100px;
+    }
+
+    #computer-pick-image-panel {
+        width: 100px;
+        height: inherit;
+    }
+
+    #computer-pick-image {
+        height: 100px;
+        width: 100px;
+    }
+
+    #user-pick-image-panel {
+        width: 100px;
+        height: 100px;
+    }
+
+    #user-pick-image {
+        height: 100px;
+        width: 100px;
+    }
+
+    #versus-text {
+        font-size: 20px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* FOURTH ROW                                                                   */
+    #fourth-row {
+        top: 120px;
+        height: 20px;
+    }
+
+    #message-text {
+        font-size: 15px;
+    }
+    /* ----------------------------------------------------------------------------- */
+    /* FIFTH ROW                                                                   */
+    #fifth-row {
+        top: 140px;
+        height: 40px;
+        width: 100%;
+    }    
+
+    
+    #restart-button img {
+        width: 40px;
+        height: 40px;
+    }
+
+    #home-button img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* ############################################################################ */
+    /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
+    #user-option-panel {
+        box-sizing: border-box;
+        top: 180px;
+        height: 60px;
+        width: 100%;
+    }
+
+    .gray-border {
+        border-width: 10px;
+    }
+   
+    #user-rock-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-rock-button-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-rock-button-image-gray {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-paper-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-paper-button-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-paper-button-image-gray {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-scissors-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-scissors-button-image {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    #user-scissors-button-image-gray {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-lizard-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-lizard-button-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-lizard-button-image-gray {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-spock-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-spock-button-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    #user-spock-button-image-gray {
+        width: 40px;
+        height: 40px;
+    }
+
+    @keyframes message-display {
+        0% {
+            left: 320px;
+        }
+
+        90% {
+            left: -400px;
+        }
+
+        100% {
+            left: -640px;
+        }
+
+    }
+}
 
 /* 
-    LANDSCAPE 640 x (between 360 and 420)
+    LANDSCAPE 640 x 360+
 */
 
-  @media (min-width: 640px) and (min-height: 360px) and (max-height: 420px) {
+@media (max-width: 640px) and (min-height: 360px) and (orientation:landscape) {
 
     header {
         width: 640px;
@@ -954,7 +1463,7 @@ h1 {
 
     #computer-pick-image-panel {
         width: 100px;
-        height:inherit;
+        height: inherit;
     }
 
     #computer-pick-image {
@@ -977,29 +1486,34 @@ h1 {
     }
 
     #versus-text {
-        font-size: 20px;        
+        font-size: 20px;
     }
 
     /* ----------------------------------------------------------------------------- */
     /* FOURTH ROW                                                                   */
     #fourth-row {
         top: 150px;
-        height:20px;
+        height: 20px;
     }
+
     #message-text {
         font-size: 15px;
     }
-    
-    #restart-button {
+    /* ----------------------------------------------------------------------------- */
+    /* FIFTH ROW                                                                   */
+    #fifth-row {
         top: 190px;
-        height:50px;
+        height: 50px;
         width: 100%;
-        height: 30px;
+    }    
+
+    
+    #restart-button img {
+        width: 50px;
+        height: 50px;
     }
 
-    #restart-button img {
-        top: 0;
-        left: 0;
+    #home-button img {
         width: 50px;
         height: 50px;
     }
@@ -1108,12 +1622,252 @@ h1 {
 }
 
 
+/* LANDSCAPE width : between 731 and 851, height : between 353 and 411 FOR PIXEL Phones 2 - 5 */
+@media (min-width: 731px) and (max-width: 851px) and (min-height: 353px) and (max-height: 411px) and (orientation:landscape)
+{
+    header {
+        width: 700px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        width: 1200px;
+        height: 30px;
+        padding: 0;
+        font-size: 15px;
+        animation: message-display-landscape 10s infinite;
+    }
+
+    /* ################################################################################## */
+    /* LAYOUT OF THE CANVAS                                                                */
+
+    #canvas {        
+        width: 720px;
+        height: 320px;
+    }
+
+    /* --------------------------------------------------------------------- */
+    /* FIRST ROW                                                            */
+    #first-row {
+        top: 0;
+        height: 50px;
+    }
+
+    #computer-score {
+        margin-left: 20px;
+        font-size: 25px;
+    }
+
+    #user-score {
+        margin-right: 20px;
+        font-size: 25px;
+    }
+
+    #settings-panel {
+        width: 240px;
+    }
+
+    #rounds-counter-panel {
+        width: 280px;
+        font-size: 25px;
+    }
+
+    #rounds-counter-text {
+        font-size: 17px;
+    }
+
+    /* --------------------------------------------------------------------- */
+    /* SECOND ROW                                                            */
+    #second-row {
+        top: 70px;
+        width: 100%;
+    }
+
+    #outcome-text {
+        height: 30px;
+        font-size: 30px;
+    }
+
+    /* --------------------------------------------------------------------- */
+    /* THIRD ROW                                                            */
+    #third-row {
+        top: 60px;
+        height: 150px;
+        width: 720px;
+    }
+
+    #computer-pick-image-panel {
+        margin-left: 20px;
+        width: 150px;
+        height: 150px;
+    }
+
+    #computer-pick-image {
+        top: 0;
+        left: 0;
+        height: 150px;
+        width: 150px;
+    }
+
+    #user-pick-image-panel {
+        margin-right: 20px;
+        width: 150px;
+        height: 150px;
+    }
+
+    #user-pick-image {
+        top: 0;
+        left: 0;
+        height: 150px;
+        width: 150px;
+    }
+
+    #versus-text {
+        font-size: 30px;
+    }
+
+    /* --------------------------------------------------------------------- */
+    /* FOURTH ROW                                                            */
+    #fourth-row {
+        top: 150px;
+        height: 50px;
+        width: 100%;
+    }
+
+    #message-text {
+        font-size: 20px;
+    }
+
+    /* --------------------------------------------------------------------- */
+    /* FIFTH ROW                                                             */
+    #fifth-row {
+        top: 190px;
+        width: 100%;
+        height: 50px;
+    } 
+
+    #restart-button img {
+        width: 50px;
+        height: 50px;
+    }
+
+    #home-button img {
+        width: 50px;
+        height: 50px;
+    }
+    /* --------------------------------------------------------------------- */
+    /* BOTTOM ROW                                                           */
+    #user-option-panel {
+        box-sizing: border-box;
+        top: 250px;
+        left: 0;
+        height: 70px;
+        width: 100%;
+    }
+
+    .gray-border {
+        border-width: 10px;
+    }
+    /* ############################################################################ */
+    /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
+    #user-rock-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-rock-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-rock-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-paper-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-paper-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-paper-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-scissors-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-scissors-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    #user-scissors-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-lizard-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-lizard-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-lizard-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-spock-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-spock-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-spock-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    @keyframes message-display-landscape {
+        0% {
+            left: 720px;
+        }
+
+        90% {
+            left: -400px;
+        }
+
+        100% {
+            left: -640px;
+        }
+
+    }
+
+}
 /* 
     ##Device = Tablets, Ipads (landscape)
     ##Screen = B/w 768px to 1024px
   */
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 500px){
     header {
         width: 700px;
         margin: 0 auto;
@@ -1138,8 +1892,8 @@ h1 {
     /* --------------------------------------------------------------------- */
     /* FIRST ROW                                                            */
     #first-row {
-        top:0;
-        height:100px;
+        top: 0;
+        height: 100px;
     }
 
     #computer-score {
@@ -1169,7 +1923,7 @@ h1 {
     /* SECOND ROW                                                            */
     #second-row {
         top: 70px;
-        width:100%;
+        width: 100%;
     }
 
     #outcome-text {
@@ -1184,6 +1938,7 @@ h1 {
         height: 150px;
         width: 720px;
     }
+
     #computer-pick-image-panel {
         margin-left: 20px;
         width: 150px;
@@ -1216,7 +1971,7 @@ h1 {
 
     /* --------------------------------------------------------------------- */
     /* FOURTH ROW                                                            */
-    #fourth-row {        
+    #fourth-row {
         top: 250px;
         height: 50px;
         width: 100%;
@@ -1226,15 +1981,20 @@ h1 {
         font-size: 20px;
     }
 
-    #restart-button {
+    /* --------------------------------------------------------------------- */
+    /* FIFTH ROW                                                             */
+    #fifth-row {
         top: 300px;
         width: 100%;
         height: 90px;
-    }
+    } 
 
     #restart-button img {
-        top: 0;
-        left: 0;
+        width: 90px;
+        height: 90px;
+    }
+
+    #home-button img {
         width: 90px;
         height: 90px;
     }
@@ -1347,10 +2107,10 @@ h1 {
     ##Screen = B/w 1025px to 1280px
   */
 
-@media (min-width: 1025px) and (max-width: 1280px) {
+@media (min-width: 1025px) and (max-width: 1280px) and (min-height: 800px) {
 
     header {
-        width: 1025px;
+        width: 1000px;
         margin: 0 auto;
     }
 
@@ -1367,8 +2127,9 @@ h1 {
 
     #canvas {
         width: 1025px;
-        height: 600px;
+        height: 760px;
     }
+
     /* ---------------------------------------------- +/
     /* FIRST ROW                                     */
     #first-row {
@@ -1376,7 +2137,7 @@ h1 {
     }
 
     #computer-score {
-        margin-left:20px;
+        margin-left: 20px;
         font-size: 50px;
     }
 
@@ -1407,8 +2168,8 @@ h1 {
     /* SECOND ROW                                    */
     #second-row {
         top: 100px;
-         width: 100%;
-         height: 60px;
+        width: 100%;
+        height: 60px;
     }
 
     #outcome-text {
@@ -1418,8 +2179,8 @@ h1 {
 
     /* ---------------------------------------------- +/
     /* THIRD ROW                                     */
-    #third-row {        
-        top: 140px;
+    #third-row {
+        top: 200px;
         height: 200px;
     }
 
@@ -1452,34 +2213,38 @@ h1 {
         font-size: 70px;
     }
 
-    
+
     /* ---------------------------------------------- +/
     /* FOURTH ROW                                     */
     #fourth-row {
         width: 100%;
-        top: 300px;
+        top: 390px;
     }
 
     #message-text {
         font-size: 30px;
     }
 
-    #restart-button {
-        top: 370px;
-        width: 100%;
-        height: 100px;
+    /* ----------------------------------------------------------------- */
+    /* FIFTH ROW                                                        */
+    #fifth-row {
+        top: 520px;
     }
-
+   
     #restart-button img {
-        top: 0;
-        left: 0;
         width: 100px;
         height: 100px;
     }
 
+    #home-button img {
+        width: 100px;
+        height: 100px;
+    }
+    /* -------------------------------------------------------------------------------- */
+    /* BOTTOM ROW                                                                      */    
     #user-option-panel {
         box-sizing: border-box;
-        top: 470px;
+        top: 630px;
         left: 0;
         height: 130px;
         width: 1025px;
@@ -1588,7 +2353,7 @@ h1 {
   ##Screen = 1281px to higher resolution desktops
 */
 
-@media (min-width: 1281px) {
+@media (min-width: 1281px) and (min-height: 900px) {
 
     header {
         width: 1200px;
@@ -1608,7 +2373,7 @@ h1 {
 
     #canvas {
         width: 1200px;
-        height: 700px;
+        height: 860px;
     }
 
     /* ------------------------------------------------------------------------------ */
@@ -1616,6 +2381,7 @@ h1 {
     #first-row {
         top: 0;
     }
+
     #computer-score {
         margin-left: 20px;
         font-size: 70px;
@@ -1647,12 +2413,12 @@ h1 {
     /* ------------------------------------------------------------------------------ */
     /* SECOND ROW                                                                     */
     #second-row {
-         top: 110px;
-         width: 100%;
-         height: 100px;
+        top: 110px;
+        width: 100%;
+        height: 100px;
     }
-    
-    #outcome-text {        
+
+    #outcome-text {
         height: 60px;
         font-size: 80px;
     }
@@ -1660,7 +2426,7 @@ h1 {
     /* ------------------------------------------------------------------------------ */
     /* THIRD ROW                                                                     */
     #third-row {
-        top: 170px;
+        top: 220px;
         height: 250px;
     }
 
@@ -1697,7 +2463,7 @@ h1 {
     /* ------------------------------------------------------------------------------ */
     /* FOURTH ROW                                                                     */
     #fourth-row {
-        top: 350px;
+        top: 450px;
         width: 100%;
     }
 
@@ -1705,26 +2471,30 @@ h1 {
         font-size: 30px;
     }
 
-    #restart-button {
-        top: 430px;
-        left: 20px;
-        width: 100%;
-        height: 120px;
+    /* -------------------------------------------------------------------------------- */
+    /* FIFTH ROW                                                                       */
+    #fifth-row {
+        top: 550px;
     }
 
     #restart-button img {
-        top: 0;
-        left: 0;
         width: 120px;
         height: 120px;
     }
 
+    #home-button img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* -------------------------------------------------------------------------------- */
+    /* BOTTOM ROW                                                                       */
+
     #user-option-panel {
         box-sizing: border-box;
-        top: 550px;
-        left: 0;
+        top: 710px;
         height: 150px;
-        width: 1200px;
+        width: 100%;
     }
 
     /* ############################################################################ */
@@ -1824,13 +2594,473 @@ h1 {
 }
 
 
-/* VARIOUS LANDSCAPES */
 
 /* 
-    LANDSCAPE 640 x (between 360 and 485)
+    LANDSCAPE 700+ x (up to 560)
 */
 
-@media (min-width: 800px) and (min-height: 360px) and (max-height: 485px) {
+@media (min-width: 700px) and (min-height: 500px) and (max-height: 560px) and (orientation:landscape){
+
+    header {
+        width: 700px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        width: 700px;
+        height: 30px;
+        padding: 5px 0;
+        font-size: 20px;
+
+    }
+
+    /* ################################################################################## */
+    /* LAYOUT OF THE CANVAS                                                                */
+
+    #canvas {
+        width: 700px;
+        height: 500px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* FIRST ROW                                                                     */
+    #first-row {
+        top: 0;
+        height: 50px;
+    }
+
+    #computer-score {
+        margin-left: 5px;
+        font-size: 20px;
+    }
+
+    #user-score {
+        margin-right: 5px;
+        font-size: 20px;
+    }
+
+    #settings-panel {
+        width: 240px;
+    }
+
+    #rounds-counter-panel {
+        width: 280px;
+        font-size: 20px;
+    }
+
+    #rounds-counter-text {
+        font-size: 17px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* SECOND ROW                                                                   */
+    #second-row {
+        top: 50px;
+        height: 30px;
+    }
+
+    #outcome-text {
+        font-size: 30px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* THIRD ROW                                                                     */
+    #third-row {
+        width: 100%;
+        top: 80px;
+        height: 100px;
+    }
+
+    #computer-pick-image-panel {
+        width: 100px;
+        height: inherit;
+    }
+
+    #computer-pick-image {
+        top: 0;
+        left: 0;
+        height: 100px;
+        width: 100px;
+    }
+
+    #user-pick-image-panel {
+        width: 100px;
+        height: 100px;
+    }
+
+    #user-pick-image {
+        top: 0;
+        left: 0;
+        height: 100px;
+        width: 100px;
+    }
+
+    #versus-text {
+        font-size: 20px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* FOURTH ROW                                                                   */
+    #fourth-row {
+        top: 150px;
+        height: 20px;
+    }
+
+    #message-text {
+        font-size: 15px;
+    }
+
+    
+
+    /* ----------------------------------------------------------------------------- */
+    /*  FIFTH ROW                                                                   */
+    #fifth-row {
+        top: 190px;
+        height: 50px;
+        width: 100%;
+        height: 50px;
+    }
+    #restart-button img {
+        width: 50px;
+        height: 50px;
+    }
+
+    #home-button img {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-option-panel {
+        box-sizing: border-box;
+        top: 240px;
+        left: 0;
+        height: 80px;
+        width: 100%;
+    }
+
+    /* ############################################################################ */
+    /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
+    #user-rock-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-rock-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-rock-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-paper-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-paper-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-paper-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-scissors-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-scissors-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    #user-scissors-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-lizard-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-lizard-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-lizard-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-spock-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-spock-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-spock-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    @keyframes message-display {
+        0% {
+            left: 320px;
+        }
+
+        90% {
+            left: -400px;
+        }
+
+        100% {
+            left: -640px;
+        }
+
+    }
+
+}
+
+/* LANDSCAPE 732 x 400+ */
+@media (max-width:732px) and (min-height: 410px) and (orientation:landscape){
+    header {
+        width: 700px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        width: 700px;
+        height: 30px;
+        padding: 5px 0;
+        font-size: 20px;
+
+    }
+
+    /* ################################################################################## */
+    /* LAYOUT OF THE CANVAS                                                                */
+
+    #canvas {
+        width: 700px;
+        height: 370px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* FIRST ROW                                                                     */
+    #first-row {
+        top: 0;
+        height: 50px;
+    }
+
+    #computer-score {
+        margin-left: 5px;
+        font-size: 30px;
+    }
+
+    #user-score {
+        margin-right: 5px;
+        font-size: 30px;
+    }
+
+    #settings-panel {
+        width: 240px;
+    }
+
+    #rounds-counter-panel {
+        width: 280px;
+        font-size: 30px;
+    }
+
+    #rounds-counter-text {
+        font-size: 17px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* SECOND ROW                                                                   */
+    #second-row {
+        top: 80px;
+        height: 30px;
+    }
+
+    #outcome-text {
+        font-size: 30px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* THIRD ROW                                                                     */
+    #third-row {
+        width: 100%;
+        top: 100px;
+        height: 100px;
+    }
+
+    #computer-pick-image-panel {
+        width: 100px;
+        height: inherit;
+    }
+
+    #computer-pick-image {
+        top: 0;
+        left: 0;
+        height: 100px;
+        width: 100px;
+    }
+
+    #user-pick-image-panel {
+        width: 100px;
+        height: 100px;
+    }
+
+    #user-pick-image {
+        top: 0;
+        left: 0;
+        height: 100px;
+        width: 100px;
+    }
+
+    #versus-text {
+        font-size: 20px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* FOURTH ROW                                                                   */
+    #fourth-row {
+        top: 180px;
+        height: 20px;
+    }
+
+    #message-text {
+        font-size: 15px;
+    }
+
+    
+
+    /* ----------------------------------------------------------------------------- */
+    /*  FIFTH ROW                                                                   */
+    #fifth-row {
+        top: 230px;
+        height: 50px;
+        width: 100%;
+        height: 50px;
+    }
+    #restart-button img {
+        width: 50px;
+        height: 50px;
+    }
+
+    #home-button img {
+        width: 50px;
+        height: 50px;
+    }
+    /* ____________________________________________________________________________ */
+    /* BOTTOM ROW                                                                  */
+
+    #user-option-panel {
+        box-sizing: border-box;
+        top: 300px;
+        left: 0;
+        height: 70px;
+        width: 100%;
+    }
+
+    .gray-border {
+        border-width: 10px;
+    }
+
+    /* ############################################################################ */
+    /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
+    #user-rock-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-rock-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-rock-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-paper-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-paper-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-paper-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-scissors-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-scissors-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    #user-scissors-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-lizard-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-lizard-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-lizard-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-spock-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-spock-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    #user-spock-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+}
+/* 
+    LANDSCAPE 800 x (up to 485)
+*/
+
+@media (min-width: 800px) and (max-height: 485px) and (orientation:landscape){
 
     header {
         width: 640px;
@@ -1904,7 +3134,7 @@ h1 {
 
     #computer-pick-image-panel {
         width: 100px;
-        height:inherit;
+        height: inherit;
     }
 
     #computer-pick-image {
@@ -1927,29 +3157,36 @@ h1 {
     }
 
     #versus-text {
-        font-size: 20px;        
+        font-size: 20px;
     }
 
     /* ----------------------------------------------------------------------------- */
     /* FOURTH ROW                                                                   */
     #fourth-row {
         top: 150px;
-        height:20px;
+        height: 20px;
     }
+
     #message-text {
         font-size: 15px;
     }
+
     
-    #restart-button {
+
+    /* ----------------------------------------------------------------------------- */
+    /*  FIFTH ROW                                                                   */
+    #fifth-row {
         top: 190px;
-        height:50px;
+        height: 50px;
         width: 100%;
-        height: 30px;
+        height: 50px;
+    }
+    #restart-button img {
+        width: 50px;
+        height: 50px;
     }
 
-    #restart-button img {
-        top: 0;
-        left: 0;
+    #home-button img {
         width: 50px;
         height: 50px;
     }
