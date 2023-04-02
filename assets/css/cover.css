@@ -13,19 +13,42 @@
 h1 {
     animation: fade-in 10s;
     text-align: center;
+    font-family: 'Orbitron', sans-serif;
 }
 
+.canvas {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1000px;
+    width: 99vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(ellipse, rgb(64, 22, 143) 0%, rgb(32, 14, 96) 40%, rgb(18, 0, 34) 100%);
+    perspective: 1200px;
+}
+
+#beginButton {
+    position:absolute;
+    top: 300px;
+    width: 300px;
+}
 #beginButton a {
-    display: block;
-    margin: 0 auto;
-    width: 200px;
+    position:absolute;
+    top: 0;
+    /* display: block; */
+    /* margin: 0 auto; */
+    left:auto;
+    width: 300px;
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     text-decoration: none;
     color: black;
     border: 20px solid;
     border-image: url("../images/webp/panel-gray-border.webp") 20;
+    font-family: 'Orbitron', sans-serif;
 }
 
 #beginButton a:hover {
@@ -35,19 +58,6 @@ h1 {
 #beginButton a:active {
     background-color: #bbd1e1;
     transform: translateY(5px);
-}
-
-.canvas {
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 700px;
-    width: 99vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: radial-gradient(ellipse, rgb(64, 22, 143) 0%, rgb(32, 14, 96) 40%, rgb(18, 0, 34) 100%);
-    perspective: 900px;
 }
 
 .rules-panel {
@@ -62,9 +72,22 @@ h1 {
 
 .rules-panel ul {
     list-style: none;
-
+    padding: 5px;
 }
 
+.quick-manual {
+    position: absolute;
+    top: 730px;
+    left: auto;
+    color: white;
+    font-size: 20px;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+.quick-manual p {
+    padding: 5px;
+}
 .cube {
     position: absolute;
     top: 100px;

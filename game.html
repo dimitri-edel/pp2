@@ -13,73 +13,73 @@
 
 <body>
     <header>
-        <div id="header-message">
+        <div id="header-message" aria-label="Motivating phrases">
             <h1 id="message-display"></h1>
         </div>
     </header>
     <div id="canvas">
         <div id="first-row">
-            <div id="computer-score">0</div>
+            <div id="computer-score" aria-label="computer's score">0</div>
             <div id="settings-panel">
                 <label for="rounds">Choose number of rounds:<br></label>
-                <select name="rounds" id="rounds" onchange="game.setNumberOfRounds(this.value)">
-                    <option value="3">3</option>
-                    <option value="5">5</option>
-                    <option value="7">7</option>
-                    <option value="11">11</option>
+                <select name="rounds" id="rounds" onchange="game.setNumberOfRounds(this.value)" aria-label="select number of rounds here">
+                    <option value="3" aria-label="you have selected three rounds">3</option>
+                    <option value="5" aria-label="you have selected five rounds">5</option>
+                    <option value="7" aria-label="you have selected seven rounds">7</option>
+                    <option value="11" aria-label="you have selected eleven rounds">11</option>
                 </select>
             </div>
             <div id="rounds-counter-panel">
                 <div id="rounds-counter-text">ROUND</div>
-                <div id="rounds-counter">0</div>
+                <div id="rounds-counter" aria-label="number of the current round">0</div>
             </div>
-            <div id="user-score">0</div>
+            <div id="user-score" aria-label="your score">0</div>
         </div>
         <div id="second-row">
-            <div id="outcome-text"></div>
+            <div id="outcome-text" aria-label="outcome of the round or game"></div>
         </div>
         <div id="third-row">
             <div id="computer-pick-image-panel"><img id="computer-pick-image" alt="image question mark"
-                    src="./assets/images/webp/question.webp"></div>
+                    src="./assets/images/webp/question.webp" aria-label="picture of the character the computer has selected"></div>
             <div id="versus-text">VS.</div>
             <div id="user-pick-image-panel"><img id="user-pick-image" alt="image question mark"
-                    src="./assets/images/webp/question.webp"></div>
+                    src="./assets/images/webp/question.webp" aria-label="picture of the character you have selected"></div>
         </div>
         <div id="fourth-row">
-            <div id="message-text"></div>
+            <div id="message-text" aria-label="text of the message that explains the outcome of the round or game"></div>
         </div>
         <div id="fifth-row">
-            <div id="restart-button" onclick="view.startOverOnClick();">
+            <div id="restart-button" onclick="view.startOverOnClick();" aria-label="click here to restart the game">
                 <img alt="image question mark" src="./assets/images/webp/restart.webp">
             </div>
-            <div id="home-button" onclick="view.homeButtonOnClick();">
+            <div id="home-button" onclick="view.homeButtonOnClick();" aria-label="click here to go back to the home page">
                 <img alt="image question mark" src="./assets/images/webp/home.webp">
             </div>
         </div>
 
         <!-- Inside this div live the buttons user can click to play the game -->
         <div id="user-option-panel" class="gray-border">
-            <div id="user-rock-button" class="player-option-picker">
+            <div id="user-rock-button" class="player-option-picker" aria-label="click here to pick the rock">
                 <img id="user-rock-button-image" src="./assets/images/webp/rock.webp" alt="image of a rock">
                 <img id="user-rock-button-image-gray" alt="image gray button"
                     src="./assets/images/webp/button-gray.webp">
             </div>
-            <div id="user-paper-button" class="player-option-picker">
+            <div id="user-paper-button" class="player-option-picker" aria-label="click here to pick the paper">
                 <img id="user-paper-button-image" src="./assets/images/webp/paper.webp" alt="image of a sheet of paper">
                 <img id="user-paper-button-image-gray" alt="image gray button"
                     src="./assets/images/webp/button-gray.webp">
             </div>
-            <div id="user-scissors-button" class="player-option-picker">
+            <div id="user-scissors-button" class="player-option-picker" aria-label="click here to pick the scissors">
                 <img id="user-scissors-button-image" alt="image of scissors" src="./assets/images/webp/scissors.webp">
                 <img id="user-scissors-button-image-gray" alt="image gray button"
                     src="./assets/images/webp/button-gray.webp">
             </div>
-            <div id="user-lizard-button" class="player-option-picker">
+            <div id="user-lizard-button" class="player-option-picker" aria-label="click here to pick the lizard">
                 <img id="user-lizard-button-image" alt="image of lizard" src="./assets/images/webp/lizard.webp">
                 <img id="user-lizard-button-image-gray" alt="image gray button"
                     src="./assets/images/webp/button-gray.webp">
             </div>
-            <div id="user-spock-button" class="player-option-picker">
+            <div id="user-spock-button" class="player-option-picker" aria-label="click here to pick Spock">
                 <img id="user-spock-button-image" alt="image of spock" src="./assets/images/webp/spock.webp">
                 <img id="user-spock-button-image-gray" alt="image gray button"
                     src="./assets/images/webp/button-gray.webp">

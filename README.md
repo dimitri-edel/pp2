@@ -13,7 +13,9 @@ The **first design** was **not user friendly** and the mentor did not aprove. He
 So I changed it to the one you will see below. This one the mentor loved. And not only was it more user friendly but also more developer friendly.
 
 #### MEDIA RESPONSIVE DESIGN
-I have tried to cover all the devices that Chrome's dev tools had to offer. Since I am on the fast track schedule there simply was not enough time to cover them all **perfectly**. So I implemented a few generic queries that cover a range of devices. The method is to divy up the devices into groups of simple dimensions. Then simply use the group's minimum required width and the minimum required height for dimensions. A few devices that have a width of less than 320 pixels have not been covered.
+I have tried to cover all the devices that Chrome's dev tools had to offer. Since I am on the fast track schedule there simply was not enough time to cover them all **perfectly**. So I implemented a few generic queries that cover a range of devices. The method is to divy up the devices into groups of simple dimensions. Then simply use the group's minimum required width and the minimum required height for dimensions. 
+I attempted to use percentages for the layout, but it left much to be desired. Especialy sizing the images was a real problem, so I guess I still have a lot to learn. For the time being it is best to stick with what I have learned so far. Thus I hard coded the sizes in pixels. Percentages only came in handy with a few elements. 
+A few devices that have a width of less than 320 pixels have not been covered.
 
 ### GOAL
 The basic idea is to build a Rock, Paper, Scissors, Lizard, Spock Game

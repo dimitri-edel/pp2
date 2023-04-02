@@ -14,12 +14,12 @@
 
 <body>
     <header>
-        <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
-        <div id="beginButton"><a href="game.html">Begin</a></div>
+        <h1 aria-label="Name of the game: rock, paper, scissors, lizard, spock">Rock, Paper, Scissors, Lizard, Spock
+        </h1>        
     </header>
     <section>
-        <div class="canvas">
-            <div class="cube">                
+        <div class="canvas">            
+            <div class="cube" aria-label="animation of a rotating cube">
                 <div class="face-rock"></div>
                 <div class="pic-rock"></div>
                 <div class="background-rock"></div>
@@ -52,6 +52,19 @@
                     <li>Spock vaporizes rock</li>
                     <li>Rock crushes scissors</li>
                 </ul>
+            </div>
+            <div id="beginButton" aria-label="click here to proceed to the game"><a href="game.html">BEGIN</a></div>
+            <div class="quick-manual">
+                <h2>Quick Manual</h2>
+                <hr>
+                <p>In the top-center of the screen lives a settings selector. It allows you to choose the number of
+                    rounds you want to play</p>
+                <p>Difficulty of the game increases by: <q> The higher the number of rounds the more difficult it is</q></p>
+
+                <p>You can restart the game at any moment by clicking on the restart button</p>
+
+                <p>When the game is over you must click on the restart button to start a new game </p>
+                
             </div>
         </div>
     </section>
