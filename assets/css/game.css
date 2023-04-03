@@ -2424,1363 +2424,1363 @@ h1 {
             left: -640px;
         }
     }
+}
 
-    /* 
+/* 
     ##Device = Laptops, Desktops
     ##Screen = B/w 1025px to 1280px
   */
 
-    @media (min-width: 1025px) and (max-width: 1280px) and (min-height: 800px) {
+@media (min-width: 1025px) and (max-width: 1280px) and (min-height: 800px) {
 
-        /* HEADER SECTION contains the following h1 that serves for displaying motivational phrases depending on the status of the game */
-        header {
-            width: 1000px;
-            margin: 0 auto;
-        }
-
-        /* Format for the motivational phrases */
-        h1 {
-            width: 1200px;
-            height: 30px;
-            padding: 5px 0;
-            font-size: 20px;
-            animation: message-display-landscape-middle 10s infinite;
-        }
-
-        /* ################################################################################## */
-        /* SIZE OF THE CANVAS                                                                 */
-        /* ################################################################################## */
-        #canvas {
-            width: 1025px;
-            height: 760px;
-        }
-
-        /* ---------------------------------------------- */
-        /* FIRST ROW                                      */
-        /* ---------------------------------------------- */
-        #first-row {
-            top: 0;
-        }
-
-        /* Display of the score of the player controlled by the computer */
-        #computer-score {
-            margin-left: 20px;
-            font-size: 50px;
-        }
-
-        /* Display of the score of the player controlled by the user */
-        #user-score {
-            margin-right: 20px;
-            font-size: 50px;
-        }
-
-        /* The settings panel from which the user can choose the number of rounds to play */
-        #settings-panel {
-            width: 340px;
-            font-size: 20px;
-        }
-
-        /* THE SELECT FIELD FOR THE NUMBER OF ROUNDS */
-        #rounds {
-            font-size: 20px;
-        }
-
-        /* Display for the number of the current round. It is not displayed at first, */
-        /* will be displayed as soon as the game begins by JavaScript */
-        #rounds-counter-panel {
-            top: 5px;
-            font-size: 50px;
-        }
-
-        /* Format of the text that sits above the current round number */
-        #rounds-counter-text {
-            font-size: 17px;
-        }
-
-        /* ---------------------------------------------- */
-        /* SECOND ROW                                     */
-        /* ---------------------------------------------- */
-        #second-row {
-            top: 100px;
-            width: 100%;
-            height: 60px;
-        }
-
-        /* outcome-text contains the text of the outcome of the round or game. For instance: 'You win!' or 'Game over!' */
-        #outcome-text {
-            font-size: 60px;
-        }
-
-        /* ---------------------------------------------- */
-        /* THIRD ROW                                      */
-        /* ---------------------------------------------- */
-        #third-row {
-            top: 200px;
-            height: 200px;
-        }
-
-        /* This element harbors the image what the computer has picked */
-        #computer-pick-image-panel {
-            width: 200px;
-            height: 200px;
-        }
-
-        /* The image of the character the computer has picked */
-        #computer-pick-image {
-            height: 200px;
-            width: 200px;
-        }
-
-        /* The text 'VS.' that sits between the image of what the computer has picked and the image of whtat the user has picked */
-        #versus-text {
-            font-size: 70px;
-        }
-
-        /* This element harbors the image of what the user has picked */
-        #user-pick-image-panel {
-            width: 200px;
-            height: 200px;
-        }
-
-        /* The image of what the user has picked */
-        #user-pick-image {
-            height: 200px;
-            width: 200px;
-        }
-
-        /* ---------------------------------------------- */
-        /* FOURTH ROW                                     */
-        /* ---------------------------------------------- */
-        #fourth-row {
-            width: 100%;
-            top: 390px;
-        }
-
-        /* Text that explains the outcome of the round or game. For instance: 'Paper covers rock' */
-        #message-text {
-            font-size: 30px;
-        }
-
-        /* ---------------------------------------------- */
-        /* FIFTH ROW                                      */
-        /* ---------------------------------------------- */
-        #fifth-row {
-            top: 520px;
-        }
-
-        /* Image of the restart button icon */
-        #restart-button img {
-            width: 100px;
-            height: 100px;
-        }
-
-        /* Image of the home button icon */
-        #home-button img {
-            width: 100px;
-            height: 100px;
-        }
-
-        /* ------------------------------------------------ */
-        /* BOTTOM ROW                                       */
-        /* ------------------------------------------------ */
-        #user-option-panel {
-            box-sizing: border-box;
-            top: 630px;
-            height: 130px;
-            width: 1025px;
-        }
-
-        /* ############################################################################ */
-        /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
-        /* ############################################################################ */
-
-        /* Container for the button with the image of a rock */
-        #user-rock-button {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Image of a rock */
-        #user-rock-button-image {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-rock-button-image  on hover */
-        #user-rock-button-image-gray {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Container for the button with the image of a paper sheet */
-        #user-paper-button {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Image of a paper sheet */
-        #user-paper-button-image {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-paper-button-image  on hover */
-        #user-paper-button-image-gray {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Container for the button with the image of scissors */
-        #user-scissors-button {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Image of scissors */
-        #user-scissors-button-image {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-scissors-button-image  on hover */
-        #user-scissors-button-image-gray {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Container for the button with the image of a lizard */
-        #user-lizard-button {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Image of a lizard */
-        #user-lizard-button-image {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
-        #user-lizard-button-image-gray {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Container for the button with the image of commander Spock */
-        #user-spock-button {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Image of commander Spock */
-        #user-spock-button-image {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
-        #user-spock-button-image-gray {
-            width: 90px;
-            height: 90px;
-        }
-
-        /* Move the text across the screen from right to left until it disapears beyond the left margin */
-        @keyframes message-display-landscape-middle {
-            0% {
-                left: 1025px;
-            }
-
-            90% {
-                left: -400px;
-            }
-
-            100% {
-                left: -650px;
-            }
-
-        }
+    /* HEADER SECTION contains the following h1 that serves for displaying motivational phrases depending on the status of the game */
+    header {
+        width: 1000px;
+        margin: 0 auto;
     }
 
-    /* 
+    /* Format for the motivational phrases */
+    h1 {
+        width: 1200px;
+        height: 30px;
+        padding: 5px 0;
+        font-size: 20px;
+        animation: message-display-landscape-middle 10s infinite;
+    }
+
+    /* ################################################################################## */
+    /* SIZE OF THE CANVAS                                                                 */
+    /* ################################################################################## */
+    #canvas {
+        width: 1025px;
+        height: 760px;
+    }
+
+    /* ---------------------------------------------- */
+    /* FIRST ROW                                      */
+    /* ---------------------------------------------- */
+    #first-row {
+        top: 0;
+    }
+
+    /* Display of the score of the player controlled by the computer */
+    #computer-score {
+        margin-left: 20px;
+        font-size: 50px;
+    }
+
+    /* Display of the score of the player controlled by the user */
+    #user-score {
+        margin-right: 20px;
+        font-size: 50px;
+    }
+
+    /* The settings panel from which the user can choose the number of rounds to play */
+    #settings-panel {
+        width: 340px;
+        font-size: 20px;
+    }
+
+    /* THE SELECT FIELD FOR THE NUMBER OF ROUNDS */
+    #rounds {
+        font-size: 20px;
+    }
+
+    /* Display for the number of the current round. It is not displayed at first, */
+    /* will be displayed as soon as the game begins by JavaScript */
+    #rounds-counter-panel {
+        top: 5px;
+        font-size: 50px;
+    }
+
+    /* Format of the text that sits above the current round number */
+    #rounds-counter-text {
+        font-size: 17px;
+    }
+
+    /* ---------------------------------------------- */
+    /* SECOND ROW                                     */
+    /* ---------------------------------------------- */
+    #second-row {
+        top: 100px;
+        width: 100%;
+        height: 60px;
+    }
+
+    /* outcome-text contains the text of the outcome of the round or game. For instance: 'You win!' or 'Game over!' */
+    #outcome-text {
+        font-size: 60px;
+    }
+
+    /* ---------------------------------------------- */
+    /* THIRD ROW                                      */
+    /* ---------------------------------------------- */
+    #third-row {
+        top: 200px;
+        height: 200px;
+    }
+
+    /* This element harbors the image what the computer has picked */
+    #computer-pick-image-panel {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* The image of the character the computer has picked */
+    #computer-pick-image {
+        height: 200px;
+        width: 200px;
+    }
+
+    /* The text 'VS.' that sits between the image of what the computer has picked and the image of whtat the user has picked */
+    #versus-text {
+        font-size: 70px;
+    }
+
+    /* This element harbors the image of what the user has picked */
+    #user-pick-image-panel {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* The image of what the user has picked */
+    #user-pick-image {
+        height: 200px;
+        width: 200px;
+    }
+
+    /* ---------------------------------------------- */
+    /* FOURTH ROW                                     */
+    /* ---------------------------------------------- */
+    #fourth-row {
+        width: 100%;
+        top: 390px;
+    }
+
+    /* Text that explains the outcome of the round or game. For instance: 'Paper covers rock' */
+    #message-text {
+        font-size: 30px;
+    }
+
+    /* ---------------------------------------------- */
+    /* FIFTH ROW                                      */
+    /* ---------------------------------------------- */
+    #fifth-row {
+        top: 520px;
+    }
+
+    /* Image of the restart button icon */
+    #restart-button img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Image of the home button icon */
+    #home-button img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* ------------------------------------------------ */
+    /* BOTTOM ROW                                       */
+    /* ------------------------------------------------ */
+    #user-option-panel {
+        box-sizing: border-box;
+        top: 630px;
+        height: 130px;
+        width: 1025px;
+    }
+
+    /* ############################################################################ */
+    /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
+    /* ############################################################################ */
+
+    /* Container for the button with the image of a rock */
+    #user-rock-button {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Image of a rock */
+    #user-rock-button-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-rock-button-image  on hover */
+    #user-rock-button-image-gray {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Container for the button with the image of a paper sheet */
+    #user-paper-button {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Image of a paper sheet */
+    #user-paper-button-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-paper-button-image  on hover */
+    #user-paper-button-image-gray {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Container for the button with the image of scissors */
+    #user-scissors-button {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Image of scissors */
+    #user-scissors-button-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-scissors-button-image  on hover */
+    #user-scissors-button-image-gray {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Container for the button with the image of a lizard */
+    #user-lizard-button {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Image of a lizard */
+    #user-lizard-button-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
+    #user-lizard-button-image-gray {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Container for the button with the image of commander Spock */
+    #user-spock-button {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Image of commander Spock */
+    #user-spock-button-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
+    #user-spock-button-image-gray {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Move the text across the screen from right to left until it disapears beyond the left margin */
+    @keyframes message-display-landscape-middle {
+        0% {
+            left: 1025px;
+        }
+
+        90% {
+            left: -400px;
+        }
+
+        100% {
+            left: -650px;
+        }
+
+    }
+}
+
+/* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
 */
 
-    @media (min-width: 1281px) and (min-height: 900px) {
+@media (min-width: 1281px) and (min-height: 900px) {
 
-        /* HEADER SECTION contains the following h1 that serves for displaying motivational phrases depending on the status of the game */
-        header {
-            width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Format for the motivational phrases */
-        h1 {
-            width: 1500px;
-            height: 30px;
-            padding: 5px 0;
-            font-size: 20px;
-            animation: message-display-landscape-wide 14s infinite;
-        }
-
-        /* ################################################################################## */
-        /* SIZE OF THE CANVAS                                                                 */
-        /* ################################################################################## */
-        #canvas {
-            width: 1200px;
-            height: 860px;
-        }
-
-        /* ------------------------------------------------------------------------------ */
-        /* FIRST ROW                                                                      */
-        /* ------------------------------------------------------------------------------ */
-        #first-row {
-            top: 0;
-        }
-
-        /* Display of the score of the player controlled by the computer */
-        #computer-score {
-            margin-left: 20px;
-            font-size: 70px;
-        }
-
-        /* Display of the score of the player controlled by the user */
-        #user-score {
-            margin-right: 20px;
-            font-size: 70px;
-        }
-
-        /* The settings panel from which the user can choose the number of rounds to play */
-        #settings-panel {
-            width: 340px;
-            font-size: 20px;
-        }
-
-        /* THE SELECT FIELD FOR THE NUMBER OF ROUNDS */
-        #rounds {
-            font-size: 35px;
-        }
-
-        /* Display for the number of the current round. It is not displayed at first, */
-        /* will be displayed as soon as the game begins by JavaScript */
-        #rounds-counter-panel {
-            width: 280px;
-            font-size: 70px;
-        }
-
-        /* Format of the text that sits above the current round number */
-        #rounds-counter-text {
-            font-size: 17px;
-        }
-
-        /* ------------------------------------------------------------------------------ */
-        /* SECOND ROW                                                                     */
-        /* ------------------------------------------------------------------------------ */
-        #second-row {
-            top: 110px;
-            width: 100%;
-            height: 100px;
-        }
-
-        /* outcome-text contains the text of the outcome of the round or game. For instance: 'You win!' or 'Game over!' */
-        #outcome-text {
-            height: 60px;
-            font-size: 80px;
-        }
-
-        /* ------------------------------------------------------------------------------ */
-        /* THIRD ROW                                                                     */
-        /* ------------------------------------------------------------------------------ */
-        #third-row {
-            top: 220px;
-            height: 250px;
-        }
-
-        /* This element harbors the image what the computer has picked */
-        #computer-pick-image-panel {
-            width: 250px;
-            height: 250px;
-        }
-
-        /* The image of the character the computer has picked */
-        #computer-pick-image {
-            height: 250px;
-            width: 250px;
-        }
-
-        /* The text 'VS.' that sits between the image of what the computer has picked and the image of whtat the user has picked */
-        #versus-text {
-            font-size: 100px;
-        }
-
-        /* This element harbors the image of what the user has picked */
-        #user-pick-image-panel {
-            width: 250px;
-            height: 250px;
-        }
-
-        /* The image of what the user has picked */
-        #user-pick-image {
-            height: 250px;
-            width: 250px;
-        }
-
-        /* ------------------------------------------------------------------------------ */
-        /* FOURTH ROW                                                                     */
-        /* ------------------------------------------------------------------------------ */
-        #fourth-row {
-            top: 450px;
-            width: 100%;
-        }
-
-        /* Text that explains the outcome of the round or game. For instance: 'Paper covers rock' */
-        #message-text {
-            font-size: 30px;
-        }
-
-        /* -------------------------------------------------------------------------------- */
-        /* FIFTH ROW                                                                        */
-        /* -------------------------------------------------------------------------------- */
-        #fifth-row {
-            top: 550px;
-        }
-
-        /* Image of the restart button icon */
-        #restart-button img {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Image of the home button icon */
-        #home-button img {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* -------------------------------------------------------------------------------- */
-        /* BOTTOM ROW                                                                       */
-        /* -------------------------------------------------------------------------------- */
-        #user-option-panel {
-            box-sizing: border-box;
-            top: 710px;
-            height: 150px;
-            width: 100%;
-        }
-
-        /* ############################################################################ */
-        /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
-        /* ############################################################################ */
-
-        /* Container for the button with the image of a rock */
-        #user-rock-button {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Image of a rock */
-        #user-rock-button-image {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-rock-button-image  on hover */
-        #user-rock-button-image-gray {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Container for the button with the image of a paper sheet */
-        #user-paper-button {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Image of a paper sheet */
-        #user-paper-button-image {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-paper-button-image  on hover */
-        #user-paper-button-image-gray {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Container for the button with the image of scissors */
-        #user-scissors-button {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Image of scissors */
-        #user-scissors-button-image {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-scissors-button-image  on hover */
-        #user-scissors-button-image-gray {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Container for the button with the image of a lizard */
-        #user-lizard-button {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Image of a lizard */
-        #user-lizard-button-image {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
-        #user-lizard-button-image-gray {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Container for the button with the image of commander Spock */
-        #user-spock-button {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Image of commander Spock */
-        #user-spock-button-image {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
-        #user-spock-button-image-gray {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Move the text across the screen from right to left until it disapears beyond the left margin */
-        @keyframes message-display-landscape-wide {
-            0% {
-                left: 1200px;
-            }
-
-            90% {
-                left: -400px;
-            }
-
-            100% {
-                left: -650px;
-            }
-
-        }
+    /* HEADER SECTION contains the following h1 that serves for displaying motivational phrases depending on the status of the game */
+    header {
+        width: 1200px;
+        margin: 0 auto;
     }
 
-    /* 
+    /* Format for the motivational phrases */
+    h1 {
+        width: 1500px;
+        height: 30px;
+        padding: 5px 0;
+        font-size: 20px;
+        animation: message-display-landscape-wide 14s infinite;
+    }
+
+    /* ################################################################################## */
+    /* SIZE OF THE CANVAS                                                                 */
+    /* ################################################################################## */
+    #canvas {
+        width: 1200px;
+        height: 860px;
+    }
+
+    /* ------------------------------------------------------------------------------ */
+    /* FIRST ROW                                                                      */
+    /* ------------------------------------------------------------------------------ */
+    #first-row {
+        top: 0;
+    }
+
+    /* Display of the score of the player controlled by the computer */
+    #computer-score {
+        margin-left: 20px;
+        font-size: 70px;
+    }
+
+    /* Display of the score of the player controlled by the user */
+    #user-score {
+        margin-right: 20px;
+        font-size: 70px;
+    }
+
+    /* The settings panel from which the user can choose the number of rounds to play */
+    #settings-panel {
+        width: 340px;
+        font-size: 20px;
+    }
+
+    /* THE SELECT FIELD FOR THE NUMBER OF ROUNDS */
+    #rounds {
+        font-size: 35px;
+    }
+
+    /* Display for the number of the current round. It is not displayed at first, */
+    /* will be displayed as soon as the game begins by JavaScript */
+    #rounds-counter-panel {
+        width: 280px;
+        font-size: 70px;
+    }
+
+    /* Format of the text that sits above the current round number */
+    #rounds-counter-text {
+        font-size: 17px;
+    }
+
+    /* ------------------------------------------------------------------------------ */
+    /* SECOND ROW                                                                     */
+    /* ------------------------------------------------------------------------------ */
+    #second-row {
+        top: 110px;
+        width: 100%;
+        height: 100px;
+    }
+
+    /* outcome-text contains the text of the outcome of the round or game. For instance: 'You win!' or 'Game over!' */
+    #outcome-text {
+        height: 60px;
+        font-size: 80px;
+    }
+
+    /* ------------------------------------------------------------------------------ */
+    /* THIRD ROW                                                                     */
+    /* ------------------------------------------------------------------------------ */
+    #third-row {
+        top: 220px;
+        height: 250px;
+    }
+
+    /* This element harbors the image what the computer has picked */
+    #computer-pick-image-panel {
+        width: 250px;
+        height: 250px;
+    }
+
+    /* The image of the character the computer has picked */
+    #computer-pick-image {
+        height: 250px;
+        width: 250px;
+    }
+
+    /* The text 'VS.' that sits between the image of what the computer has picked and the image of whtat the user has picked */
+    #versus-text {
+        font-size: 100px;
+    }
+
+    /* This element harbors the image of what the user has picked */
+    #user-pick-image-panel {
+        width: 250px;
+        height: 250px;
+    }
+
+    /* The image of what the user has picked */
+    #user-pick-image {
+        height: 250px;
+        width: 250px;
+    }
+
+    /* ------------------------------------------------------------------------------ */
+    /* FOURTH ROW                                                                     */
+    /* ------------------------------------------------------------------------------ */
+    #fourth-row {
+        top: 450px;
+        width: 100%;
+    }
+
+    /* Text that explains the outcome of the round or game. For instance: 'Paper covers rock' */
+    #message-text {
+        font-size: 30px;
+    }
+
+    /* -------------------------------------------------------------------------------- */
+    /* FIFTH ROW                                                                        */
+    /* -------------------------------------------------------------------------------- */
+    #fifth-row {
+        top: 550px;
+    }
+
+    /* Image of the restart button icon */
+    #restart-button img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Image of the home button icon */
+    #home-button img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* -------------------------------------------------------------------------------- */
+    /* BOTTOM ROW                                                                       */
+    /* -------------------------------------------------------------------------------- */
+    #user-option-panel {
+        box-sizing: border-box;
+        top: 710px;
+        height: 150px;
+        width: 100%;
+    }
+
+    /* ############################################################################ */
+    /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
+    /* ############################################################################ */
+
+    /* Container for the button with the image of a rock */
+    #user-rock-button {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Image of a rock */
+    #user-rock-button-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-rock-button-image  on hover */
+    #user-rock-button-image-gray {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Container for the button with the image of a paper sheet */
+    #user-paper-button {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Image of a paper sheet */
+    #user-paper-button-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-paper-button-image  on hover */
+    #user-paper-button-image-gray {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Container for the button with the image of scissors */
+    #user-scissors-button {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Image of scissors */
+    #user-scissors-button-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-scissors-button-image  on hover */
+    #user-scissors-button-image-gray {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Container for the button with the image of a lizard */
+    #user-lizard-button {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Image of a lizard */
+    #user-lizard-button-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
+    #user-lizard-button-image-gray {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Container for the button with the image of commander Spock */
+    #user-spock-button {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Image of commander Spock */
+    #user-spock-button-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
+    #user-spock-button-image-gray {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Move the text across the screen from right to left until it disapears beyond the left margin */
+    @keyframes message-display-landscape-wide {
+        0% {
+            left: 1200px;
+        }
+
+        90% {
+            left: -400px;
+        }
+
+        100% {
+            left: -650px;
+        }
+
+    }
+}
+
+/* 
     LANDSCAPE 700+ x (up to 560)
 */
 
-    @media (min-width: 700px) and (min-height: 500px) and (max-height: 560px) and (orientation:landscape) {
+@media (min-width: 700px) and (min-height: 500px) and (max-height: 560px) and (orientation:landscape) {
 
-        /* HEADER SECTION contains the following h1 that serves for displaying motivational phrases depending on the status of the game */
-        header {
-            width: 700px;
-            margin: 0 auto;
+    /* HEADER SECTION contains the following h1 that serves for displaying motivational phrases depending on the status of the game */
+    header {
+        width: 700px;
+        margin: 0 auto;
+    }
+
+    /* Format for the motivational phrases */
+    h1 {
+        width: 700px;
+        height: 30px;
+        padding: 5px 0;
+        font-size: 20px;
+
+    }
+
+    /* ################################################################################## */
+    /* SIZE OF THE CANVAS                                                                 */
+    /* ################################################################################## */
+    #canvas {
+        width: 700px;
+        height: 500px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* FIRST ROW                                                                     */
+    /* ----------------------------------------------------------------------------- */
+    #first-row {
+        top: 0;
+        height: 50px;
+    }
+
+    /* Display of the score of the player controlled by the computer */
+    #computer-score {
+        margin-left: 5px;
+        font-size: 20px;
+    }
+
+    /* Display of the score of the player controlled by the user */
+    #user-score {
+        margin-right: 5px;
+        font-size: 20px;
+    }
+
+    /* The settings panel from which the user can choose the number of rounds to play */
+    #settings-panel {
+        width: 240px;
+    }
+
+    /* Display for the number of the current round. It is not displayed at first, */
+    /* will be displayed as soon as the game begins by JavaScript */
+    #rounds-counter-panel {
+        width: 280px;
+        font-size: 20px;
+    }
+
+    /* Format of the text that sits above the current round number */
+    #rounds-counter-text {
+        font-size: 17px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* SECOND ROW                                                                    */
+    /* ----------------------------------------------------------------------------- */
+    #second-row {
+        top: 50px;
+        height: 30px;
+    }
+
+    /* outcome-text contains the text of the outcome of the round or game. For instance: 'You win!' or 'Game over!' */
+    #outcome-text {
+        font-size: 30px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* THIRD ROW                                                                     */
+    /* ----------------------------------------------------------------------------- */
+    #third-row {
+        width: 100%;
+        top: 80px;
+        height: 100px;
+    }
+
+    /* This element harbors the image what the computer has picked */
+    #computer-pick-image-panel {
+        width: 100px;
+        height: inherit;
+    }
+
+    /* The image of the character the computer has picked */
+    #computer-pick-image {
+        height: 100px;
+        width: 100px;
+    }
+
+    /* The text 'VS.' that sits between the image of what the computer has picked and the image of whtat the user has picked */
+    #versus-text {
+        font-size: 20px;
+    }
+
+    /* This element harbors the image of what the user has picked */
+    #user-pick-image-panel {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* The image of what the user has picked */
+    #user-pick-image {
+        height: 100px;
+        width: 100px;
+    }
+
+
+    /* ----------------------------------------------------------------------------- */
+    /* FOURTH ROW                                                                   */
+    /* ----------------------------------------------------------------------------- */
+    #fourth-row {
+        top: 150px;
+        height: 20px;
+    }
+
+    /* Image of the restart button icon */
+    #message-text {
+        font-size: 15px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /*  FIFTH ROW                                                                    */
+    /* ----------------------------------------------------------------------------- */
+    #fifth-row {
+        top: 190px;
+        height: 50px;
+        width: 100%;
+        height: 50px;
+    }
+
+    /* Image of the restart button icon */
+    #restart-button img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of the home button icon */
+    #home-button img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* -------------------------------------------------------------------------------- */
+    /* BOTTOM ROW                                                                       */
+    /* -------------------------------------------------------------------------------- */
+    #user-option-panel {
+        box-sizing: border-box;
+        top: 240px;
+        left: 0;
+        height: 80px;
+        width: 100%;
+    }
+
+    /* ############################################################################ */
+    /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
+    /* ############################################################################ */
+
+    /* Container for the button with the image of a rock */
+    #user-rock-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of a rock */
+    #user-rock-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-rock-button-image  on hover */
+    #user-rock-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Container for the button with the image of a paper sheet */
+    #user-paper-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of a paper sheet */
+    #user-paper-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-paper-button-image  on hover */
+    #user-paper-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Container for the button with the image of scissors */
+    #user-scissors-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of scissors */
+    #user-scissors-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-scissors-button-image  on hover */
+    #user-scissors-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Container for the button with the image of a lizard */
+    #user-lizard-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of a lizard */
+    #user-lizard-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
+    #user-lizard-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Container for the button with the image of commander Spock */
+    #user-spock-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of commander Spock */
+    #user-spock-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
+    #user-spock-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Move the text across the screen from right to left until it disapears beyond the left margin */
+    @keyframes message-display {
+        0% {
+            left: 320px;
         }
 
-        /* Format for the motivational phrases */
-        h1 {
-            width: 700px;
-            height: 30px;
-            padding: 5px 0;
-            font-size: 20px;
-
+        90% {
+            left: -400px;
         }
 
-        /* ################################################################################## */
-        /* SIZE OF THE CANVAS                                                                 */
-        /* ################################################################################## */
-        #canvas {
-            width: 700px;
-            height: 500px;
-        }
-
-        /* ----------------------------------------------------------------------------- */
-        /* FIRST ROW                                                                     */
-        /* ----------------------------------------------------------------------------- */
-        #first-row {
-            top: 0;
-            height: 50px;
-        }
-
-        /* Display of the score of the player controlled by the computer */
-        #computer-score {
-            margin-left: 5px;
-            font-size: 20px;
-        }
-
-        /* Display of the score of the player controlled by the user */
-        #user-score {
-            margin-right: 5px;
-            font-size: 20px;
-        }
-
-        /* The settings panel from which the user can choose the number of rounds to play */
-        #settings-panel {
-            width: 240px;
-        }
-
-        /* Display for the number of the current round. It is not displayed at first, */
-        /* will be displayed as soon as the game begins by JavaScript */
-        #rounds-counter-panel {
-            width: 280px;
-            font-size: 20px;
-        }
-
-        /* Format of the text that sits above the current round number */
-        #rounds-counter-text {
-            font-size: 17px;
-        }
-
-        /* ----------------------------------------------------------------------------- */
-        /* SECOND ROW                                                                    */
-        /* ----------------------------------------------------------------------------- */
-        #second-row {
-            top: 50px;
-            height: 30px;
-        }
-
-        /* outcome-text contains the text of the outcome of the round or game. For instance: 'You win!' or 'Game over!' */
-        #outcome-text {
-            font-size: 30px;
-        }
-
-        /* ----------------------------------------------------------------------------- */
-        /* THIRD ROW                                                                     */
-        /* ----------------------------------------------------------------------------- */
-        #third-row {
-            width: 100%;
-            top: 80px;
-            height: 100px;
-        }
-
-        /* This element harbors the image what the computer has picked */
-        #computer-pick-image-panel {
-            width: 100px;
-            height: inherit;
-        }
-
-        /* The image of the character the computer has picked */
-        #computer-pick-image {
-            height: 100px;
-            width: 100px;
-        }
-
-        /* The text 'VS.' that sits between the image of what the computer has picked and the image of whtat the user has picked */
-        #versus-text {
-            font-size: 20px;
-        }
-
-        /* This element harbors the image of what the user has picked */
-        #user-pick-image-panel {
-            width: 100px;
-            height: 100px;
-        }
-
-        /* The image of what the user has picked */
-        #user-pick-image {
-            height: 100px;
-            width: 100px;
-        }
-
-
-        /* ----------------------------------------------------------------------------- */
-        /* FOURTH ROW                                                                   */
-        /* ----------------------------------------------------------------------------- */
-        #fourth-row {
-            top: 150px;
-            height: 20px;
-        }
-
-        /* Image of the restart button icon */
-        #message-text {
-            font-size: 15px;
-        }
-
-        /* ----------------------------------------------------------------------------- */
-        /*  FIFTH ROW                                                                    */
-        /* ----------------------------------------------------------------------------- */
-        #fifth-row {
-            top: 190px;
-            height: 50px;
-            width: 100%;
-            height: 50px;
-        }
-
-        /* Image of the restart button icon */
-        #restart-button img {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of the home button icon */
-        #home-button img {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* -------------------------------------------------------------------------------- */
-        /* BOTTOM ROW                                                                       */
-        /* -------------------------------------------------------------------------------- */
-        #user-option-panel {
-            box-sizing: border-box;
-            top: 240px;
-            left: 0;
-            height: 80px;
-            width: 100%;
-        }
-
-        /* ############################################################################ */
-        /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
-        /* ############################################################################ */
-
-        /* Container for the button with the image of a rock */
-        #user-rock-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of a rock */
-        #user-rock-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-rock-button-image  on hover */
-        #user-rock-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Container for the button with the image of a paper sheet */
-        #user-paper-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of a paper sheet */
-        #user-paper-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-paper-button-image  on hover */
-        #user-paper-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Container for the button with the image of scissors */
-        #user-scissors-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of scissors */
-        #user-scissors-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-scissors-button-image  on hover */
-        #user-scissors-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Container for the button with the image of a lizard */
-        #user-lizard-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of a lizard */
-        #user-lizard-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
-        #user-lizard-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Container for the button with the image of commander Spock */
-        #user-spock-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of commander Spock */
-        #user-spock-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
-        #user-spock-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Move the text across the screen from right to left until it disapears beyond the left margin */
-        @keyframes message-display {
-            0% {
-                left: 320px;
-            }
-
-            90% {
-                left: -400px;
-            }
-
-            100% {
-                left: -640px;
-            }
-
+        100% {
+            left: -640px;
         }
 
     }
 
-    /* LANDSCAPE 732 x 400+ */
-    @media (max-width:732px) and (min-height: 410px) and (orientation:landscape) {
+}
 
-        /* HEADER SECTION contains the following h1 that serves for displaying motivational phrases depending on the status of the game */
-        header {
-            width: 700px;
-            margin: 0 auto;
-        }
+/* LANDSCAPE 732 x 400+ */
+@media (max-width:732px) and (min-height: 410px) and (orientation:landscape) {
 
-        /* Format for the motivational phrases */
-        h1 {
-            width: 700px;
-            height: 30px;
-            padding: 5px 0;
-            font-size: 20px;
-
-        }
-
-        /* ################################################################################## */
-        /* SIZE OF THE CANVAS                                                                */
-        /* ################################################################################## */
-        #canvas {
-            width: 700px;
-            height: 370px;
-        }
-
-        /* ----------------------------------------------------------------------------- */
-        /* FIRST ROW                                                                     */
-        /* ----------------------------------------------------------------------------- */
-        #first-row {
-            top: 0;
-            height: 50px;
-        }
-
-        /* Display of the score of the player controlled by the computer */
-        #computer-score {
-            margin-left: 5px;
-            font-size: 30px;
-        }
-
-        /* Display of the score of the player controlled by the user */
-        #user-score {
-            margin-right: 5px;
-            font-size: 30px;
-        }
-
-        /* The settings panel from which the user can choose the number of rounds to play */
-        #settings-panel {
-            width: 240px;
-        }
-
-        /* Display for the number of the current round. It is not displayed at first, */
-        /* will be displayed as soon as the game begins by JavaScript */
-        #rounds-counter-panel {
-            width: 280px;
-            font-size: 30px;
-        }
-
-        /* Format of the text that sits above the current round number */
-        #rounds-counter-text {
-            font-size: 17px;
-        }
-
-        /* ----------------------------------------------------------------------------- */
-        /* SECOND ROW                                                                    */
-        /* ----------------------------------------------------------------------------- */
-        #second-row {
-            top: 80px;
-            height: 30px;
-        }
-
-        /* outcome-text contains the text of the outcome of the round or game. For instance: 'You win!' or 'Game over!' */
-        #outcome-text {
-            font-size: 30px;
-        }
-
-        /* ----------------------------------------------------------------------------- */
-        /* THIRD ROW                                                                     */
-        /* ----------------------------------------------------------------------------- */
-        #third-row {
-            width: 100%;
-            top: 100px;
-            height: 100px;
-        }
-
-        /* This element harbors the image what the computer has picked */
-        #computer-pick-image-panel {
-            width: 100px;
-            height: inherit;
-        }
-
-        /* The image of the character the computer has picked */
-        #computer-pick-image {
-            height: 100px;
-            width: 100px;
-        }
-
-        /* The text 'VS.' that sits between the image of what the computer has picked and the image of whtat the user has picked */
-        #versus-text {
-            font-size: 20px;
-        }
-
-        /* This element harbors the image of what the user has picked */
-        #user-pick-image-panel {
-            width: 100px;
-            height: 100px;
-        }
-
-        /* The image of what the user has picked */
-        #user-pick-image {
-            height: 100px;
-            width: 100px;
-        }
-
-        /* ----------------------------------------------------------------------------- */
-        /* FOURTH ROW                                                                   */
-        /* ----------------------------------------------------------------------------- */
-        #fourth-row {
-            top: 180px;
-            height: 20px;
-        }
-
-        /* Image of the restart button icon */
-        #message-text {
-            font-size: 15px;
-        }
-
-        /* ----------------------------------------------------------------------------- */
-        /*  FIFTH ROW                                                                    */
-        /* ----------------------------------------------------------------------------- */
-        #fifth-row {
-            top: 230px;
-            height: 50px;
-            width: 100%;
-            height: 50px;
-        }
-
-        /* Image of the restart button icon */
-        #restart-button img {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of the home button icon */
-        #home-button img {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* -------------------------------------------------------------------------------- */
-        /* BOTTOM ROW                                                                       */
-        /* -------------------------------------------------------------------------------- */
-        #user-option-panel {
-            box-sizing: border-box;
-            top: 300px;
-            height: 70px;
-            width: 100%;
-        }
-
-        /* Border around #user-option-panel */
-        .gray-border {
-            border-width: 10px;
-        }
-
-
-        /* ############################################################################ */
-        /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
-        /* ############################################################################ */
-
-        /* Container for the button with the image of a rock */
-        #user-rock-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of a rock */
-        #user-rock-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-rock-button-image  on hover */
-        #user-rock-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Container for the button with the image of a paper sheet */
-        #user-paper-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of a paper sheet */
-        #user-paper-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-paper-button-image  on hover */
-        #user-paper-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Container for the button with the image of scissors */
-        #user-scissors-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of scissors */
-        #user-scissors-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-scissors-button-image  on hover */
-        #user-scissors-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Container for the button with the image of a lizard */
-        #user-lizard-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of a lizard */
-        #user-lizard-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
-        #user-lizard-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Container for the button with the image of commander Spock */
-        #user-spock-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of commander Spock */
-        #user-spock-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
-        #user-spock-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
+    /* HEADER SECTION contains the following h1 that serves for displaying motivational phrases depending on the status of the game */
+    header {
+        width: 700px;
+        margin: 0 auto;
     }
 
-    /* LANDSCAPE 800 x (up to 485) */
-    @media (min-width: 800px) and (max-height: 485px) and (orientation:landscape) {
+    /* Format for the motivational phrases */
+    h1 {
+        width: 700px;
+        height: 30px;
+        padding: 5px 0;
+        font-size: 20px;
 
-        /* HEADER SECTION contains the following h1 that serves for displaying motivational phrases depending on the status of the game */
-        header {
-            width: 640px;
-            margin: 0 auto;
+    }
+
+    /* ################################################################################## */
+    /* SIZE OF THE CANVAS                                                                */
+    /* ################################################################################## */
+    #canvas {
+        width: 700px;
+        height: 370px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* FIRST ROW                                                                     */
+    /* ----------------------------------------------------------------------------- */
+    #first-row {
+        top: 0;
+        height: 50px;
+    }
+
+    /* Display of the score of the player controlled by the computer */
+    #computer-score {
+        margin-left: 5px;
+        font-size: 30px;
+    }
+
+    /* Display of the score of the player controlled by the user */
+    #user-score {
+        margin-right: 5px;
+        font-size: 30px;
+    }
+
+    /* The settings panel from which the user can choose the number of rounds to play */
+    #settings-panel {
+        width: 240px;
+    }
+
+    /* Display for the number of the current round. It is not displayed at first, */
+    /* will be displayed as soon as the game begins by JavaScript */
+    #rounds-counter-panel {
+        width: 280px;
+        font-size: 30px;
+    }
+
+    /* Format of the text that sits above the current round number */
+    #rounds-counter-text {
+        font-size: 17px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* SECOND ROW                                                                    */
+    /* ----------------------------------------------------------------------------- */
+    #second-row {
+        top: 80px;
+        height: 30px;
+    }
+
+    /* outcome-text contains the text of the outcome of the round or game. For instance: 'You win!' or 'Game over!' */
+    #outcome-text {
+        font-size: 30px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* THIRD ROW                                                                     */
+    /* ----------------------------------------------------------------------------- */
+    #third-row {
+        width: 100%;
+        top: 100px;
+        height: 100px;
+    }
+
+    /* This element harbors the image what the computer has picked */
+    #computer-pick-image-panel {
+        width: 100px;
+        height: inherit;
+    }
+
+    /* The image of the character the computer has picked */
+    #computer-pick-image {
+        height: 100px;
+        width: 100px;
+    }
+
+    /* The text 'VS.' that sits between the image of what the computer has picked and the image of whtat the user has picked */
+    #versus-text {
+        font-size: 20px;
+    }
+
+    /* This element harbors the image of what the user has picked */
+    #user-pick-image-panel {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* The image of what the user has picked */
+    #user-pick-image {
+        height: 100px;
+        width: 100px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* FOURTH ROW                                                                   */
+    /* ----------------------------------------------------------------------------- */
+    #fourth-row {
+        top: 180px;
+        height: 20px;
+    }
+
+    /* Image of the restart button icon */
+    #message-text {
+        font-size: 15px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /*  FIFTH ROW                                                                    */
+    /* ----------------------------------------------------------------------------- */
+    #fifth-row {
+        top: 230px;
+        height: 50px;
+        width: 100%;
+        height: 50px;
+    }
+
+    /* Image of the restart button icon */
+    #restart-button img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of the home button icon */
+    #home-button img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* -------------------------------------------------------------------------------- */
+    /* BOTTOM ROW                                                                       */
+    /* -------------------------------------------------------------------------------- */
+    #user-option-panel {
+        box-sizing: border-box;
+        top: 300px;
+        height: 70px;
+        width: 100%;
+    }
+
+    /* Border around #user-option-panel */
+    .gray-border {
+        border-width: 10px;
+    }
+
+
+    /* ############################################################################ */
+    /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
+    /* ############################################################################ */
+
+    /* Container for the button with the image of a rock */
+    #user-rock-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of a rock */
+    #user-rock-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-rock-button-image  on hover */
+    #user-rock-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Container for the button with the image of a paper sheet */
+    #user-paper-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of a paper sheet */
+    #user-paper-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-paper-button-image  on hover */
+    #user-paper-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Container for the button with the image of scissors */
+    #user-scissors-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of scissors */
+    #user-scissors-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-scissors-button-image  on hover */
+    #user-scissors-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Container for the button with the image of a lizard */
+    #user-lizard-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of a lizard */
+    #user-lizard-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
+    #user-lizard-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Container for the button with the image of commander Spock */
+    #user-spock-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of commander Spock */
+    #user-spock-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
+    #user-spock-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* LANDSCAPE 800 x (up to 485) */
+@media (min-width: 800px) and (max-height: 485px) and (orientation:landscape) {
+
+    /* HEADER SECTION contains the following h1 that serves for displaying motivational phrases depending on the status of the game */
+    header {
+        width: 640px;
+        margin: 0 auto;
+    }
+
+    /* Format for the motivational phrases */
+    h1 {
+        width: 680px;
+        height: 30px;
+        padding: 5px 0;
+        font-size: 20px;
+
+    }
+
+    /* ################################################################################## */
+    /* SIZE OF THE CANVAS                                                                */
+    /* ################################################################################## */
+    #canvas {
+        width: 640px;
+        height: 320px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* FIRST ROW                                                                     */
+    /* ----------------------------------------------------------------------------- */
+    #first-row {
+        top: 0;
+        height: 50px;
+    }
+
+    /* Display of the score of the player controlled by the computer */
+    #computer-score {
+        margin-left: 5px;
+        font-size: 20px;
+    }
+
+    /* Display of the score of the player controlled by the user */
+    #user-score {
+        margin-right: 5px;
+        font-size: 20px;
+    }
+
+    /* The settings panel from which the user can choose the number of rounds to play */
+    #settings-panel {
+        width: 240px;
+    }
+
+    /* Display for the number of the current round. It is not displayed at first, */
+    /* will be displayed as soon as the game begins by JavaScript */
+    #rounds-counter-panel {
+        width: 280px;
+        font-size: 20px;
+    }
+
+    /* Format of the text that sits above the current round number */
+    #rounds-counter-text {
+        font-size: 17px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* SECOND ROW                                                                    */
+    /* ----------------------------------------------------------------------------- */
+    #second-row {
+        top: 50px;
+        height: 30px;
+    }
+
+    /* outcome-text contains the text of the outcome of the round or game. For instance: 'You win!' or 'Game over!' */
+    #outcome-text {
+        font-size: 30px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* THIRD ROW                                                                     */
+    /* ----------------------------------------------------------------------------- */
+    #third-row {
+        width: 100%;
+        top: 80px;
+        height: 100px;
+    }
+
+    /* This element harbors the image what the computer has picked */
+    #computer-pick-image-panel {
+        width: 100px;
+        height: inherit;
+    }
+
+    /* The image of the character the computer has picked */
+    #computer-pick-image {
+        height: 100px;
+        width: 100px;
+    }
+
+    /* The text 'VS.' that sits between the image of what the computer has picked and the image of whtat the user has picked */
+    #versus-text {
+        font-size: 20px;
+    }
+
+    /* This element harbors the image of what the user has picked */
+    #user-pick-image-panel {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* The image of what the user has picked */
+    #user-pick-image {
+        height: 100px;
+        width: 100px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /* FOURTH ROW                                                                   */
+    /* ----------------------------------------------------------------------------- */
+    #fourth-row {
+        top: 150px;
+        height: 20px;
+    }
+
+    /* Image of the restart button icon */
+    #message-text {
+        font-size: 15px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    /*  FIFTH ROW                                                                    */
+    /* ----------------------------------------------------------------------------- */
+    #fifth-row {
+        top: 190px;
+        height: 50px;
+        width: 100%;
+        height: 50px;
+    }
+
+    /* Image of the restart button icon */
+    #restart-button img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of the home button icon */
+    #home-button img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* -------------------------------------------------------------------------------- */
+    /* BOTTOM ROW                                                                       */
+    /* -------------------------------------------------------------------------------- */
+    #user-option-panel {
+        box-sizing: border-box;
+        top: 240px;
+        height: 80px;
+        width: 100%;
+    }
+
+    /* ############################################################################ */
+    /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
+    /* ############################################################################ */
+
+    /* Container for the button with the image of a rock */
+    #user-rock-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of a rock */
+    #user-rock-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-rock-button-image  on hover */
+    #user-rock-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Container for the button with the image of a paper sheet */
+    #user-paper-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of a paper sheet */
+    #user-paper-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-paper-button-image  on hover */
+    #user-paper-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Container for the button with the image of scissors */
+    #user-scissors-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of scissors */
+    #user-scissors-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-scissors-button-image  on hover */
+    #user-scissors-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Container for the button with the image of a lizard */
+    #user-lizard-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of a lizard */
+    #user-lizard-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
+    #user-lizard-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Container for the button with the image of commander Spock */
+    #user-spock-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Image of commander Spock */
+    #user-spock-button-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
+    #user-spock-button-image-gray {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Move message-display text from left to right */
+    @keyframes message-display {
+        0% {
+            left: 320px;
         }
 
-        /* Format for the motivational phrases */
-        h1 {
-            width: 680px;
-            height: 30px;
-            padding: 5px 0;
-            font-size: 20px;
-
+        90% {
+            left: -400px;
         }
 
-        /* ################################################################################## */
-        /* SIZE OF THE CANVAS                                                                */
-        /* ################################################################################## */
-        #canvas {
-            width: 640px;
-            height: 320px;
-        }
-
-        /* ----------------------------------------------------------------------------- */
-        /* FIRST ROW                                                                     */
-        /* ----------------------------------------------------------------------------- */
-        #first-row {
-            top: 0;
-            height: 50px;
-        }
-
-        /* Display of the score of the player controlled by the computer */
-        #computer-score {
-            margin-left: 5px;
-            font-size: 20px;
-        }
-
-        /* Display of the score of the player controlled by the user */
-        #user-score {
-            margin-right: 5px;
-            font-size: 20px;
-        }
-
-        /* The settings panel from which the user can choose the number of rounds to play */
-        #settings-panel {
-            width: 240px;
-        }
-
-        /* Display for the number of the current round. It is not displayed at first, */
-        /* will be displayed as soon as the game begins by JavaScript */
-        #rounds-counter-panel {
-            width: 280px;
-            font-size: 20px;
-        }
-
-        /* Format of the text that sits above the current round number */
-        #rounds-counter-text {
-            font-size: 17px;
-        }
-
-        /* ----------------------------------------------------------------------------- */
-        /* SECOND ROW                                                                    */
-        /* ----------------------------------------------------------------------------- */
-        #second-row {
-            top: 50px;
-            height: 30px;
-        }
-
-        /* outcome-text contains the text of the outcome of the round or game. For instance: 'You win!' or 'Game over!' */
-        #outcome-text {
-            font-size: 30px;
-        }
-
-        /* ----------------------------------------------------------------------------- */
-        /* THIRD ROW                                                                     */
-        /* ----------------------------------------------------------------------------- */
-        #third-row {
-            width: 100%;
-            top: 80px;
-            height: 100px;
-        }
-
-        /* This element harbors the image what the computer has picked */
-        #computer-pick-image-panel {
-            width: 100px;
-            height: inherit;
-        }
-
-        /* The image of the character the computer has picked */
-        #computer-pick-image {
-            height: 100px;
-            width: 100px;
-        }
-
-        /* The text 'VS.' that sits between the image of what the computer has picked and the image of whtat the user has picked */
-        #versus-text {
-            font-size: 20px;
-        }
-
-        /* This element harbors the image of what the user has picked */
-        #user-pick-image-panel {
-            width: 100px;
-            height: 100px;
-        }
-
-        /* The image of what the user has picked */
-        #user-pick-image {
-            height: 100px;
-            width: 100px;
-        }
-
-        /* ----------------------------------------------------------------------------- */
-        /* FOURTH ROW                                                                   */
-        /* ----------------------------------------------------------------------------- */
-        #fourth-row {
-            top: 150px;
-            height: 20px;
-        }
-
-        /* Image of the restart button icon */
-        #message-text {
-            font-size: 15px;
-        }
-
-        /* ----------------------------------------------------------------------------- */
-        /*  FIFTH ROW                                                                    */
-        /* ----------------------------------------------------------------------------- */
-        #fifth-row {
-            top: 190px;
-            height: 50px;
-            width: 100%;
-            height: 50px;
-        }
-
-        /* Image of the restart button icon */
-        #restart-button img {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of the home button icon */
-        #home-button img {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* -------------------------------------------------------------------------------- */
-        /* BOTTOM ROW                                                                       */
-        /* -------------------------------------------------------------------------------- */
-        #user-option-panel {
-            box-sizing: border-box;
-            top: 240px;
-            height: 80px;
-            width: 100%;
-        }
-
-        /* ############################################################################ */
-        /* PANEL WITH OPTIONS FROM WHICH THE USER CAN PICK THEIR MOVE                  */
-        /* ############################################################################ */
-
-        /* Container for the button with the image of a rock */
-        #user-rock-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of a rock */
-        #user-rock-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-rock-button-image  on hover */
-        #user-rock-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Container for the button with the image of a paper sheet */
-        #user-paper-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of a paper sheet */
-        #user-paper-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-paper-button-image  on hover */
-        #user-paper-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Container for the button with the image of scissors */
-        #user-scissors-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of scissors */
-        #user-scissors-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-scissors-button-image  on hover */
-        #user-scissors-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Container for the button with the image of a lizard */
-        #user-lizard-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of a lizard */
-        #user-lizard-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
-        #user-lizard-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Container for the button with the image of commander Spock */
-        #user-spock-button {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Image of commander Spock */
-        #user-spock-button-image {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Transparent image that will be displayed on top of the #user-lizard-button-image  on hover */
-        #user-spock-button-image-gray {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Move message-display text from left to right */
-        @keyframes message-display {
-            0% {
-                left: 320px;
-            }
-
-            90% {
-                left: -400px;
-            }
-
-            100% {
-                left: -640px;
-            }
-
+        100% {
+            left: -640px;
         }
 
     }
+}
