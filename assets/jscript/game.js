@@ -44,7 +44,7 @@
 
 */
 
-/* Indexes of outcomes */
+/* Indexes of outcomes. Also referred to as owner-indexes */
 const versus_rock = 0;
 const versus_paper = 1;
 const versus_scissors = 2;

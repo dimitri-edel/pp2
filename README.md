@@ -17,6 +17,14 @@ I have tried to cover all the devices that Chrome's dev tools had to offer. Sinc
 I attempted to use percentages for the layout, but it left much to be desired. Especialy sizing the images was a real problem, so I guess I still have a lot to learn. For the time being it is best to stick with what I have learned so far. Thus I hard coded the sizes in pixels. Percentages only came in handy with a few elements. 
 A few devices that have a width of less than 320 pixels have not been covered.
 
+### OBJECT ORIENTED DESIGN FOR JAVASCRIPT
+Since JavaScript provides the means for an Object Oriented Design, I decided to take advantage of that. This aproach simplifies everything by making things easier to oversee. I decided to make a class that represents the choice that the user makes. For there are five different characters that the user can choose to play, there will be one general Class ,which I named Pick. And then five classes that inherit from it, namely Rock, Paper, Scissors, Lizard and Spock.
+Also, I need to separate the presentation from the game logic. Hence, I created a Game class and a View class. The View class contains all the event-handlers that are triggered when the user clicks on a responsive element, like a button. The event-handlers in the View will in turn trigger the corresponding method in the Game object. Upon which the Game object will report back to the view object and , so to speak, ask it to apply some changes to either HTML or CSS. There is also a class named Player which is used by the Game class to create two players: one for the computer and one for the user of the page. 
+
+Below you can see a simplified Class Diagram
+
+#### Simplified Class Diagram
+![Image of class diagram](./assets/images/documentation/class-diagram.webp)
 ### GOAL
 The basic idea is to build a Rock, Paper, Scissors, Lizard, Spock Game
 #### External user’s goal
@@ -61,6 +69,9 @@ image
 ### BUGS
 #### JavaScipt
 There was a typo, that was causing problems. I misspelled the word lizard. There was and still is an arry by the name 'LIZARD' and a class with the name 'Lizard'. However the name of the class was spelled incorrectly like so 'Lizzard'. One of the tag id's in html alos used the incorrect spelling. I used the debugger and the culprits were found out rather quickly. I rectified the spelling in the class name and the html-tag-id and it fixed everything.
+#### CSS
+After I added some comments to the game.css file, there was an error. I forgot one of the curly braces, so the media query was off. 
+
 ### VALIDATOR TESTING
 The pages have been tested by validator.w3.org and jigsaw.w3.org/css-validator and have passed the tests.
 ### JSHint 
