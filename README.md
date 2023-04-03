@@ -29,7 +29,7 @@ The site’s goal is to provide a challenging game with increasing levels of dif
 - A score tracking system
 - The ability to play against the computer
 ### IMAGES
-I downloaded the restart icon from freeiconspng.com and then used it as a template for the home button.
+All the images were free and I gathered them from various providers, whose names are listed in credits. Only two of the images I drew myself, because it was simple. I drew the paper sheet icon and the home icon. I downloaded the restart icon from freeiconspng.com and then used it as a template for the home button.
 ### LAYOUT
 
 #### Home page
@@ -64,7 +64,8 @@ There was a typo, that was causing problems. I misspelled the word lizard. There
 ### VALIDATOR TESTING
 The pages have been tested by validator.w3.org and jigsaw.w3.org/css-validator and have passed the tests.
 ### JSHint 
-The JavaScript has been tested in JSHint without any issues as long as it is set to esversion: 6. Otherwise, it will show some warnings because I use ECMAScript 6 features such as const and let instead of the var keyword. I use const for values that are constant, even though the keyword is used for 
+The JavaScript has been tested in JSHint without any issues as long as it is set to esversion: 6. Otherwise, it will show some warnings because I use ECMAScript 6 features such as const and let instead of the var keyword. Consequently, this JScript will not work on devices that came out before 2015 and have not been properly updated. 
+P.S. I use const for values that are constant, even though the keyword is used for 
 declaring a variable. However, it is just my personal preference.
 ## Deployment
 The site has been deployed from GitHub Pages. The way to do that was to go to the settings. Click on the Pages icon. Select the repository and the branch. And click on Publish. And that was that.
