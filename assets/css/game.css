@@ -256,10 +256,10 @@ h1 {
 /*------------------------------------------------------------------------------------------- */
 #user-option-panel {
     position: absolute;
-    top: 340px;
+    top: 360px;
     left: 0;
-    height: 50px;
-    width: 280px;
+    height: 70px;
+    width: 320px;
     background-color: rgb(159 173 174 / 29%);
     display: flex;
     box-sizing: border-box;

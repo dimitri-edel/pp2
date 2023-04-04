@@ -1,4 +1,4 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Cover image](./assets/images/documentation/cover.webp)
 
 
 # Rock, Paper, Scissors, Lizard, Spock
@@ -73,23 +73,22 @@ Once the game is over, this is what the user is going to see:
 
 At this point the user has the option of restarting the game or going back to the home page.
 ## Features
+The user can choose how many attempts they want to play per game. Which I refer to as 'rounds'.
+The level of difficulty increases,depending on the number of rounds they choose to play. Yet the initial setting of three lets the computer pick randomly. Otherwise the computer will cheat ever so often.
 
 ### NAVIGATION
 The index page has the begin button, that takes the user to the game page.
 On the game panel lives a home button that takes the user back to the home page.
-### HOME PAGE
-image
-#### GAME PAGE
-image
 
 ## Responsive Design
+I have covered most of the devices that the dev tools provided dimensions for. Only few of them have not been covered so far, but will be as soon as I get around to doing it.
 ## Testing
 ### LIGHTHOUSE
-
+I guess it's just like they say: 'A picture is worth a thousand words!'
 #### home page
-image
+![Lighthouse test image of the home page](./assets/images/documentation/lighthouse-home.webp)
 #### gmae page
-image
+![Lighthouse test image of the game page](./assets/images/documentation/lighthouse-game.webp)
 ### BUGS
 #### JavaScipt
 There was a typo, that was causing problems. I misspelled the word lizard. There was and still is an arry by the name 'LIZARD' and a class with the name 'Lizard'. However the name of the class was spelled incorrectly like so 'Lizzard'. One of the tag id's in html alos used the incorrect spelling. I used the debugger and the culprits were found out rather quickly. I rectified the spelling in the class name and the html-tag-id and it fixed everything.
