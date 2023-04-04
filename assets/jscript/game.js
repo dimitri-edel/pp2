@@ -693,4 +693,5 @@ class View {
 let game = new Game(3);
 // The view object will be used to relay view events
 let view = new View();
+// Set the initial message to the #message-display
 document.getElementById("message-display").innerHTML = starting_message;
