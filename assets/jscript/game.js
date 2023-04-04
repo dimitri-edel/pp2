@@ -596,7 +596,7 @@ class View {
 
     // Is triggered when the 'home' icon is clicked
     homeButtonOnClick() {
-        window.open("/index.html", "_self");
+        window.open("index.html", "_self");
     }
     // Removes onclick event listeners from the user option picker panel. Used when the game is over, to prevent the
     // user from continueing the game. After that it becomes necessary to click the restart icon to start a new game.    
