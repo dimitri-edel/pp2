@@ -40,19 +40,43 @@ The site’s goal is to provide a challenging game with increasing levels of dif
 All the images were free and I gathered them from various providers, whose names are listed in credits. Only two of the images I drew myself, because it was simple. I drew the paper sheet icon and the home icon. I downloaded the restart icon from freeiconspng.com and then used it as a template for the home button.
 ### LAYOUT
 
-#### Home page
+#### HOME PAGE
+Home page contains the begin-button that takes the user to the game page.
+It also has a list of rules to the game. Furthermore, it has a quick manual that explains a few things you might need to know before playing the game.
+![Image of home page](./assets/images/documentation/home-page.webp)
+#### GAME PAGE
+#### Before the game begins
+![Image of the game page of before the game begins](./assets/images/documentation/game-start.webp)
+#### Settings
+![Image of settings panel](./assets/images/documentation/game-settings.webp)
 
-#### Game page
+Before the game begins, user has the option to choose the number of rounds to play. 
+#### Rounds
+![Image of a game round](./assets/images/documentation/game-rounds.webp)
 
+When the user plays the next round, by picking a character that they want to play. If they win the round, several things are going to happen:
+1) The user score, which sits in the top right corner, will get updated. 
+2) The image of the character that the user picked will appear on the right hand side, replacing whatever image used to be there.
+3) The image of the character that the computer picked will appear on the left hand side, replacing whatever image used to be there.
+4) The user can see the message that states that they win.
+5) The user can see the message that explains why they win, by reciting one of the rules.
+6) The text that appears at the very top of the page gets updated to one of the motivational phrases. This text is always moving from left to right.
+
+#### Game over
+![Image of when the game is over](./assets/images/documentation/game-over.webp)
+
+Once the game is over, this is what the user is going to see:
+1) The final score.
+2) Images of the characters that were played in the last round.
+3) The 'GAME OVER' message.
+4) The message that states the outcome of the game.
+
+At this point the user has the option of restarting the game or going back to the home page.
 ## Features
 
 ### NAVIGATION
-
-
-Navigation bar structure
-Name of page
-- Home
-- Game
+The index page has the begin button, that takes the user to the game page.
+On the game panel lives a home button that takes the user back to the home page.
 ### HOME PAGE
 image
 #### GAME PAGE

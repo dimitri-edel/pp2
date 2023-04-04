@@ -88,8 +88,7 @@ const spock_versus_paper = "Paper disproves spock!";
 const spock_versus_scissors = "Spock smashes scissors!";
 const spock_versus_lizard = "Lizard poisons spock!";
 
-const outcome_index = 0;
-const message_index = 1;
+
 
 /* 
     The content of the ROCK, PAPER, SCISSORS, LIZARD and SPOCK arrays  contain possible outcomes at the corresponding index. 
@@ -103,6 +102,11 @@ const message_index = 1;
     ROCK[versus_spock][outcome_index] is "win"
     ROCK[versus_spock][message_index] is "Spock vaporizes rock!"
 */
+
+// The two indexes are used in the arrays below, to identify the entries in the array of the second dimension
+const outcome_index = 0;
+const message_index = 1;
+
 const ROCK = new Array(6);
 // Make it a two-dimensional array
 for (var i = 0; i < ROCK.length; i++) {
