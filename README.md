@@ -127,3 +127,6 @@ The site has been deployed from GitHub Pages. The way to do that was to go to th
 - cliparting.com (image of rock)
 - NicePNG (image of scissors)
 - 123RF (image of lizard)
+
+### DESIGN
+Special thanks to my mentor Adegbenga Adeye for providing many useful tips on the design.
